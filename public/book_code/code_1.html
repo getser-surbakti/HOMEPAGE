@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life Code Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2980b9;
+        }
+        .code-container {
+            background-color: #e8e8e8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+        }
+        .section {
+            margin-top: 30px;
+        }
+        .section h2 {
+            color: #2c3e50;
+        }
+        .key-points ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Conway's Game of Life - Code Refactoring</h1>
+    
+    <div class="section">
+        <h2>Original (Messy) Code</h2>
+        <div class="code-container">
+            <pre>
+def game_of_life_step(grid):
+    """
+    Simulates one step of Conway's Game of Life.
+
+    Args:
+      grid: A 2D list representing the current state of the grid.
+
+    Returns:
+      A 2D list representing the next state of the grid.
+    """
+    new_grid = [[0] * len(grid[0]) for _ in range(len(grid))]
+    for row in range(len(grid)):
+        for col in range(len(grid[0])):
+            live_neighbors = 0
+            for i in range(max(0, row - 1), min(row + 2, len(grid))):
+                for j in range(max(0, col - 1), min(col + 2, len(grid[0]))):
+                    if i == row and j == col:
+                        continue
+                    if grid[i][j] == 1:
+                        live_neighbors += 1
+            if grid[row][col] == 1 and (live_neighbors < 2 or live_neighbors > 3):
+                new_grid[row][col] = 0
+            elif grid[row][col] == 0 and live_neighbors == 3:
+                new_grid[row][col] = 1
+            else:
+                new_grid[row][col] = grid[row][col]
+    return new_grid
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Refactored (Clean) Code</h2>
+        <div class="code-container">
+            <pre>
+def count_live_neighbors(game_board, row, col):
+    """
+    Counts the number of live neighbors for a given cell.
+
+    Args:
+      game_board: A 2D list representing the current state of the game board.
+      row: The row index of the cell.
+      col: The column index of the cell.
+
+    Returns:
+      The number of live neighbors.
+    """
+    num_rows, num_cols = len(game_board), len(game_board[0])
+    count = 0
+    for i in range(max(0, row - 1), min(row + 2, num_rows)):
+        for j in range(max(0, col - 1), min(col + 2, num_cols)):
+            if i == row and j == col:
+                continue
+            if game_board[i][j] == 1:
+                count += 1
+    return count
+
+def get_next_cell_state(game_board, row, col):
+    """
+    Determines the next state of a cell based on the number of live neighbors.
+
+    Args:
+      game_board: A 2D list representing the current state of the game board.
+      row: The row index of the cell.
+      col: The column index of the cell.
+
+    Returns:
+      The next state of the cell (0 for dead, 1 for alive).
+    """
+    live_neighbors = count_live_neighbors(game_board, row, col)
+    if game_board[row][col] == 1 and (live_neighbors < 2 or live_neighbors > 3):
+        return 0
+    elif game_board[row][col] == 0 and live_neighbors == 3:
+        return 1
+    else:
+        return game_board[row][col]
+
+def game_of_life_step(game_board):
+    """
+    Simulates one step of Conway's Game of Life.
+
+    Args:
+      game_board: A 2D list representing the current state of the game board.
+
+    Returns:
+      A 2D list representing the next state of the game board.
+    """
+    num_rows, num_cols = len(game_board), len(game_board[0])
+    next_board = [[0] * num_cols for _ in range(num_rows)]
+    for row in range(num_rows):
+        for col in range(num_cols):
+            next_board[row][col] = get_next_cell_state(game_board, row, col)
+    return next_board
+            </pre>
+        </div>
+    </div>
+
+    <footer>
+        <p>In the refactored code, we've broken the functionality into smaller, more focused functions. This makes the code easier to understand, test, and maintain. The primary changes include:</p>
+        <ul>
+            <li>Extracting the logic to count live neighbors into a separate function.</li>
+            <li>Creating a dedicated function to determine the next state of a cell.</li>
+            <li>Using smaller, more descriptive function names.</li>
+        </ul>
+    </footer>
+
+</body>
+</html>

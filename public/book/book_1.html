@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Code: A Handbook of Agile Software Craftsmanship</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        marquee {
+            color:red; 
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        .code-block {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .chapter-title {
+            margin-top: 30px;
+            color: #2980b9;
+        }
+        .key-points {
+            margin-top: 10px;
+        }
+        .example {
+            background-color: #ecf0f1;
+            border-left: 5px solid #2980b9;
+            margin: 15px 0;
+            padding: 10px;
+        }
+        .example p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Clean Code: A Handbook of Agile Software Craftsmanship</h1>
+    <p>By Robert C. Martin</p>
+    <marquee>Follow me on IG: @getsersurbakti</marquee>
+
+    <h2>Let's Dive into Clean Code Chapter by Chapter</h2>
+
+    <h2>Part 1: Principles, Patterns, and Practices of Agile Software Craftsmanship</h2>
+
+    <!-- Chapter 1 -->
+    <h3 class="chapter-title">Chapter 1: Clean Code</h3>
+    <div class="key-points">
+        <ul>
+            <li>What constitutes clean code (simple, readable, maintainable)</li>
+            <li>The importance of writing code for humans, not just computers</li>
+            <li>The concept of software craftsmanship</li>
+        </ul>
+    </div>
+    <div class="example">
+        <p>Imagine you're building a LEGO castle.</p>
+        <ul>
+            <li>Clean Code is like building a really awesome LEGO castle:</li>
+            <ul>
+                <li>Simple: It's easy to see how each piece fits together.</li>
+                <li>Readable: You can easily understand what each part does.</li>
+                <li>Maintainable: You can easily add new towers or change things without breaking the whole castle.</li>
+            </ul>
+            <li>Writing code is like building with LEGOs:</li>
+            <ul>
+                <li>Computers understand the instructions, but other people need to understand them too.</li>
+                <li>Just like your friends might want to help build your castle, other programmers might need to work on your code later.</li>
+            </ul>
+            <li>Software Craftsmanship is like being a skilled LEGO builder:</li>
+            <ul>
+                <li>It's not just about putting the pieces together, it's about doing it with care and pride.</li>
+                <li>A good LEGO builder uses the best techniques, pays attention to detail, and always tries to improve their skills.</li>
+            </ul>
+        </ul>
+    </div>
+    <p>In simple terms, Clean Code is about writing computer programs that are like well-organized, beautiful LEGO castles. It's about writing code that is easy to understand, easy to change, and fun to work with!</p>
+
+    <!-- Chapter 2 -->
+    <h3 class="chapter-title">Chapter 2: Meaningful Names</h3>
+    <div class="key-points">
+        <ul>
+            <li>Choosing descriptive and meaningful names for variables, functions, and classes</li>
+            <li>Avoiding meaningless names like "data" or "temp"</li>
+            <li>Using prefixes and suffixes judiciously</li>
+        </ul>
+    </div>
+    <div class="example">
+        <p>Imagine you have a box of toys.</p>
+        <ul>
+            <li>Meaningful Names are like giving your toys good names:</li>
+            <ul>
+                <li>Instead of calling your toy car "Thing 1," you call it "Red Race Car."</li>
+            </ul>
+            <li>Good names make it easy to understand:</li>
+            <ul>
+                <li>If you have a variable called "customerName," you know it holds the name of a customer.</li>
+                <li>If you have a function called "calculateTotal," you know it will calculate the total amount.</li>
+            </ul>
+            <li>Bad names are confusing:</li>
+            <ul>
+                <li>Names like "data" or "temp" are like calling all your toys "Stuff." It's hard to know what they are!</li>
+            </ul>
+        </ul>
+    </div>
+    <p>Just like you give your toys good names, we give meaningful names to things in our computer code. This makes our code easier to read, understand, and work with.</p>
+
+    <!-- Chapter 3 -->
+    <h3 class="chapter-title">Chapter 3: Functions</h3>
+    <div class="key-points">
+        <ul>
+            <li>Keeping functions small and focused (ideally, one level of abstraction)</li>
+            <li>Using descriptive function names that indicate their purpose</li>
+            <li>Avoiding side effects within functions</li>
+        </ul>
+    </div>
+    <div class="example">
+        <p>Imagine you're making a delicious pizza.</p>
+        <ul>
+            <li>Functions are like little helpers in the kitchen:</li>
+            <ul>
+                <li>One helper might be responsible for "makePizzaDough".</li>
+            </ul>
+            <li>Keep your helpers focused:</li>
+            <ul>
+                <li>Each helper should have a specific job and do it well.</li>
+            </ul>
+            <li>Give your helpers good names:</li>
+            <ul>
+                <li>You wouldn't call your dough-making helper "DoStuff."</li>
+            </ul>
+        </ul>
+    </div>
+    <p>In computer code, "functions" are like little helpers that perform specific tasks. Just like in the kitchen, we want our functions to be small, focused, and easy to understand. This makes our code easier to read, easier to change, and less likely to have mistakes.</p>
+
+    <!-- Chapter 4 -->
+    <h3 class="chapter-title">Chapter 4: Comments</h3>
+    <div class="key-points">
+        <ul>
+            <li>Using comments sparingly to explain why something is done, not what it does</li>
+            <li>Avoiding comments that merely restate the code</li>
+            <li>Using good commenting style to enhance readability</li>
+        </ul>
+    </div>
+    <div class="example">
+        <p>Imagine you're building a LEGO castle with your friend.</p>
+        <ul>
+            <li>Comments are like notes you leave for your friend:</li>
+            <ul>
+                <li>Good comments explain the "why" behind your actions.</li>
+            </ul>
+            <li>Bad comments just repeat what you're doing:</li>
+            <ul>
+                <li>Don't just say "Now I'm putting the blue roof on." Your friend can see that!</li>
+            </ul>
+        </ul>
+    </div>
+    <p>In computer code, "comments" are like notes you leave for other programmers (or even for yourself in the future). Good comments explain the why behind your code, making it easier to understand and maintain.</p>
+
+    <!-- Chapter 5 -->
+    <h3 class="chapter-title">Chapter 5: Formatting</h3>
+    <div class="key-points">
+        <ul>
+            <li>Using consistent indentation and spacing to improve code readability</li>
+            <li>Breaking up long lines of code to improve readability</li>
+            <li>Using blank lines to separate logical sections of code</li>
+        </ul>
+    </div>
+
+    <!-- Chapter 6 -->
+    <h3 class="chapter-title">Chapter 6: Objects and Data Structures</h3>
+    <div class="key-points">
+        <ul>
+            <li>Understanding the difference between objects and data structures</li>
+            <li>Using objects to encapsulate behavior and data structures to expose data</li>
+            <li>Choosing the right data structure for the job</li>
+        </ul>
+    </div>
+
+    <!-- Chapter 7 -->
+    <h3 class="chapter-title">Chapter 7: Error Handling</h3>
+    <div class="key-points">
+        <ul>
+            <li>Using exceptions to handle errors gracefully</li>
+            <li>Avoiding returning error codes</li>
+            <li>Using assertions to check for invalid conditions</li>
+        </ul>
+    </div>
+
+    <!-- Chapter 8 -->
+    <h3 class="chapter-title">Chapter 8: Boundaries</h3>
+    <div class="key-points">
+        <ul>
+            <li>Designing clean interfaces between different parts of your code</li>
+            <li>Using dependency injection to manage dependencies</li>
+            <li>Testing third-party code effectively</li>
+        </ul>
+    </div>
+
+    <!-- Chapter 9 -->
+    <h3 class="chapter-title">Chapter 9: Unit Tests</h3>
+    <div class="key-points">
+        <ul>
+            <li>Writing unit tests that are fast, independent, repeatable, self-validating, and thorough</li>
+            <li>Using test-driven development (TDD) to guide your design</li>
+            <li>Understanding the importance of code coverage</li>
+        </ul>
+    </div>
+
+    <!-- Chapter 10 -->
+    <h3 class="chapter-title">Chapter 10: Classes</h3>
+    <div class="key-points">
+        <ul>
+            <li>Keeping classes small and focused</li>
+            <li>Using interfaces to define contracts</li>
+            <li>Avoiding inheritance when possible</li>
+        </ul>
+    </div>
+
+    <!-- Chapter 11 -->
+    <h3 class="chapter-title">Chapter 11: Systems</h3>
+    <div class="key-points">
+        <ul>
+            <li>Designing systems that are scalable, maintainable, and testable</li>
+            <li>Using separation of concerns to break down complex systems</li>
+            <li>Understanding the importance of architecture</li>
+        </ul>
+    </div>
+
+    <!-- Chapter 12 -->
+    <h3 class="chapter-title">Chapter 12: Smells and Heuristics</h3>
+    <div class="key-points">
+        <ul>
+            <li>Identifying common code smells (e.g., long methods, switch statements)</li>
+            <li>Applying heuristics to refactor code and improve design</li>
+            <li>Continuously improving your code through refactoring</li>
+        </ul>
+    </div>
+    <!-- Add remaining chapters as needed -->
+
+    <h2>Part 2: Case Studies</h2>
+    <p>This section provides real-world examples of applying the principles and practices discussed in Part 1 to refactor existing code.</p>
+    <a href="http://127.0.0.1:5500/public/book_code/code_1.html">Messy Vs Clean Code</a>
+    <h2>Part 3: Concurrency</h2>
+    <p>This section covers the challenges of writing concurrent code and provides strategies for writing clean, thread-safe code.</p
