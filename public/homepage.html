@@ -7,10 +7,15 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<style>
+    marquee {
+        color: red;
+    }
+</style>
 
 <header class="bg-primary text-white text-center py-4">
     <h1>Financial Management Tools</h1>
-    <nav>
+        <nav>
         <ul class="nav justify-content-center">
             <li class="nav-item">
                 <a class="nav-link text-white" href="https://finance-management-tools-getser.vercel.app/public/homepage.html" target="_blank">Home</a>
@@ -19,7 +24,7 @@
                 <a class="nav-link text-white" href="https://investmentcalculator-getser.vercel.app/" target="_blank">Investment Calculator</a>
             </li>                       
             <li class="nav-item">
-                <a class="nav-link text-white" href="public/budget_tracker.html">Budget Tracker</a>
+                <a class="nav-link text-white" href="public/budget_tracker.html">Cash Flow Tracker</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="public/portfolio_report.html">Portfolio Report</a>
@@ -28,26 +33,52 @@
                 <a class="nav-link text-white" href="public/creator_profile.html">Creator Profile</a> <!-- Link to the Creator Profile page -->
             </li>
         </ul>
-    </nav>
+        </nav>
+    </div>
+    
 </header>
-
+<marquee>Follow me on IG: @getsersurbakti</marquee>
 <main class="container mt-5">
     <section id="investment-calculator" class="mb-4">
-        <h2>Investment Calculator</h2>
-        <p>A tool to help you calculate potential investment returns based on various parameters: initial investment, annual rate, years of growth, contributions, and inflation rate.</p>
+        <h2> <img src="calculator.jpg" alt="Calculator Icon" style="width: 50px; height: 50px;">Investment Calculator</h2>
+        <p>An Investment Calculator is a tool that helps estimate 
+            the potential returns on investments over time. By inputting 
+            variables such as: the initial investment amount, expected rate 
+            of return, investment duration, and frequency of contributions, inflation rate,
+            the calculator provides an estimated future value of the investment. 
+            It can be used for various investment types, including stocks, bonds,
+            retirement accounts, or real estate, helping individuals and businesses
+            make informed decisions about their financial goals and investment strategies.
+            </p>
     </section>
     <section id="budget-tracker" class="mb-4">
-        <h2>Budget Tracker</h2>
-        <p>An application to help you manage and track your monthly expenses and savings.</p>
+        <h2><img src="cash_flow.png" alt="Cash Flow Icon" style="width: 50px; height: 50px;">Cash Flow Tracker</h2>
+        <p>A Cash Flow Tracker is a tool or system used to monitor and manage the inflow and outflow of cash in a business or personal finance setting. It helps track sources of income (e.g., sales, investments) and expenditures (e.g., bills, purchases) over a specific period. By providing real-time visibility into cash flow, it enables better financial decision-making, ensures sufficient liquidity, and helps identify areas for cost-saving or investment opportunities. It is an essential tool for maintaining financial health and ensuring that there is enough cash available to meet obligations.</p>
     </section>
     <section id="portfolio-report" class="mb-4">
-        <h2>Portfolio Report</h2>
-        <p>Generate reports on your investment portfolio’s performance and insights.</p>
+        <h2><img src="portfolio.jpeg" alt="Portfolio Icon" style="width: 50px; height: 50px;">Portfolio Report Maker</h2>
+        <p>A Portfolio Report Maker is a tool designed to generate comprehensive reports for investment portfolios. It aggregates data on various assets, such as stocks, bonds, and real estate, and provides insights into performance, risk, and diversification. The report typically includes key metrics like returns, asset allocation, and historical trends, helping investors evaluate their portfolio's overall health. This tool is essential for tracking progress toward financial goals, making informed investment decisions, and communicating portfolio performance to stakeholders or clients.</p>
     </section>
 
-<footer class="bg-light text-center py-3">
-    <p>Contact Information | FAQs | Support</p>
-</footer>
+    <footer>
+        <div style="background-color: #0772c9; color: #fff; padding: 20px; text-align: center;">
+            <nav>
+                <ul style="list-style-type: none; padding: 0; margin: 0;">
+                    <li style="display: inline; margin-right: 15px;">
+                        <a href="#contact" style="color: #fff; text-decoration: none;">Contact Information</a>
+                    </li>
+                    <li style="display: inline; margin-right: 15px;">
+                        <a href="#faqs" style="color: #fff; text-decoration: none;">FAQs</a>
+                    </li>
+                    <li style="display: inline;">
+                        <a href="#support" style="color: #fff; text-decoration: none;">Support</a>
+                    </li>
+                </ul>
+            </nav>
+            <p style="margin-top: 10px; font-size: 14px;">&copy; 2024 Getser Surbakti. All rights reserved.</p>
+        </div>
+    </footer>
+    
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
