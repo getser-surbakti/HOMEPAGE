@@ -13,52 +13,211 @@
     }
 </style>
 
-<header class="bg-primary text-white text-center py-4">
-    <h1>Financial Management Tools</h1>
+<header class="bg-primary text-white py-4">
+    <div class="container">
+        <!-- Title -->
+        <h1 class="text-center mb-3">FINANCIAL MANAGEMENT TOOLS</h1>
+        
+        <!-- Navigation Bar -->
         <nav>
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link text-white" href="https://finance-management-tools-getser.vercel.app/public/homepage.html" target="_blank">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="https://investmentcalculator-getser.vercel.app/" target="_blank">Investment Calculator</a>
-            </li>                       
-            <li class="nav-item">
-                <a class="nav-link text-white" href="budget_tracker.html">Cash Flow Tracker</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="portfolio_report.html">Portfolio Report</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="creator_profile.html">Creator Profile</a> <!-- Link to the Creator Profile page -->
-            </li>
-        </ul>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="homepage.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="https://investmentcalculator-getser.vercel.app/" target="_blank">Investment Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="budget_tracker.html">Cash Flow Tracker</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="portfolio_report.html">Portfolio Report</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="creator_profile.html">Creator Profile</a> <!-- Link to the Creator Profile page -->
+                </li>
+            </ul>
         </nav>
     </div>
-    
 </header>
+
+<!-- CSS Styling -->
+<style>
+    /* Header background and padding */
+    header {
+        background-color: #007bff; /* Primary color */
+    }
+
+    /* Container to center and limit the width */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    /* Heading Styling */
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    /* Navigation Bar Styling */
+    .nav {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-item {
+        margin-right: 20px;
+        font-size: 1.1rem;
+    }
+
+    /* Navigation Links Styling */
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.2s ease-in-out;
+    }
+
+    /* Hover Effect for Navigation Links */
+    .nav-link:hover {
+        color: #ffc107; /* Accent color on hover */
+        transform: translateY(-2px); /* Slight lift effect */
+    }
+
+    /* Mobile Responsiveness: Stacks items vertically on smaller screens */
+    @media (max-width: 768px) {
+        .nav {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .nav-item {
+            margin-bottom: 15px;
+            margin-right: 0;
+        }
+    }
+</style>
+
 <marquee>Follow me on IG: @getsersurbakti</marquee>
 <main class="container mt-5">
-    <section id="investment-calculator" class="mb-4">
-        <h2> <img src="calculator.jpg" alt="Calculator Icon" style="width: 50px; height: 50px;">Investment Calculator</h2>
-        <p>An Investment Calculator is a tool that helps estimate 
-            the potential returns on investments over time. By inputting 
-            variables such as: the initial investment amount, expected rate 
-            of return, investment duration, and frequency of contributions, inflation rate,
-            the calculator provides an estimated future value of the investment. 
-            It can be used for various investment types, including stocks, bonds,
-            retirement accounts, or real estate, helping individuals and businesses
-            make informed decisions about their financial goals and investment strategies.
-            </p>
+    <!-- Investment Calculator Section -->
+    <section id="investment-calculator" class="mb-5">
+        <h2 class="d-flex align-items-center">
+            <img src="calculator.jpg" alt="Calculator Icon" class="icon mr-3" /> 
+            Investment Calculator
+        </h2>
+        <p class="description-text">
+            An <b>Investment Calculator</b> is a tool that helps estimate the potential returns on investments over time. By inputting variables such as <i>the initial investment amount, expected rate of return, investment duration, frequency of contributions,</i> and <i>inflation rate,</i> the calculator provides an estimated future value of the investment. 
+            It can be used for various investment types, including stocks, bonds, retirement accounts, or real estate, helping individuals and businesses make informed decisions about their financial goals and investment strategies.
+        </p>
     </section>
-    <section id="budget-tracker" class="mb-4">
-        <h2><img src="cash_flow.png" alt="Cash Flow Icon" style="width: 50px; height: 50px;">Cash Flow Tracker</h2>
-        <p>A Cash Flow Tracker is a tool or system used to monitor and manage the inflow and outflow of cash in a business or personal finance setting. It helps track sources of income (e.g., sales, investments) and expenditures (e.g., bills, purchases) over a specific period. By providing real-time visibility into cash flow, it enables better financial decision-making, ensures sufficient liquidity, and helps identify areas for cost-saving or investment opportunities. It is an essential tool for maintaining financial health and ensuring that there is enough cash available to meet obligations.</p>
+
+    <!-- Cash Flow Tracker Section -->
+    <section id="budget-tracker" class="mb-5">
+        <h2 class="d-flex align-items-center">
+            <img src="cash_flow.png" alt="Cash Flow Icon" class="icon mr-3" /> 
+            Cash Flow Tracker
+        </h2>
+        <p class="description-text">
+            A <b>Cash Flow Tracker</b> is a tool or system used to monitor and manage the inflow and outflow of cash in a business or personal finance setting. It helps track sources of income (e.g., sales, investments) and expenditures (e.g., bills, purchases) over a specific period.
+            By providing real-time visibility into cash flow, it enables better financial decision-making, ensures sufficient liquidity, and helps identify areas for cost-saving or investment opportunities. It is an essential tool for maintaining financial health and ensuring that there is enough cash available to meet obligations.
+        </p>
     </section>
-    <section id="portfolio-report" class="mb-4">
-        <h2><img src="portfolio.jpeg" alt="Portfolio Icon" style="width: 50px; height: 50px;">Portfolio Report Maker</h2>
-        <p>A Portfolio Report Maker is a tool designed to generate comprehensive reports for investment portfolios. It aggregates data on various assets, such as stocks, bonds, and real estate, and provides insights into performance, risk, and diversification. The report typically includes key metrics like returns, asset allocation, and historical trends, helping investors evaluate their portfolio's overall health. This tool is essential for tracking progress toward financial goals, making informed investment decisions, and communicating portfolio performance to stakeholders or clients.</p>
+
+    <!-- Portfolio Report Maker Section -->
+    <section id="portfolio-report" class="mb-5">
+        <h2 class="d-flex align-items-center">
+            <img src="portfolio.jpeg" alt="Portfolio Icon" class="icon mr-3" /> 
+            Portfolio Report Maker
+        </h2>
+        <p class="description-text">
+            A <b>Portfolio Report Maker</b> is a tool designed to generate comprehensive reports for investment portfolios. It aggregates data on various assets, such as stocks, bonds, and real estate, and provides insights into performance, risk, and diversification.
+            The report typically includes key metrics like returns, asset allocation, and historical trends, helping investors evaluate their portfolio's overall health. This tool is essential for tracking progress toward financial goals, making informed investment decisions, and communicating portfolio performance to stakeholders or clients.
+        </p>
     </section>
+</main>
+
+<!-- CSS Styling -->
+<style>
+    /* General Container Styling */
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    /* Styling for Icons */
+    .icon {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    /* Heading Styling */
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    /* Styling for Description Text */
+    .description-text {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        text-align: justify; /* Justifies text to give it a neat appearance */
+    }
+
+    /* Paragraph Background & Styling */
+    .description-text {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+    }
+
+    /* Hover Effect for Paragraph */
+    .description-text:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Section Styling */
+    section {
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
+
+    /* Flexbox for Aligning Icons */
+    .d-flex {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Icon Margin */
+    .mr-3 {
+        margin-right: 15px;
+    }
+
+    /* Hover Effect for Section Titles */
+    h2:hover {
+        color: #007bff;
+        cursor: pointer;
+    }
+
+</style>
+
 
     <footer>
         <div style="background-color: #0772c9; color: #fff; padding: 20px; text-align: center;">
