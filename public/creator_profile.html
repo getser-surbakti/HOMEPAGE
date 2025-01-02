@@ -9,16 +9,41 @@
 <body>
 
 <style>
-    /* General body styling */
-    body {
+     /* General body styling */
+     body {
         font-family: Arial, sans-serif;
     }
 
     /* Header styling */
     header {
-        background-color: #08090a;
-        color: white;
-        padding: 20px 0;
+    background-color: #333; /* Dark background for contrast */
+    padding: 20px 0;
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern feel */
+    }
+    .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+    .header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 25px;
+    }
+    nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    }
+    nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
     }
 
     /* Title Styling */
@@ -29,35 +54,46 @@
         letter-spacing: 2px;
         margin-bottom: 20px;
     }
+    
 
     /* Navbar Styling */
     .nav-item {
         margin-right: 20px;
+        position: relative;
     }
 
     /* Styling for navigation links */
     .nav-link {
         color: white;
         font-size: 1.2rem;
+        font-weight: 500;
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: color 0.3s ease, transform 0.3s ease;
+        padding: 10px 15px;
+        border-radius: 8px;
     }
 
     .nav-link:hover {
         color: #ffc107;
+        transform: translateY(-3px);
     }
+    .nav-link:focus, .nav-link:hover {
+        outline: none; /* Remove the focus outline */
 
     /* Responsive Navbar */
     @media (max-width: 768px) {
         .nav {
-            flex-direction: column;
-            text-align: center;
-        }
+        flex-direction: column;
+        gap: 15px;
+    }
 
-        .nav-item {
-            margin-bottom: 10px;
-            margin-right: 0;
-        }
+         .header-title {
+        font-size: 2rem;
+    }
+
+         .nav-item {
+        text-align: center;
+    }
 
         h1 {
             font-size: 2rem;
@@ -98,35 +134,13 @@
     marquee {
         font-size: 1rem;
         padding: 10px;
-        background-color: #090b0e;
-        color: white;
-        margin-bottom: 20px;
-    }
-
-    /* Footer Styling */
-    footer {
         background-color: #0a0a0a;
         color: white;
-        padding: 20px;
-        text-align: center;
+        margin-bottom: 20px;
+        border: 0px solid rgb(241, 240, 240); 
     }
-
-    footer a {
-        color: white;
-        text-decoration: none;
-        margin-right: 15px;
-    }
-
-    footer a:hover {
-        text-decoration: underline;
-    }
-
-    footer p {
-        font-size: 0.875rem;
-        margin-top: 10px;
-    }
-
 </style>
+
 
 <header>
     <div class="container">
@@ -156,6 +170,7 @@
 <!-- Marquee for Instagram Link -->
 <marquee>Follow me on IG: @getsersurbakti</marquee>
 
+
 <main class="container mt-5">
     <!-- Creator Profile Section -->
     <section id="creator-profile" class="mt-5">
@@ -170,24 +185,125 @@
         </div>
     </section>
 
+    <style>
+        /* Book list styling */
+.book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.book-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-image img {
+    max-width: 120px;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+/* Book title and details styling */
+.book-details {
+    flex-grow: 1;
+}
+
+.book-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.book-title:hover {
+    color: #0056b3;
+}
+
+.book-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+    </style>
     <!-- Books I Read Section -->
     <section id="books-i-read" class="mt-5">
-        <h3>Books I Read</h3>
-        <div class="media">
-            <img src="assets/book.jpeg" class="mr-3" alt="Book" width="100" height="100">
-            <div class="media-body">
-                <h5 class="mt-0">Notes and Summaries From the Books I've Read:</h5>
-                <li>Book 1:</li>
-                <a href="book/book_1.html">"A Handbook of Agile Software Craftsmanship" by Robert C. Martin</a>
-                <li>Book 2:</li>
-                <a href="book/book_2.html">"The Pragmatic Programmer" by Andrew Hunt and David Thomas</a>
-                <li>Book 3:</li>
-                <a href="book/book_3.html">“SQL For Dummies” by Allen G. Taylor</a>
+        <h3 class="section-title">Books I've Read</h3>
+        <p class="section-description">Below are the books I've read along with summaries and notes for each. Click on the titles to explore detailed notes and takeaways.</p>
+        
+        <div class="book-list">
+            <div class="book-item">
+                <div class="book-image">
+                    <img src="assets/book1.jpeg" alt="A Handbook of Agile Software Craftsmanship" class="img-fluid">
+                </div>
+                <div class="book-details">
+                    <h5><a href="book/book_1.html" class="book-title">"A Handbook of Agile Software Craftsmanship" by Robert C. Martin</a></h5>
+                    <p class="book-description">A deep dive into agile practices and software craftsmanship. This book highlights key principles that help developers build maintainable software.</p>
+                </div>
+            </div>
+            
+            <div class="book-item">
+                <div class="book-image">
+                    <img src="assets/book2.jpeg" alt="The Pragmatic Programmer" class="img-fluid">
+                </div>
+                <div class="book-details">
+                    <h5><a href="book/book_2.html" class="book-title">"The Pragmatic Programmer" by Andrew Hunt and David Thomas</a></h5>
+                    <p class="book-description">A must-read for every software developer, filled with practical advice and best practices for achieving excellence in programming.</p>
+                </div>
+            </div>
+            
+            <div class="book-item">
+                <div class="book-image">
+                    <img src="assets/book3.jpeg" alt="SQL For Dummies" class="img-fluid">
+                </div>
+                <div class="book-details">
+                    <h5><a href="book/book_3.html" class="book-title">"SQL For Dummies" by Allen G. Taylor</a></h5>
+                    <p class="book-description">An easy-to-understand guide for SQL beginners, covering everything from database design to complex queries.</p>
+                </div>
             </div>
         </div>
     </section>
+    
 </main>
+<style>
+    /* Footer Styling */
+    footer {
+       background-color: #0a0a0a;
+       color: white;
+       padding: 20px;
+       text-align: center;
+   }
 
+   footer a {
+       color: white;
+       text-decoration: none;
+       margin-right: 15px;
+   }
+
+   footer a:hover {
+       text-decoration: underline;
+   }
+
+   footer p {
+       font-size: 0.875rem;
+       margin-top: 10px;
+   }
+
+</style>
 <footer>
     <nav>
         <ul style="list-style-type: none; padding: 0; margin: 0;">
