@@ -9,16 +9,41 @@
 <body>
 
 <style>
-    /* General body styling */
-    body {
+     /* General body styling */
+     body {
         font-family: Arial, sans-serif;
     }
 
     /* Header styling */
     header {
-        background-color: #0c0d0e;
-        color: white;
-        padding: 20px 0;
+    background-color: #333; /* Dark background for contrast */
+    padding: 20px 0;
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern feel */
+    }
+    .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+    .header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 25px;
+    }
+    nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    }
+    nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
     }
 
     /* Title Styling */
@@ -29,35 +54,46 @@
         letter-spacing: 2px;
         margin-bottom: 20px;
     }
+    
 
     /* Navbar Styling */
     .nav-item {
         margin-right: 20px;
+        position: relative;
     }
 
     /* Styling for navigation links */
     .nav-link {
         color: white;
         font-size: 1.2rem;
+        font-weight: 500;
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: color 0.3s ease, transform 0.3s ease;
+        padding: 10px 15px;
+        border-radius: 8px;
     }
 
     .nav-link:hover {
         color: #ffc107;
+        transform: translateY(-3px);
     }
+    .nav-link:focus, .nav-link:hover {
+        outline: none; /* Remove the focus outline */
 
     /* Responsive Navbar */
     @media (max-width: 768px) {
         .nav {
-            flex-direction: column;
-            text-align: center;
-        }
+        flex-direction: column;
+        gap: 15px;
+    }
 
-        .nav-item {
-            margin-bottom: 10px;
-            margin-right: 0;
-        }
+         .header-title {
+        font-size: 2rem;
+    }
+
+         .nav-item {
+        text-align: center;
+    }
 
         h1 {
             font-size: 2rem;
@@ -98,32 +134,10 @@
     marquee {
         font-size: 1rem;
         padding: 10px;
-        background-color: #050505;
+        background-color: #0a0a0a;
         color: white;
         margin-bottom: 20px;
-    }
-
-    /* Footer Styling */
-    footer {
-        background-color: #101011;
-        color: white;
-        padding: 20px;
-        text-align: center;
-    }
-
-    footer a {
-        color: white;
-        text-decoration: none;
-        margin-right: 15px;
-    }
-
-    footer a:hover {
-        text-decoration: underline;
-    }
-
-    footer p {
-        font-size: 0.875rem;
-        margin-top: 10px;
+        border: 0px solid rgb(241, 240, 240); 
     }
 
 </style>
