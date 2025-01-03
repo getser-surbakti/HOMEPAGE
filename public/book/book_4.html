@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automate the Boring Stuff with Python</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+         }
+        header {
+            background-color: #03070a;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        marquee {
+        color : red;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .chapter {
+            margin-bottom: 30px;
+        }
+        .chapter h2 {
+            color: #2980b9;
+            margin-top: 0;
+        }
+        h2 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h3 {
+            color: #27ae60;
+            margin-top: 0;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .note {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-left: 5px solid #2980b9;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 30px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>"Automate the Boring Stuff with Python ”</h1>
+  <p class="author"> by Al Sweigart</p>
+  <marquee>Follow me on IG: @getsersurbakti</marquee>
+  <p>Below is a summary of the key points from each chapter of Automate the Boring Stuff with Python by Al Sweigart:</p>
+
+</header>
+<div class="container">
+    <div class="section">
+        <h2>Chapter 1: Python Basics</h2>
+        <ul>
+            <li><strong>Python Syntax:</strong> Introduction to basic Python syntax, including variables, expressions, and statements.</li>
+            <li><strong>Types of Data:</strong> Discusses strings, integers, and floats.</li>
+            <li><strong>Input/Output:</strong> Using <code>input()</code> to get user input and <code>print()</code> for output.</li>
+            <li><strong>Comments:</strong> How to write comments in Python using <code>#</code>.</li>
+        </ul>
+
+        <div class="section">
+            <h3>Python Syntax</h3>
+            <p>Python has rules, just like any game. These rules are called "syntax."</p>
+            <ul>
+                <li><strong>Variables:</strong> Think of a variable as a little box where you can store things.</li>
+                <pre>
+age = 10
+name = "Alex"
+                </pre>
+                <li><strong>Expressions and Statements:</strong> An expression is like solving a puzzle.</li>
+                <pre>
+5 + 3  # This adds 5 and 3.
+                </pre>
+                <pre>
+total = 5 + 3  # This says, "Add them and store the result in 'total'."
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Types of Data</h3>
+            <p>Python can handle different kinds of "things." Here are the main types:</p>
+            <ul>
+                <li><strong>Strings:</strong> Words, names, or anything inside quotes.</li>
+                <pre>
+favorite_color = "blue"
+                </pre>
+                <li><strong>Integers:</strong> Whole numbers like 1, 2, or 100.</li>
+                <pre>
+apples = 5
+                </pre>
+                <li><strong>Floats:</strong> Numbers with a decimal, like 3.14 (think of pies 🍕).</li>
+                <pre>
+pi = 3.14
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Input/Output</h3>
+            <ul>
+                <li><strong>Input:</strong> You can ask the user a question.</li>
+                <pre>
+name = input("What's your name? ")
+print("Hi, " + name + "!")
+                </pre>
+                <li><strong>Output:</strong> Python can also just tell you stuff using <code>print()</code>.</li>
+                <pre>
+print("I love coding!")
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Comments</h3>
+            <ul>
+                <li>Sometimes, you want to leave a note for yourself or others in your code, like reminders or explanations.</li>
+                <pre>
+# This is a comment. It won't affect the code.
+print("Hello, world!")  # This prints a message.
+                </pre>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Chapter 2: Flow Control</h2>
+        <ul>
+            <li><strong>If Statements:</strong> How to use <code>if</code>, <code>elif</code>, and <code>else</code> to control program flow.</li>
+            <li><strong>Comparison Operators:</strong> How to use operators like ==, !=, <, >, <=, and >=.</li>
+            <li><strong>Boolean Values:</strong> Introduction to True and False in conditions.</li>
+            <li><strong>Logical Operators:</strong> How to use <code>and</code>, <code>or</code>, and <code>not</code> to combine conditions.</li>
+            <li><strong>While Loops:</strong> Introduction to loops that continue as long as a condition is true.</li>
+            <li><strong>For Loops:</strong> Using <code>for</code> loops to iterate over sequences (lists, strings, etc.).</li>
+        </ul>
+
+        <div class="section">
+            <h3>If Statements</h3>
+            <ul>
+                <li><strong>If:</strong> "If it’s sunny, I’ll go outside." In Python:</li>
+                <pre>
+weather = "sunny"
+if weather == "sunny":
+    print("Let's go outside!")
+                </pre>
+                <li><strong>Elif (Else If):</strong> "If it’s not sunny but it’s cloudy, I’ll stay indoors." In Python:</li>
+                <pre>
+weather = "cloudy"
+if weather == "sunny":
+    print("Let's go outside!")
+elif weather == "cloudy":
+    print("Let's stay indoors.")
+                </pre>
+                <li><strong>Else:</strong> "If it’s neither sunny nor cloudy, I’ll take a nap!" In Python:</li>
+                <pre>
+weather = "rainy"
+if weather == "sunny":
+    print("Let's go outside!")
+elif weather == "cloudy":
+    print("Let's stay indoors.")
+else:
+    print("I'll take a nap!")
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Comparison Operators</h3>
+            <ul>
+                <li>These are like tools to compare things, like numbers or words:</li>
+                <pre>
+age = 10
+if age > 5:
+    print("You're older than 5!")
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Boolean Values</h3>
+            <ul>
+                <li>In Python, there are only two Boolean values:</li>
+                <ul>
+                    <li><strong>True:</strong> Yes, it’s correct.</li>
+                    <li><strong>False:</strong> No, it’s not.</li>
+                </ul>
+                <pre>
+is_raining = False
+if is_raining:
+    print("Take an umbrella!")
+else:
+    print("Enjoy the sunshine!")
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Logical Operators</h3>
+            <ul>
+                <li>These let you combine multiple conditions:</li>
+                <ul>
+                    <li><strong>and:</strong> All conditions must be true.</li>
+                    <li><strong>or:</strong> At least one condition must be true.</li>
+                    <li><strong>not:</strong> Flips True to False, or False to True.</li>
+                </ul>
+                <pre>
+is_weekend = True
+is_sunny = True
+
+if is_weekend and is_sunny:
+    print("Let's have a picnic!")
+if is_weekend or is_sunny:
+    print("We can still have fun!")
+if not is_weekend:
+    print("It's a workday.")
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>While Loops</h3>
+            <ul>
+                <li>A while loop keeps doing something as long as a condition is true.</li>
+                <pre>
+sheep_count = 0
+while sheep_count < 5:
+    sheep_count += 1
+    print(f"Counted {sheep_count} sheep.")
+print("Now I'm asleep!")
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>For Loops</h3>
+            <ul>
+                <li>A for loop goes through a list of things one by one.</li>
+                <pre>
+toys = ["car", "doll", "ball"]
+for toy in toys:
+    print(f"I found a {toy}!")
+                </pre>
+                <pre>
+for letter in "Python":
+    print(letter)
+                </pre>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Chapter 3: Functions -->
+    <div class="section">
+        <h2>Chapter 3: Functions</h2>
+
+        <div class="section">
+            <h3>Defining Functions</h3>
+            <ul>
+                <li>A function is like a magic spell: you write it once, and then you can use it whenever you need.</li>
+                <pre>
+def say_hello():
+    print("Hello!")
+say_hello()  # This prints "Hello!"
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Parameters and Arguments</h3>
+            <ul>
+                <li>Sometimes your spell needs extra ingredients (data) to work. These are called parameters and arguments.</li>
+                <li>Parameters: The placeholders for the ingredients when you make the spell.</li>
+                <li>Arguments: The actual ingredients you give when using the spell.</li>
+                <pre>
+def greet(name):
+    print(f"Hello, {name}!")
+greet("Alice")  # This prints "Hello, Alice!"
+greet("Bob")    # This prints "Hello, Bob!"
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Return Values</h3>
+            <ul>
+                <li>Sometimes, your spell needs to send something back to you. This is called a return value.</li>
+                <pre>
+def add_numbers(a, b):
+    return a + b
+result = add_numbers(3, 4)
+print(result)  # This prints 7
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Scope</h3>
+            <ul>
+                <li>Think of scope as the boundaries of a spell’s magic.</li>
+                <li>Local Scope: Magic (variables) created inside a function only works inside that function.</li>
+                <pre>
+def cast_spell():
+    magic_word = "Abracadabra"
+    print(magic_word)
+
+cast_spell()  # This prints "Abracadabra"
+print(magic_word)  # ERROR! 'magic_word' is only inside the spell.
+                </pre>
+                <li>Global Scope: Magic created outside a function works everywhere.</li>
+                <pre>
+magic_word = "Hocus Pocus"
+def cast_spell():
+    print(magic_word)
+
+cast_spell()  # This prints "Hocus Pocus"
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Why Use Functions?</h3>
+            <ul>
+                <li>Reusable: Write once, use many times.</li>
+                <li>Organized: Makes your code neat and tidy.</li>
+                <li>Smart: Handles specific tasks for you, like a helper!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chapter 4: Lists -->
+    <div class="section">
+        <h2>Chapter 4: Lists</h2>
+
+        <div class="section">
+            <h3>Creating Lists</h3>
+            <ul>
+                <li>A list is like a treasure chest where you can keep many items.</li>
+                <pre>
+treasures = ["gold coin", "ruby", "emerald"]
+print(treasures)  # Prints: ['gold coin', 'ruby', 'emerald']
+                </pre>
+                <li>You can even have an empty chest:</li>
+                <pre>
+empty_chest = []
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>List Indexing</h3>
+            <ul>
+                <li>Each item in a list has a number, called its index, starting from 0.</li>
+                <pre>
+treasures = ["gold coin", "ruby", "emerald"]
+print(treasures[0])  # Prints: gold coin
+print(treasures[2])  # Prints: emerald
+                </pre>
+                <li>Negative indexing starts from the end:</li>
+                <pre>
+print(treasures[-1])  # Prints: emerald
+print(treasures[-2])  # Prints: ruby
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Slicing</h3>
+            <ul>
+                <li>Sometimes, you want just a part of the list. This is called slicing.</li>
+                <li>Use [start:end] to grab a piece of the list.</li>
+                <pre>
+treasures = ["gold coin", "ruby", "emerald", "diamond", "pearl"]
+print(treasures[1:4])  # Prints: ['ruby', 'emerald', 'diamond']
+                </pre>
+                <li>If you leave out start or end, Python assumes the beginning or the end of the list:</li>
+                <pre>
+print(treasures[:3])  # Prints: ['gold coin', 'ruby', 'emerald']
+print(treasures[2:])  # Prints: ['emerald', 'diamond', 'pearl']
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Adding/Removing Items</h3>
+            <ul>
+                <li>Adding:</li>
+                <ul>
+                    <li><strong>append()</strong>: Add an item to the end of the list.</li>
+                    <pre>
+treasures.append("sapphire")
+print(treasures)  # ['gold coin', 'ruby', 'emerald', 'diamond', 'pearl', 'sapphire']
+                    </pre>
+                    <li><strong>insert()</strong>: Add an item at a specific position.</li>
+                    <pre>
+treasures.insert(2, "silver coin")
+print(treasures)  # ['gold coin', 'ruby', 'silver coin', 'emerald', 'diamond', 'pearl', 'sapphire']
+                    </pre>
+                </ul>
+                <li>Removing:</li>
+                <ul>
+                    <li><strong>remove()</strong>: Remove a specific item.</li>
+                    <pre>
+treasures.remove("ruby")
+print(treasures)  # ['gold coin', 'silver coin', 'emerald', 'diamond', 'pearl', 'sapphire']
+                    </pre>
+                    <li><strong>pop()</strong>: Take an item out (like grabbing it).</li>
+                    <pre>
+last_treasure = treasures.pop()
+print(last_treasure)  # Prints: sapphire
+print(treasures)      # ['gold coin', 'silver coin', 'emerald', 'diamond', 'pearl']
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>List Functions</h3>
+            <ul>
+                <li><strong>len()</strong>: Count how many items are in the list.</li>
+                <pre>
+print(len(treasures))  # Prints: 5
+                </pre>
+                <li><strong>sorted()</strong>: Arrange the list in order.</li>
+                <pre>
+print(sorted(treasures))  # Alphabetical order
+                </pre>
+                <li><strong>min()</strong> and <strong>max()</strong>: Find the smallest or biggest item (useful for numbers).</li>
+                <pre>
+numbers = [10, 5, 20, 15]
+print(min(numbers))  # Prints: 5
+print(max(numbers))  # Prints: 20
+                </pre>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Chapter 5: Dictionaries -->
+    <div class="section">
+        <h2>Chapter 5: Dictionaries</h2>
+
+        <div class="section">
+            <h3>What is a Dictionary?</h3>
+            <ul>
+                <li>Imagine you have a box where you can put things, but the cool part is that this box has special labels (called keys) on the outside. Each label helps you find the thing inside the box (called the value).</li>
+                <li>Example dictionary items:</li>
+                <ul>
+                    <li>"apple" → "a red fruit"</li>
+                    <li>"dog" → "a fluffy animal"</li>
+                    <li>"car" → "a fast machine"</li>
+                </ul>
+                <li>This is what we call a dictionary in Python!</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>1. Creating Dictionaries</h3>
+            <ul>
+                <li>To create a dictionary, write the keys and values inside curly braces {}.</li>
+                <pre>
+my_dictionary = {
+    "apple": "a red fruit",
+    "dog": "a fluffy animal",
+    "car": "a fast machine"
+}
+                </pre>
+                <li>In this example, "apple", "dog", and "car" are the keys, and "a red fruit", "a fluffy animal", and "a fast machine" are the values.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>2. Accessing and Modifying Dictionaries</h3>
+            <ul>
+                <li>You can access the value inside the dictionary using the key, like opening a box with a label!</li>
+                <pre>
+print(my_dictionary["apple"])  # Output: a red fruit
+                </pre>
+                <li>To change the value of a key, just assign a new value to the key:</li>
+                <pre>
+my_dictionary["apple"] = "a green fruit"
+print(my_dictionary["apple"])  # Output: a green fruit
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>3. Iterating Over Dictionaries</h3>
+            <ul>
+                <li>To go through the entire dictionary using a loop:</li>
+                <ul>
+                    <li>If you want to iterate through the keys:</li>
+                    <pre>
+for key in my_dictionary:
+    print(key)  # Prints 'apple', 'dog', 'car'
+                    </pre>
+                    <li>If you want to iterate through the values:</li>
+                    <pre>
+for value in my_dictionary.values():
+    print(value)  # Prints 'a green fruit', 'a fluffy animal', 'a fast machine'
+                    </pre>
+                    <li>If you want to see both the key and the value (key-value pair):</li>
+                    <pre>
+for key, value in my_dictionary.items():
+    print(key, ":", value)
+    # Prints:
+    # apple : a green fruit
+    # dog : a fluffy animal
+    # car : a fast machine
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>4. Common Dictionary Methods</h3>
+            <ul>
+                <li><strong>get()</strong>: This method helps you find a value by key, and if the key doesn’t exist, it won’t cause an error but return a default message:</li>
+                <pre>
+print(my_dictionary.get("apple"))  # Output: a green fruit
+print(my_dictionary.get("banana", "No such fruit"))  # Output: No such fruit
+                </pre>
+                <li><strong>keys()</strong>: This method returns all the keys in the dictionary:</li>
+                <pre>
+print(my_dictionary.keys())  # Output: dict_keys(['apple', 'dog', 'car'])
+                </pre>
+                <li><strong>values()</strong>: This method returns all the values in the dictionary:</li>
+                <pre>
+print(my_dictionary.values())  # Output: dict_values(['a green fruit', 'a fluffy animal', 'a fast machine'])
+                </pre>
+                <li><strong>items()</strong>: This method returns a list of all the key-value pairs:</li>
+                <pre>
+print(my_dictionary.items())  # Output: dict_items([('apple', 'a green fruit'), ('dog', 'a fluffy animal'), ('car', 'a fast machine')])
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>In Summary:</h3>
+            <ul>
+                <li>Dictionaries are like boxes with labels (keys) and treasures (values).</li>
+                <li>You can look up treasures by keys, change them, and loop through all the keys or values.</li>
+                <li>Methods like get(), keys(), values(), and items() make it easy to work with dictionaries.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chapter 6: Manipulating Strings -->
+    <div class="section">
+        <h2>Chapter 6: Manipulating Strings</h2>
+
+        <div class="section">
+            <h3>What are Strings?</h3>
+            <ul>
+                <li>A string is a piece of text! It can be a word, a sentence, or even a whole paragraph.</li>
+                <ul>
+                    <li>"Hello"</li>
+                    <li>"I love Python!"</li>
+                    <li>"This is a string!"</li>
+                </ul>
+                <li>Now, let's learn some cool tricks for manipulating strings!</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>1. String Methods</h3>
+            <ul>
+                <li>String methods are like magic wands that change how your text behaves. Here are some common methods:</li>
+                <ul>
+                    <li><strong>.upper()</strong>: Makes all the letters uppercase (big letters).</li>
+                    <pre>
+text = "hello"
+print(text.upper())  # Output: "HELLO"
+                    </pre>
+                    <li><strong>.lower()</strong>: Makes all the letters lowercase (small letters).</li>
+                    <pre>
+text = "HELLO"
+print(text.lower())  # Output: "hello"
+                    </pre>
+                    <li><strong>.split()</strong>: Splits a string into smaller parts based on a separator.</li>
+                    <pre>
+text = "I love Python"
+words = text.split()  # Splits by spaces into words
+print(words)  # Output: ['I', 'love', 'Python']
+                    </pre>
+                    <li><strong>.join()</strong>: Joins a list of words back into a string.</li>
+                    <pre>
+words = ['I', 'love', 'Python']
+sentence = " ".join(words)  # Joins the words with spaces
+print(sentence)  # Output: "I love Python"
+                    </pre>
+                    <li><strong>.replace()</strong>: Replaces part of a string with something else.</li>
+                    <pre>
+text = "I love Python"
+new_text = text.replace("Python", "coding")
+print(new_text)  # Output: "I love coding"
+                    </pre>
+                    <li><strong>.strip()</strong>: Removes extra spaces from the beginning and end of the string.</li>
+                    <pre>
+text = "  Hello!  "
+clean_text = text.strip()
+print(clean_text)  # Output: "Hello!"
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>2. String Formatting</h3>
+            <ul>
+                <li>Sometimes, you want to create strings that change based on values. You can use f-strings or the format() method to fill in parts of the string.</li>
+                <ul>
+                    <li><strong>Using f-strings:</strong> This is like having a template for your strings:</li>
+                    <pre>
+name = "John"
+age = 10
+message = f"Hello, {name}! You are {age} years old."
+print(message)  # Output: "Hello, John! You are 10 years old."
+                    </pre>
+                    <li><strong>Using format():</strong> Another way to format strings with placeholders:</li>
+                    <pre>
+name = "John"
+age = 10
+message = "Hello, {}! You are {} years old.".format(name, age)
+print(message)  # Output: "Hello, John! You are 10 years old."
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>3. Regular Expressions (Regex)</h3>
+            <ul>
+                <li>Regular expressions (Regex) help you find patterns in text, like searching for specific words, numbers, or characters.</li>
+                <ul>
+                    <li>Example: Searching for the word "Python":</li>
+                    <pre>
+import re
+
+text = "I love Python!"
+match = re.search(r"Python", text)  # Search for the word "Python"
+if match:
+    print("Found Python!")
+else:
+    print("Python not found.")
+                    </pre>
+                    <li>Example: Finding all numbers in a string:</li>
+                    <pre>
+import re
+
+text = "I have 2 apples and 3 oranges."
+numbers = re.findall(r"\d+", text)  # \d+ matches one or more digits
+print(numbers)  # Output: ['2', '3']
+                    </pre>
+                    <li>Example: Replacing words with Regex:</li>
+                    <pre>
+import re
+
+text = "I love Python!"
+new_text = re.sub(r"Python", "coding", text)  # Replace "Python" with "coding"
+print(new_text)  # Output: "I love coding!"
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>In Summary:</h3>
+            <ul>
+                <li>String methods help you manipulate text in various ways, like turning it into uppercase, splitting it, or joining it back together.</li>
+                <li>String formatting helps create dynamic text with placeholders.</li>
+                <li>Regular expressions (Regex) are like powerful search tools for finding patterns in text.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Chapter 7: Pattern Matching with Regular Expressions -->
+    <div class="section">
+        <h2>Chapter 7: Pattern Matching with Regular Expressions</h2>
+
+        <div class="section">
+            <h3>What’s a Regular Expression (Regex)?</h3>
+            <ul>
+                <li>Think of regular expressions (regex) like a super-powerful tool for searching through text. It's like using a magic magnifying glass that helps you find patterns in words, sentences, or anything made of letters and numbers.</li>
+                <li>For example, if you have a list of phone numbers, you can use regex to find all numbers that start with the area code "123".</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Regex Syntax</h3>
+            <ul>
+                <li>"Syntax" just means the rules for how to write regex. It’s like a secret language with special rules. Here are some basic components:</li>
+                <ul>
+                    <li><strong>.</strong> (Dot): Matches any letter or number (wildcard).</li>
+                    <li><strong>\d</strong>: Matches any digit (number). For example, <code>\d</code> can match 3, 7, 0, etc.</li>
+                    <li><strong>\w</strong>: Matches any letter, number, or underscore (a-z, 0-9, _).</li>
+                    <li><strong>\s</strong>: Matches a space, tab, or newline (used to match blank spaces between words).</li>
+                    <li><strong>^</strong>: Means the start of a string. For example, <code>^Hello</code> will only match "Hello" at the beginning of the text.</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>re Module in Python</h3>
+            <ul>
+                <li>In Python, the <code>re</code> module gives you all the tools to work with regular expressions. Think of it like a toolbox that lets you search, match, and manipulate strings using regex patterns.</li>
+                <pre>
+import re  # We bring the toolbox into our code
+
+# Use re.search to find if something exists in a text
+result = re.search('cat', 'The cat is cute')
+print(result)  # This will tell us that 'cat' is found in 'The cat is cute'
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Common Regex Functions</h3>
+            <ul>
+                <li><strong>re.search()</strong>: Searches for a pattern in a string. If it finds the pattern, it returns a match.</li>
+                <pre>
+result = re.search('cat', 'The cat is cute')
+                </pre>
+                <li><strong>re.match()</strong>: Checks if the pattern matches only at the beginning of the string.</li>
+                <pre>
+result = re.match('cat', 'The cat is cute')  # Won't match, as 'cat' is not at the start.
+                </pre>
+                <li><strong>re.findall()</strong>: Finds all occurrences of a pattern and returns them as a list.</li>
+                <pre>
+result = re.findall('cat', 'The cat and the fat cat')
+print(result)  # Output: ['cat', 'cat']
+                </pre>
+                <li><strong>re.sub()</strong>: Replaces occurrences of a pattern with a new value.</li>
+                <pre>
+result = re.sub('cat', 'dog', 'The cat is cute')
+print(result)  # Output: 'The dog is cute'
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Special Characters in Regex</h3>
+            <ul>
+                <li><strong>\d</strong>: Matches any digit (number). For example, <code>\d</code> can match 1, 2, 5, etc.</li>
+                <li><strong>\w</strong>: Matches any word character (letters, numbers, and underscores).</li>
+                <li><strong>\s</strong>: Matches spaces, tabs, or newlines.</li>
+                <li><strong>^</strong>: Matches the start of a string.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Examples to Tie It All Together</h3>
+            <ul>
+                <li><strong>re.search() example:</strong></li>
+                <pre>
+import re
+text = 'I have 2 apples and 10 bananas.'
+result = re.search(r'\d', text)  # Searching for any digit
+print(result)  # Output: '2'
+                </pre>
+                <li><strong>re.findall() example:</strong></li>
+                <pre>
+text = 'I have 2 apples and 10 bananas.'
+result = re.findall(r'\d', text)  # Finding all digits
+print(result)  # Output: ['2', '1', '0']
+                </pre>
+                <li><strong>re.sub() example:</strong></li>
+                <pre>
+text = 'I love cats, cats are cute.'
+result = re.sub(r'cats', 'dogs', text)  # Replaces 'cats' with 'dogs'
+print(result)  # Output: 'I love dogs, dogs are cute.'
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Conclusion</h3>
+            <ul>
+                <li>Regex is like a secret language for searching and changing text. You can use it to find patterns, check for matches at the start of a string, or even replace parts of the text.</li>
+                <li>Python’s <code>re</code> module helps you use regex in your code to supercharge your string manipulation skills!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chapter 8: Reading and Writing Files -->
+    <div class="section">
+        <h2>Chapter 8: Reading and Writing Files</h2>
+
+        <div class="section">
+            <h3>What’s a File?</h3>
+            <ul>
+                <li>Imagine you have a big notebook where you keep your stories, drawings, and notes. This notebook is like a file on your computer. You can open it, read from it, write in it, or even add new pages!</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Opening Files with <code>open()</code></h3>
+            <ul>
+                <li>To do anything with a file (like reading or writing), you need to open it first. Think of it like unlocking a notebook before looking inside or writing in it.</li>
+                <pre>
+file = open('myfile.txt')  # Opens the file 'myfile.txt' for reading.
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>File Input/Output (I/O)</h3>
+            <ul>
+                <li><strong>Input</strong>: Reading from a file.</li>
+                <li><strong>Output</strong>: Writing to a file.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>File Modes</h3>
+            <ul>
+                <li>When opening a file, you specify a mode to tell Python what you want to do:</li>
+                <ul>
+                    <li><strong>'r'</strong> (read mode): Opens the file for reading.</li>
+                    <pre>
+file = open('myfile.txt', 'r')  # Opens the file for reading.
+                    </pre>
+                    <li><strong>'w'</strong> (write mode): Opens the file for writing. If the file exists, it erases the content.</li>
+                    <pre>
+file = open('myfile.txt', 'w')  # Opens the file for writing.
+                    </pre>
+                    <li><strong>'a'</strong> (append mode): Opens the file for writing, but does not erase the content.</li>
+                    <pre>
+file = open('myfile.txt', 'a')  # Opens the file for appending.
+                    </pre>
+                    <li><strong>'rb'</strong> (read binary mode): Opens the file for reading binary content.</li>
+                    <pre>
+file = open('image.jpg', 'rb')  # Opens the file for reading binary data.
+                    </pre>
+                    <li><strong>'wb'</strong> (write binary mode): Opens the file for writing binary content.</li>
+                    <pre>
+file = open('image.jpg', 'wb')  # Opens the file for writing binary data.
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Reading Files</h3>
+            <ul>
+                <li>There are different ways to read a file:</li>
+                <ul>
+                    <li><strong>.read()</strong>: Reads the entire file.</li>
+                    <pre>
+file = open('myfile.txt', 'r')
+content = file.read()  # Reads all the content in the file.
+print(content)
+                    </pre>
+                    <li><strong>.readlines()</strong>: Reads the file line by line, returning a list of lines.</li>
+                    <pre>
+file = open('myfile.txt', 'r')
+lines = file.readlines()  # Reads all lines and stores them in a list.
+print(lines)
+                    </pre>
+                    <li><strong>.readline()</strong>: Reads one line at a time.</li>
+                    <pre>
+file = open('myfile.txt', 'r')
+first_line = file.readline()  # Reads the first line only.
+print(first_line)
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Writing Files</h3>
+            <ul>
+                <li>To write to a file, you can use:</li>
+                <ul>
+                    <li><strong>.write()</strong>: Writes a string to the file.</li>
+                    <pre>
+file = open('myfile.txt', 'w')
+file.write('Hello, world!')
+file.close()  # Always close the file!
+                    </pre>
+                    <li><strong>.writelines()</strong>: Writes a list of lines to the file.</li>
+                    <pre>
+lines = ['Hello, world!\n', 'Python is fun!\n']
+file = open('myfile.txt', 'w')
+file.writelines(lines)  # Writes all the lines to the file.
+file.close()
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>File Paths</h3>
+            <ul>
+                <li>A file path is the address of the file. There are two types:</li>
+                <ul>
+                    <li><strong>Absolute path</strong>: The full address from the root of the file system.</li>
+                    <li><strong>Relative path</strong>: The path relative to the current working directory.</li>
+                </ul>
+                <pre>
+file = open('foldername/myfile.txt', 'r')  # Opening a file in a folder.
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Conclusion</h3>
+            <ul>
+                <li>Reading files is like opening a notebook to see what's written inside.</li>
+                <li>Writing files is like adding new things to your notebook.</li>
+                <li>Opening files means unlocking them first with <code>open()</code>.</li>
+                <li>File modes tell the computer if you’re just looking, writing, or adding to the file.</li>
+                <li>File paths help you locate the file, whether it’s nearby or far away!</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Chapter 9: Organizing Files -->
+    <div class="section">
+        <h2>Chapter 9: Organizing Files</h2>
+
+        <div class="section">
+            <h3>What’s a Directory?</h3>
+            <ul>
+                <li>Think of a directory like a big folder on your computer where you keep all your files. Inside that folder, there can be other folders, which we call subdirectories. It’s like having a toy chest (the main folder), and inside the toy chest, you have smaller boxes (the subfolders) where you keep different types of toys!</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Walking Through Directories</h3>
+            <ul>
+                <li>When you want to find a file, you have to walk through these folders and subfolders to see where the file is hiding. It's like walking through your house, opening one box after another to find something.</li>
+                <li>In Python, we can use the <code>os</code> and <code>os.path</code> modules to help us walk through and organize our folders and files.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>os and os.path Modules</h3>
+            <ul>
+                <li>The <code>os</code> module helps us talk to the operating system (like Windows or Mac), and the <code>os.path</code> module helps us figure out things about file paths, like if a file exists or where it’s located.</li>
+                <ul>
+                    <li><strong>os.getcwd()</strong>: This tells us where we are right now in the computer’s folder world. It's like saying, "Hey, where am I right now?"</li>
+                    <pre>
+import os
+print(os.getcwd())  # Prints the current directory we’re in.
+                    </pre>
+                    <li><strong>os.chdir()</strong>: This lets us change the folder we’re in, like opening a new folder to explore.</li>
+                    <pre>
+os.chdir('Documents')  # Changes to the 'Documents' folder.
+                    </pre>
+                    <li><strong>os.path.join()</strong>: This is a super useful tool that helps us put together folder names and file names, kind of like combining puzzle pieces to find the full path to a file.</li>
+                    <pre>
+full_path = os.path.join('Documents', 'file.txt')  # Makes the full file path.
+print(full_path)  # Shows 'Documents/file.txt'.
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>os.walk() - Walking Through Folders</h3>
+            <ul>
+                <li>Imagine you want to go through your entire toy chest, and then through every smaller box inside it to find a toy. <code>os.walk()</code> helps you do that on your computer!</li>
+                <li>This function lets you go through every folder and subfolder to see what's inside. It’s like a helper that walks through every folder in your house to make sure nothing is missed.</li>
+                <pre>
+import os
+
+for foldername, subfolders, filenames in os.walk('Documents'):
+    print(f'Looking in: {foldername}')
+    print(f'Subfolders: {subfolders}')
+    print(f'Files: {filenames}')
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Creating, Deleting, and Renaming Files</h3>
+            <ul>
+                <li>Now, let’s learn how to create, delete, and rename files—kind of like organizing your toys and putting them in new boxes or throwing away ones you don’t need anymore!</li>
+                <ul>
+                    <li><strong>Creating a Folder:</strong> If you need a new folder to keep things in, you can use <code>os.mkdir()</code> to create it!</li>
+                    <pre>
+os.mkdir('NewFolder')  # Creates a new folder called 'NewFolder'
+                    </pre>
+                    <li><strong>Deleting a File:</strong> If you want to delete a file you don’t need anymore, you can use <code>os.remove()</code>. It’s like throwing away an old piece of paper.</li>
+                    <pre>
+os.remove('oldfile.txt')  # Deletes the file 'oldfile.txt'
+                    </pre>
+                    <li><strong>Renaming a File:</strong> If you want to give a file a new name, you can use <code>os.rename()</code>. It’s like changing the name of a box to something better.</li>
+                    <pre>
+os.rename('oldname.txt', 'newname.txt')  # Renames the file from 'oldname.txt' to 'newname.txt'
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>shutil Module – Copying and Moving Files</h3>
+            <ul>
+                <li>Sometimes, we want to make a copy of a file, or we want to move it to a new folder. The <code>shutil</code> module is like a magic toolbox that helps us copy and move files around!</li>
+                <ul>
+                    <li><strong>Copying a File:</strong> If you want to make a copy of a file, you can use <code>shutil.copy()</code>. It’s like having two identical toys instead of just one.</li>
+                    <pre>
+import shutil
+shutil.copy('file.txt', 'newfolder/')  # Copies 'file.txt' into the 'newfolder'
+                    </pre>
+                    <li><strong>Moving a File:</strong> If you want to move a file to a new folder (like moving a toy to a new box), you can use <code>shutil.move()</code>.</li>
+                    <pre>
+shutil.move('file.txt', 'newfolder/')  # Moves 'file.txt' to the 'newfolder'
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Recap of What We Learned</h3>
+            <ul>
+                <li><code>os</code> and <code>os.path</code> help us talk to the computer and work with folders and files.</li>
+                <li><code>os.walk()</code> lets us walk through all folders and subfolders to find files (like a treasure hunt!).</li>
+                <li><code>os.mkdir()</code> helps us create new folders.</li>
+                <li><code>os.remove()</code> deletes files we don’t need anymore.</li>
+                <li><code>os.rename()</code> lets us give files new names, like renaming a box.</li>
+                <li><code>shutil.copy()</code> makes copies of files, and <code>shutil.move()</code> helps us move files to new places.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Conclusion</h3>
+            <ul>
+                <li>Organizing files on a computer is just like organizing your room or your toy chest! You can walk through your folders, create new ones, delete old ones, and even copy or move things around. With Python’s <code>os</code> and <code>shutil</code> tools, you’ve got everything you need to keep your files neat and tidy!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chapter 10: Debugging -->
+    <div class="section">
+        <h2>Chapter 10: Debugging</h2>
+
+        <div class="section">
+            <h3>What is Debugging?</h3>
+            <ul>
+                <li>Imagine you're playing a game, and something isn’t working the way you want it to. Maybe your character is stuck in a wall, or something doesn’t show up. Debugging is the process of finding out what went wrong and fixing it so everything works as it should!</li>
+                <li>In programming, debugging helps us find and fix problems in our code—things like when we make a mistake or something breaks. Let’s learn how we can catch and fix those errors!</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Error Types</h3>
+            <ul>
+                <li>Sometimes, when we write code, it doesn't work because of errors. Errors are like mistakes, and there are different types of mistakes that can happen:</li>
+                <ul>
+                    <li><strong>SyntaxError:</strong> This happens when we make a mistake in how we write the code, like forgetting to put a comma or a parenthesis. It's like trying to spell a word wrong and the computer says, "I don’t understand this!"</li>
+                    <pre>
+print("Hello world"  # Missing closing parenthesis, will cause a SyntaxError
+                    </pre>
+                    <li><strong>IndexError:</strong> This happens when we try to access something that doesn’t exist, like trying to open a box that’s not there. For example, if we ask for the 10th item in a list that only has 5 items.</li>
+                    <pre>
+my_list = [1, 2, 3, 4, 5]
+print(my_list[10])  # There is no 10th item, will cause an IndexError
+                    </pre>
+                    <li><strong>TypeError:</strong> This happens when we try to do something with the wrong kind of thing. Like trying to add a number to a word (you can't add apples to oranges!).</li>
+                    <pre>
+number = 5
+word = "Hello"
+print(number + word)  # Trying to add a number and a word causes a TypeError
+                    </pre>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Try/Except Blocks</h3>
+            <ul>
+                <li>What if your code is making mistakes, but you don’t want the whole program to stop? That’s where try/except comes in. It's like saying, "Hey, try this thing, but if something goes wrong, don’t worry! I’ll catch it and handle it."</li>
+                <pre>
+try:
+    # Try to do something risky
+    number = int(input("Enter a number: "))  # Convert input to a number
+    print(10 / number)  # Try dividing by the number
+except ZeroDivisionError:
+    # If there is a ZeroDivisionError (like dividing by 0), handle it here
+    print("Oops! You can’t divide by zero.")
+except ValueError:
+    # If there’s an error because the user didn’t enter a number, handle it here
+    print("Oops! You didn’t enter a valid number.")
+finally:
+    # This will always run, even if there’s an error or not
+    print("Thanks for using the program!")
+                </pre>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Logging</h3>
+            <ul>
+                <li>Sometimes, it’s hard to find what went wrong, especially if the program runs for a long time. Instead of waiting for the program to break, we can use logging to leave a trail of notes (like a detective's notebook) while the program is running. These notes help us see what's happening inside the code!</li>
+                <pre>
+import logging
+
+# Set up the log to write to a file, or show in the console
+logging.basicConfig(level=logging.DEBUG)
+
+logging.debug("This is a debug message.")
+logging.info("This is some info.")
+logging.warning("This is a warning.")
+logging.error("Something went wrong!")
+logging.critical("This is really bad!")
+                </pre>
+                <ul>
+                    <li>DEBUG: Gives you detailed information for debugging.</li>
+                    <li>INFO: Gives you general information.</li>
+                    <li>WARNING: Something might be wrong, but it’s not critical.</li>
+                    <li>ERROR: Something went wrong, but the program can continue.</li>
+                    <li>CRITICAL: Something went very wrong, and the program might crash!</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Python Debugger (PDB)</h3>
+            <ul>
+                <li>Sometimes the best way to find out what went wrong is to stop the program and look at what’s happening step by step. This is where PDB (Python Debugger) comes in. It's like a magnifying glass for your code, letting you pause it, step through each part, and see what’s happening!</li>
+                <pre>
+import pdb
+
+pdb.set_trace()  # This will pause the program and let you inspect it
+                </pre>
+                <ul>
+                    <li>n (next): Go to the next line of code.</li>
+                    <li>s (step): Go inside any functions that are called.</li>
+                    <li>c (continue): Keep running the code until the next breakpoint.</li>
+                    <li>p (print): Print the value of a variable.</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Conclusion</h3>
+            <ul>
+                <li>Debugging is like being a detective and figuring out what went wrong when your program doesn’t work the way you want. You can:</li>
+                <ul>
+                    <li>Look for different errors (like SyntaxError or IndexError).</li>
+                    <li>Use try/except to catch mistakes and handle them.</li>
+                    <li>Use logging to keep notes and track what's happening while your code runs.</li>
+                    <li>Use PDB to stop the program and look inside to see what’s really happening!</li>
+                </ul>
+                <li>With debugging, you’ll be able to find out what went wrong and fix it, just like solving a mystery!</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <h2 class="chapter-title">Chapter 11: Web Scraping</h2>
+
+        <h3>What is Web Scraping?</h3>
+        <p>Web scraping is the process of going to a website, taking the information you want from the page, and saving it for later. It’s like going to a library, grabbing a book, and copying down just the parts you care about (like the fun facts or the pictures) without reading the whole thing!</p>
+
+        <h3>The Tools We’ll Use</h3>
+        <p>To do web scraping, we’ll use two powerful tools:</p>
+        <ul>
+            <li><strong>BeautifulSoup</strong>: This is like a magical pair of scissors that helps you cut out the important pieces of a webpage.</li>
+            <li><strong>requests</strong>: This helps you get the webpage in the first place—like asking the internet, "Hey, can I see this webpage?"</li>
+        </ul>
+
+        <h3>Step 1: Requesting Web Pages with requests</h3>
+        <p>Before you can scrape a webpage, you need to ask for it. It’s like knocking on a door and saying, "Hey, can I come in and see your stuff?" You do this with requests.</p>
+        <pre><code>
+import requests
+
+# Send a request to the website
+response = requests.get('https://example.com')
+
+# Check if the request was successful
+if response.status_code == 200:
+    print("We got the page!")
+else:
+    print("Oops, something went wrong!")
+        </code></pre>
+
+        <h3>Step 2: Using BeautifulSoup to Scrape Data</h3>
+        <p>Once we have the webpage, we need to scrape it—basically, we’ll grab the parts we care about and ignore the rest. This is where BeautifulSoup comes in. BeautifulSoup is like a superhero that makes HTML (the code for webpages) easier to understand.</p>
+        <pre><code>
+from bs4 import BeautifulSoup
+
+# Create a BeautifulSoup object to parse the webpage
+soup = BeautifulSoup(response.text, 'html.parser')
+        </code></pre>
+
+        <h3>Step 3: Extracting Data</h3>
+        <p>Now that we have the webpage in a neat format, we can extract specific data, like a link, a title, or even a picture.</p>
+        <ul>
+            <li>Finding the title of a page:</li>
+        </ul>
+        <pre><code>
+title = soup.title.string
+print("Page title:", title)
+        </code></pre>
+        <ul>
+            <li>Finding all links (URLs) on the page:</li>
+        </ul>
+        <pre><code>
+links = soup.find_all('a')  # Find all 'a' tags, which are used for links
+for link in links:
+    print(link.get('href'))  # Prints the URL of each link
+        </code></pre>
+
+        <h3>Step 4: Handling Forms (Automating Form Submissions)</h3>
+        <p>Sometimes, websites have forms you need to fill out (like when you sign up for something or search for something). You can automate filling out a form using requests and BeautifulSoup.</p>
+        <pre><code>
+payload = {'search': 'python programming'}  # The data you want to send
+response = requests.post('https://example.com/search', data=payload)
+        </code></pre>
+        <p>After submitting the form, use BeautifulSoup again to scrape the new page and get the results.</p>
+        <pre><code>
+soup = BeautifulSoup(response.text, 'html.parser')
+results = soup.find_all('div', class_='result')
+for result in results:
+    print(result.text)
+        </code></pre>
+
+        <h3>Recap of What We Learned</h3>
+        <ul>
+            <li>BeautifulSoup helps us scrape data from a webpage and makes it easy to find the things we want.</li>
+            <li>requests helps us ask for the webpage and get it in the first place.</li>
+            <li>We can extract information like titles, links, and headings from the page using BeautifulSoup.</li>
+            <li>We can even automate filling out forms on websites and scraping the results!</li>
+        </ul>
+
+        <h3>Conclusion</h3>
+        <p>Web scraping is like being a treasure hunter on the internet! 🏴‍☠️ With BeautifulSoup and requests, you can go on an adventure through websites, grab the data you care about, and even automate filling out forms and finding cool stuff. It’s like being a detective in the world of the web!</p>
+    </div>
+
+    <!-- Chapter 12: Working with Excel Spreadsheets -->
+        <h2 class="chapter-title">Chapter 12: Working with Excel Spreadsheets</h2>
+
+        <h3>What is openpyxl?</h3>
+        <p>openpyxl is a special tool in Python that lets you work with Excel files, which are files that end in .xlsx. You can read, write, and change the data inside these files.</p>
+        <p>Think of it like this:</p>
+        <ul>
+            <li>If Excel is a big notebook, openpyxl is your pencil that lets you write in that notebook, read from it, or even erase things!</li>
+        </ul>
+
+        <h3>Step 1: Reading and Writing Excel Files with openpyxl</h3>
+        <p>Before you can start working with the Excel spreadsheet, you need to open it and read the data inside. Or, if you want to write something new, you can do that too!</p>
+        <pre><code>
+import openpyxl
+
+# Open an existing Excel file (read it)
+workbook = openpyxl.load_workbook('example.xlsx')
+
+# Or, create a new Excel file
+workbook = openpyxl.Workbook()  # This makes a new workbook
+
+# Save the file to your computer
+workbook.save('newfile.xlsx')
+        </code></pre>
+
+        <h3>Step 2: Navigating Excel Sheets</h3>
+        <p>An Excel file can have many sheets inside it, and each sheet is like a different page in the notebook. You can go to a specific sheet in your file and start working with it.</p>
+        <pre><code>
+# Get the active sheet (the one that's open by default)
+sheet = workbook.active
+
+# Or, you can get a specific sheet by name
+sheet = workbook['Sheet1']  # 'Sheet1' is the name of the sheet
+        </code></pre>
+
+        <h3>Step 3: Reading and Writing Data in Cells</h3>
+        <p>In Excel, every piece of data lives inside a cell, and every cell has a specific location (like "A1", "B2", etc.). You can read data from these cells or write new data into them.</p>
+        <h3>Reading Data from a Cell</h3>
+        <pre><code>
+# Get the value in a specific cell (e.g., "A1")
+cell_value = sheet['A1'].value
+print(cell_value)  # Prints the value in cell A1
+        </code></pre>
+        <h3>Writing Data to a Cell</h3>
+        <pre><code>
+# Write data to a specific cell (e.g., "A1")
+sheet['A1'] = 'Hello, Excel!'  # This writes "Hello, Excel!" in cell A1
+        </code></pre>
+
+        <h3>Step 4: Saving Your Changes</h3>
+        <p>Once you’re done changing things in your spreadsheet, you save it so your work doesn’t disappear.</p>
+        <pre><code>
+workbook.save('example.xlsx')  # Save the changes back to the file
+        </code></pre>
+
+        <h3>Step 5: Using Formulas in Excel</h3>
+        <p>Excel is awesome because you can use formulas to do math, like adding numbers, averaging things, and more. You can even tell Python to write formulas into your cells!</p>
+        <pre><code>
+# Write a formula into a cell (e.g., adding two numbers)
+sheet['A1'] = 5
+sheet['A2'] = 10
+sheet['A3'] = '=A1+A2'  # This will add the numbers in A1 and A2, and show the result in A3
+        </code></pre>
+
+        <h3>Step 6: Formatting Cells</h3>
+        <p>Excel is not just for numbers and words—it also lets you format cells to make them look nicer! You can change the color, the font, and even the size of the text.</p>
+        <pre><code>
+from openpyxl.styles import Font
+
+# Bold text in cell A1
+sheet['A1'].font = Font(bold=True)
+
+from openpyxl.styles import PatternFill
+
+# Set the background color of cell A1 to yellow
+sheet['A1'].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+        </code></pre>
+
+        <h3>Recap of What We Learned</h3>
+        <ul>
+            <li>openpyxl helps us read and write Excel files from Python.</li>
+            <li>We can navigate between different sheets in the file and pick the right one to work with.</li>
+            <li>We can read the data inside a cell, write new data to a cell, and save our changes.</li>
+            <li>We can use formulas in Excel to do math automatically, like adding or multiplying numbers.</li>
+            <li>We can format cells to make our spreadsheet look cooler by changing fonts, colors, and more!</li>
+        </ul>
+
+        <h3>Conclusion</h3>
+        <p>Working with Excel files in Python is like having a superpower that lets you control and organize data in the easiest way possible. Whether you’re reading, writing, calculating with formulas, or making things pretty, openpyxl lets you do it all! 🧑‍💻💥</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Chapter 13: Working with CSV Files -->
+    <div class="section">
+        <h2 class="chapter-title">Chapter 13: Working with CSV Files</h2>
+
+        <h3>What is a CSV File?</h3>
+        <p>Imagine you have a big list of things, like a grocery shopping list, a list of your friends, or a list of your favorite movies. A CSV file is just a special way to store this list in a simple text file, but with a twist: the list is separated by commas! 🛒🍎🍌</p>
+        <p>So, a CSV file looks something like this:</p>
+        <pre><code>
+Name, Age, Favorite Color
+John, 10, Blue
+Alice, 12, Red
+Sam, 11, Green
+        </code></pre>
+        <p>In this file:</p>
+        <ul>
+            <li>Each row represents a new line, like a new item in the list.</li>
+            <li>The commas separate each piece of information (called data), like the person’s name, age, and favorite color.</li>
+        </ul>
+        <p>CSV stands for Comma-Separated Values, and it's a simple way to store lots of data in a file, just like a table!</p>
+
+        <h3>Working with CSV Files in Python</h3>
+        <p>Python has a special tool called the CSV module that helps you read from and write to CSV files. It’s like a helpful assistant that knows how to open CSV files and organize the information inside them.</p>
+
+        <h3>Step 1: Reading CSV Files</h3>
+        <p>To read a CSV file (like looking at the grocery list), we use the <code>csv.reader()</code> function. This function helps us open the file, and it knows how to break up the data into rows and columns.</p>
+        <pre><code>
+import csv
+
+# Open the CSV file for reading
+with open('people.csv', mode='r') as file:
+    # Create a CSV reader to read the file
+    reader = csv.reader(file)
+    
+    # Loop through each row in the CSV file
+    for row in reader:
+        print(row)  # This will print each row as a list of data
+        </code></pre>
+        <p>In this example:</p>
+        <ul>
+            <li><code>open('people.csv', mode='r')</code> opens the file for reading.</li>
+            <li><code>csv.reader(file)</code> reads the file and breaks it into rows.</li>
+            <li><code>for row in reader:</code> goes through each row one by one and prints it.</li>
+        </ul>
+        <p>Each row will be a list, so the first row might look like this: <code>['John', '10', 'Blue']</code>.</p>
+
+        <h3>Step 2: Writing CSV Files</h3>
+        <p>Now, let’s talk about writing to a CSV file. Writing is like creating your own list to save on your computer, like making your grocery list and then saving it to a file!</p>
+        <pre><code>
+import csv
+
+# Open the CSV file for writing (this will create a new file or overwrite an existing one)
+with open('new_people.csv', mode='w', newline='') as file:
+    # Create a CSV writer to write data to the file
+    writer = csv.writer(file)
+    
+    # Write a row of data (like a header)
+    writer.writerow(['Name', 'Age', 'Favorite Color'])
+    
+    # Write some rows of data
+    writer.writerow(['John', 10, 'Blue'])
+    writer.writerow(['Alice', 12, 'Red'])
+    writer.writerow(['Sam', 11, 'Green'])
+        </code></pre>
+        <p>In this example:</p>
+        <ul>
+            <li><code>open('new_people.csv', mode='w', newline='')</code> opens the file for writing. If the file doesn’t exist, it will be created.</li>
+            <li><code>csv.writer(file)</code> is like giving us a pen to write in the CSV file.</li>
+            <li><code>writer.writerow()</code> writes one row at a time.</li>
+        </ul>
+
+        <h3>Why Use CSV Files?</h3>
+        <ul>
+            <li>Simple to read and write: CSV files are easy to open and edit in programs like Excel or even a regular text editor (like Notepad).</li>
+            <li>Perfect for lists and tables: They help you organize things like names, numbers, or anything that fits into a table.</li>
+            <li>Used everywhere: CSV files are used by many programs to exchange data, like sharing a list of contacts, inventory, or even results from a survey.</li>
+        </ul>
+
+        <h3>Recap of What We Learned</h3>
+        <ul>
+            <li>CSV files are just simple text files where the data is separated by commas, like a shopping list or a table.</li>
+            <li>The CSV module in Python helps us read and write CSV files easily:</li>
+            <ul>
+                <li><code>csv.reader()</code> is for reading CSV files and turning them into lists of rows.</li>
+                <li><code>csv.writer()</code> is for writing new data into a CSV file.</li>
+            </ul>
+            <li>You can create your own CSV files, save your data, and share it with others!</li>
+        </ul>
+
+        <h3>Conclusion</h3>
+        <p>CSV files are a simple and powerful way to store and share data. With the CSV module, you can read existing lists or make your own and save them for later. It's like turning a big jumble of numbers and words into an easy-to-read table, and Python is your superpower to do it! 📊💪</p>
+    </div>
+
+    <!-- Chapter 14: Sending Email and Text Messages -->
+    <div class="section">
+        <h2 class="chapter-title">Chapter 14: Sending Email and Text Messages</h2>
+
+        <h3>What is Email and SMS?</h3>
+        <ul>
+            <li>Email is like sending a letter on the internet. You type your message, put in the email address of the person you want to send it to, and hit "send." It's like using a magic mailbox!</li>
+            <li>SMS (Short Message Service) is sending a text message to someone's phone. It's like sending a short letter, but instead of using email, you send it straight to their phone number.</li>
+        </ul>
+        <p>Now, Python can help you send emails and text messages automatically without you having to open an app or type anything!</p>
+
+        <h3>Step 1: Sending Emails with SMTP</h3>
+        <p>To send emails using Python, we use a tool called smtplib. It's like a helper that knows how to talk to email servers and send your messages.</p>
+        <h4>What is SMTP?</h4>
+        <p>SMTP stands for Simple Mail Transfer Protocol. It’s a way for email systems to talk to each other and deliver your email to someone else’s inbox.</p>
+        <pre><code>
+import smtplib
+
+# Email details
+sender_email = 'your_email@example.com'
+receiver_email = 'friend_email@example.com'
+password = 'your_password'  # Be careful with your password!
+subject = 'Hello from Python'
+body = 'This is a test email sent using Python!'
+
+# Set up the SMTP server (this is for Gmail, but other email services are similar)
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()  # This makes the connection secure
+server.login(sender_email, password)  # Log in to your email account
+
+# Create the email
+message = f"Subject: {subject}\n\n{body}"
+
+# Send the email
+server.sendmail(sender_email, receiver_email, message)
+
+# Close the connection to the server
+server.quit()
+
+print("Email sent!")
+        </code></pre>
+        <p>Once you run this, the email will go from your account to the recipient’s inbox! 🎉</p>
+
+        <h3>Step 2: Sending Text Messages (SMS)</h3>
+        <p>To send a text message, you can use email-to-SMS gateways. These are special email addresses that turn your email into a text message and send it to someone's phone!</p>
+        <pre><code>
+import smtplib
+
+# Email details
+sender_email = 'your_email@example.com'
+receiver_phone = '1234567890@vtext.com'  # This is the Verizon phone's email address
+password = 'your_password'
+message = 'Hello! This is a text message sent using Python!'
+
+# Set up the SMTP server
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()  # Secure connection
+server.login(sender_email, password)
+
+# Send the email (which will be turned into a text message)
+server.sendmail(sender_email, receiver_phone, message)
+
+# Close the server connection
+server.quit()
+
+print("Text message sent!")
+        </code></pre>
+        
+        <h3>Step 3: Handling Email Attachments and HTML Emails</h3>
+        <p>Sometimes, you want to send attachments (like pictures or files) or HTML emails (fancy emails with colors, links, and images). Python can do that too!</p>
+
+        <h4>Sending Email Attachments:</h4>
+        <pre><code>
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+
+# Email details
+sender_email = 'your_email@example.com'
+receiver_email = 'friend_email@example.com'
+password = 'your_password'
+subject = 'Check out this file!'
+body = 'I have attached a file for you.'
+
+# Create the email object
+msg = MIMEMultipart()
+msg['From'] = sender_email
+msg['To'] = receiver_email
+msg['Subject'] = subject
+msg.attach(MIMEText(body, 'plain'))
+
+# Attach a file (for example, 'file.pdf')
+filename = 'file.pdf'
+attachment = open('file.pdf', 'rb')  # Open the file in binary mode
+
+part = MIMEBase('application', 'octet-stream')
+part.set_payload(attachment.read())  # Read the file data
+encoders.encode_base64(part)  # Encode it to base64 to send it
+
+part.add_header('Content-Disposition', f'attachment; filename={filename}')
+msg.attach(part)  # Attach the file to the email
+
+# Send the email
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()
+server.login(sender_email, password)
+server.sendmail(sender_email, receiver_email, msg.as_string())
+server.quit()
+
+print("Email with attachment sent!")
+        </code></pre>
+
+        <h4>Sending HTML Emails:</h4>
+        <pre><code>
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+# Email details
+sender_email = 'your_email@example.com'
+receiver_email = 'friend_email@example.com'
+password = 'your_password'
+subject = 'HTML Email Example'
+
+# HTML content for the email
+html = """
+<html>
+  <body>
+    <h1 style="color: blue;">Hello from Python!</h1>
+    <p>This is a <b>bold</b> paragraph, and here's a link to <a href="https://www.example.com">example.com</a>.</p>
+  </body>
+</html>
+"""
+
+# Create the email object
+msg = MIMEMultipart()
+msg['From'] = sender_email
+msg['To'] = receiver_email
+msg['Subject'] = subject
+msg.attach(MIMEText(html, 'html'))  # Attach HTML content
+
+# Send the email
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()
+server.login(sender_email, password)
+server.sendmail(sender_email, receiver_email, msg.as_string())
+server.quit()
+
+print("HTML email sent!")
+        </code></pre>
+
+        <h3>Recap of What We Learned</h3>
+        <ul>
+            <li>Sending emails with Python is easy using <code>smtplib</code>, which talks to email servers and sends your messages.</li>
+            <li>You can send text messages to phones using email-to-SMS gateways, which convert your email into a text message.</li>
+            <li>Email attachments can be added using the email module.</li>
+            <li>HTML emails let you send fancy emails with images, links, and styling.</li>
+        </ul>
+
+        <h3>Conclusion</h3>
+        <p>Python is like your super tool for sending emails and text messages automatically! Whether it’s sending a simple email, a text message to a phone, or even adding files and fancy HTML to your emails, you can do it all with just a little code! 📨💥</p>
+    </div>
+</div>
+
+<!-- Chapter 15: Keeping Time -->
+<div class="chapter">
+    <h2>Chapter 15: Keeping Time</h2>
+    <p>In Python, we have special tools that can help us measure time, work with dates, and even schedule tasks to run at specific times—like setting an alarm to remind you of something!</p>
+
+    <div class="step">
+        <h3>Step 1: Using the time Module</h3>
+        <p>Imagine you’re playing a game, and you want to measure how long it takes you to finish a level. You can use Python’s <code>time</code> module to measure time and even add delays (like pausing the game for a moment).</p>
+        <h4>How to measure time:</h4>
+        <pre><code>import time
+
+# Record the start time
+start_time = time.time()
+
+# Do something that takes time (like sleeping for 2 seconds)
+time.sleep(2)
+
+# Record the end time
+end_time = time.time()
+
+# Calculate how long it took
+elapsed_time = end_time - start_time
+print(f"It took {elapsed_time} seconds to run!")</code></pre>
+        <p>This code measures how long a task takes by calculating the difference between the start and end times.</p>
+        <ul>
+            <li><code>time.time()</code>: Returns the current time in seconds since the "epoch".</li>
+            <li><code>time.sleep(2)</code>: Pauses the program for 2 seconds.</li>
+            <li><code>elapsed_time</code>: The difference between the start and end time, showing how long the task took.</li>
+        </ul>
+        <h4>How to add delays:</h4>
+        <pre><code>print("Wait for 3 seconds...")
+time.sleep(3)  # Waits for 3 seconds
+print("Done waiting!")</code></pre>
+        <p>This code will wait for 3 seconds before printing "Done waiting!".</p>
+    </div>
+
+    <div class="step">
+        <h3>Step 2: Working with Dates and Times using the datetime Module</h3>
+        <p>The <code>datetime</code> module helps you work with dates (like today’s date) and times (like the current time). You can also do math with dates, like figuring out what date it will be 10 days from now!</p>
+
+        <h4>Getting the Current Date and Time:</h4>
+        <pre><code>import datetime
+
+# Get the current date and time
+now = datetime.datetime.now()
+
+print(f"Current date and time: {now}")</code></pre>
+        <p>This will print the current date and time in the format <code>2025-01-03 14:30:00</code>.</p>
+
+        <h4>Formatting Dates and Times:</h4>
+        <pre><code>now = datetime.datetime.now()
+
+# Format the date as "Month Day, Year"
+formatted_date = now.strftime("%B %d, %Y")
+print(f"Formatted date: {formatted_date}")</code></pre>
+        <p>Formatted date: <code>January 03, 2025</code></p>
+
+        <h4>Date Arithmetic:</h4>
+        <pre><code>today = datetime.date.today()
+
+# Add 10 days to today
+ten_days_later = today + datetime.timedelta(days=10)
+print(f"10 days from today: {ten_days_later}")</code></pre>
+        <p>This calculates the date 10 days from today and prints it.</p>
+    </div>
+
+    <div class="step">
+        <h3>Step 3: Scheduling Tasks with schedule or APScheduler</h3>
+        <p>Use tools like <code>schedule</code> or <code>APScheduler</code> to automate tasks, like running a task every 5 minutes or sending an email every day at 8 AM.</p>
+
+        <h4>Using schedule to Automate Tasks:</h4>
+        <pre><code>import schedule
+import time
+
+def task():
+print("Task is running!")
+
+# Schedule the task to run every 5 seconds
+schedule.every(5).seconds.do(task)
+
+while True:
+schedule.run_pending()
+time.sleep(1)  # Wait for 1 second before checking again</code></pre>
+
+        <p>This code runs the <code>task()</code> function every 5 seconds.</p>
+
+        <h4>Using APScheduler for More Complex Scheduling:</h4>
+        <pre><code>from apscheduler.schedulers.background import BackgroundScheduler
+import time
+
+def task():
+print("Task is running!")
+
+scheduler = BackgroundScheduler()
+scheduler.add_job(task, 'interval', seconds=10)  # Run every 10 seconds
+scheduler.start()
+
+while True:
+time.sleep(1)</code></pre>
+        <p>APScheduler allows more complex scheduling like running tasks at specific intervals.</p>
+    </div>
+
+    <div class="note">
+        <strong>Recap:</strong>
+        <ul>
+            <li><code>time</code> helps measure time and pause your program.</li>
+            <li><code>datetime</code> allows working with dates, times, and date arithmetic.</li>
+            <li>Scheduling tasks lets you automate actions with <code>schedule</code> or <code>APScheduler</code>.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Chapter 16: Controlling the Keyboard and Mouse -->
+<div class="chapter">
+    <h2>Chapter 16: Controlling the Keyboard and Mouse</h2>
+    <p>Imagine you want Python to click on buttons, type text, or move the mouse around—all by itself. You can automate these tasks using a library called <code>pyautogui</code>.</p>
+
+    <div class="step">
+        <h3>Step 1: What is pyautogui?</h3>
+        <p><code>pyautogui</code> lets you control the mouse and keyboard to automate tasks. It’s like giving Python superpowers to control your computer for you!</p>
+    </div>
+
+    <div class="step">
+        <h3>Step 2: Moving and Clicking the Mouse 🖱️</h3>
+        <h4>Moving the Mouse:</h4>
+        <pre><code>import pyautogui
+
+# Move the mouse to the position (x=500, y=300)
+pyautogui.moveTo(500, 300)</code></pre>
+
+        <h4>Clicking the Mouse:</h4>
+        <pre><code>pyautogui.moveTo(500, 300)
+pyautogui.click()</code></pre>
+
+        <h4>Dragging the Mouse:</h4>
+        <pre><code>pyautogui.moveTo(500, 300)
+pyautogui.mouseDown()  # Hold down the mouse button
+pyautogui.moveTo(700, 500)  # Drag to (700, 500)
+pyautogui.mouseUp()  # Release the mouse button</code></pre>
+    </div>
+
+    <div class="step">
+        <h3>Step 3: Controlling the Keyboard ⌨️</h3>
+        <h4>Typing Text:</h4>
+        <pre><code>import pyautogui
+
+# Type "Hello, Python!"
+pyautogui.write("Hello, Python!")</code></pre>
+
+        <h4>Pressing Keyboard Keys:</h4>
+        <pre><code>pyautogui.press('enter')
+pyautogui.press('esc')</code></pre>
+
+        <h4>Pressing Multiple Keys at Once:</h4>
+        <pre><code>pyautogui.hotkey('shift', 's')</code></pre>
+    </div>
+
+    <div class="step">
+        <h3>Step 4: Putting It All Together!</h3>
+        <pre><code>import pyautogui
+import time
+
+# Wait for 2 seconds to give you time to open a text editor (like Notepad)
+time.sleep(2)
+
+# Move the mouse to where the text box is (let's say at (200, 300))
+pyautogui.moveTo(200, 300)
+
+# Click to focus on the text box
+pyautogui.click()
+
+# Type "Hello, world!"
+pyautogui.write("Hello, world!")
+
+# Press Enter to send the message
+pyautogui.press('enter')</code></pre>
+    </div>
+
+    <div class="note">
+        <strong>Recap:</strong>
+        <ul>
+            <li><code>pyautogui</code> automates keyboard and mouse control.</li>
+            <li>Use <code>moveTo(x, y)</code> to move the mouse and <code>click()</code> to click.</li>
+            <li><code>write()</code> types text and <code>press()</code> presses keyboard keys.</li>
+            <li><code>hotkey()</code> allows multiple key presses at once!</li>
+        </ul>
+    </div>
+</div>
+<h2>Chapter 17: Working with PDF and Word Documents</h2>
+            <p>Learn how to handle PDFs and Word documents using Python libraries like <strong>PyPDF2</strong> and <strong>python-docx</strong>!</p>
+        </header>
+        
+        <section class="step">
+            <h3>Step 1: Working with PDFs using PyPDF2</h3>
+            <h4>Reading PDF Files:</h4>
+            <pre><code>
+import PyPDF2
+
+# Open the PDF file
+pdf_file = open('example.pdf', 'rb')  # 'rb' means "read binary"
+
+# Create a PDF reader object
+pdf_reader = PyPDF2.PdfReader(pdf_file)
+
+# Get the text from the first page
+page = pdf_reader.pages[0]
+text = page.extract_text()
+
+# Print the text
+print(text)
+
+# Close the PDF file
+pdf_file.close()
+            </code></pre>
+            <p>In this example:</p>
+            <ul>
+                <li><code>open('example.pdf', 'rb')</code> opens the PDF file (in read binary mode).</li>
+                <li><code>PdfReader(pdf_file)</code> reads the PDF.</li>
+                <li><code>page.extract_text()</code> extracts the text from the first page.</li>
+            </ul>
+            
+            <h4>Writing to PDF:</h4>
+            <pre><code>
+import PyPDF2
+
+# Open two PDF files
+pdf_file_1 = open('example1.pdf', 'rb')
+pdf_file_2 = open('example2.pdf', 'rb')
+
+# Create PDF readers
+pdf_reader1 = PyPDF2.PdfReader(pdf_file_1)
+pdf_reader2 = PyPDF2.PdfReader(pdf_file_2)
+
+# Create a PDF writer object to combine the PDFs
+pdf_writer = PyPDF2.PdfWriter()
+
+# Add pages from both PDFs to the writer
+pdf_writer.add_page(pdf_reader1.pages[0])
+pdf_writer.add_page(pdf_reader2.pages[0])
+
+# Write the combined PDF to a new file
+output_pdf = open('combined.pdf', 'wb')
+pdf_writer.write(output_pdf)
+
+# Close all the files
+pdf_file_1.close()
+pdf_file_2.close()
+output_pdf.close()
+            </code></pre>
+            <p>This example shows how to combine two PDFs.</p>
+        </section>
+
+        <section class="step">
+            <h3>Step 2: Working with Word Documents using python-docx</h3>
+            <h4>Reading Word Documents:</h4>
+            <pre><code>
+from docx import Document
+
+# Open the Word document
+doc = Document('example.docx')
+
+# Loop through each paragraph in the document and print it
+for para in doc.paragraphs:
+    print(para.text)
+            </code></pre>
+
+            <h4>Writing to Word Documents:</h4>
+            <pre><code>
+from docx import Document
+
+# Create a new Word document
+doc = Document()
+
+# Add a title
+doc.add_heading('My First Python Document', 0)
+
+# Add a paragraph
+doc.add_paragraph('This is my first paragraph created by Python!')
+
+# Save the document
+doc.save('new_document.docx')
+            </code></pre>
+        </section>
+
+        <section class="step">
+            <h3>Step 3: Putting It All Together!</h3>
+            <pre><code>
+import PyPDF2
+from docx import Document
+
+# Step 1: Read the PDF
+pdf_file = open('example.pdf', 'rb')
+pdf_reader = PyPDF2.PdfReader(pdf_file)
+page = pdf_reader.pages[0]
+pdf_text = page.extract_text()
+pdf_file.close()
+
+# Step 2: Create a new Word document
+doc = Document()
+
+# Add a title
+doc.add_heading('PDF to Word Document', 0)
+
+# Add the PDF text as a paragraph in the Word document
+doc.add_paragraph('Here’s what I learned from the PDF:')
+doc.add_paragraph(pdf_text)
+
+# Step 3: Save the Word document
+doc.save('pdf_to_word.docx')
+
+print("PDF content has been added to a Word document!")
+            </code></pre>
+            <p>This program reads a PDF, extracts its content, and saves it as a Word document!</p>
+        </section>
+
+    </div>
+    <h2>Chapter 18: Organizing Your Code</h2>
+    <p>Learn how to break your code into manageable pieces with functions, classes, and modules.</p>
+</header>
+
+<section class="step">
+    <h3>Step 1: Modularizing Your Code</h3>
+    <p>Think of modularizing your code like organizing toys into boxes—each piece should be reusable and manageable.</p>
+
+    <h4>Functions:</h4>
+    <pre><code>
+def say_hello():
+print("Hello!")
+
+# Call the function
+say_hello()
+    </code></pre>
+    <p>Functions let you reuse code easily without having to repeat yourself!</p>
+
+    <h4>Classes:</h4>
+    <pre><code>
+class Car:
+def __init__(self, color, model):
+self.color = color
+self.model = model
+
+def start(self):
+print(f"The {self.model} car is starting!")
+
+my_car = Car("red", "Toyota")
+my_car.start()  # Prints: The Toyota car is starting!
+    </code></pre>
+</section>
+
+<section class="step">
+    <h3>Step 2: Creating Modules</h3>
+    <h4>Example of a Module:</h4>
+    <pre><code>
+# mymath.py
+def add(x, y):
+return x + y
+
+def subtract(x, y):
+return x - y
+    </code></pre>
+    <p>You can import this module into another Python file:</p>
+    <pre><code>
+# main.py
+import mymath
+
+result = mymath.add(5, 3)
+print(result)  # Prints: 8
+    </code></pre>
+</section>
+
+<section class="step">
+    <h3>Step 3: Packages and Libraries</h3>
+    <p>Packages are folders that contain multiple modules, while libraries are collections of packages. You can find libraries on PyPI!</p>
+
+    <h4>Using Third-Party Libraries:</h4>
+    <pre><code>
+# Install a library with pip
+pip install requests
+
+# Example usage
+import requests
+response = requests.get("https://www.example.com")
+print(response.text)
+    </code></pre>
+</section>
+
+<h2>Chapter 19: Automating Tasks with Python</h2>
+            <p>Learn how to automate tasks with Python, from renaming files to sending emails and scraping websites!</p>
+        </header>
+
+        <section class="step">
+            <h3>Step 1: Practical Automation</h3>
+            <h4>Renaming Files Automatically:</h4>
+            <pre><code>
+import os
+
+folder_path = 'your_folder_path_here'
+files = os.listdir(folder_path)
+
+for i, file in enumerate(files):
+    new_name = f'photo{i + 1}.jpg'
+    old_path = os.path.join(folder_path, file)
+    new_path = os.path.join(folder_path, new_name)
+    os.rename(old_path, new_path)
+
+print("All files have been renamed!")
+            </code></pre>
+
+            <h4>Sending Emails Automatically:</h4>
+            <pre><code>
+import smtplib
+from email.mime.text import MIMEText
+
+# Email setup
+sender_email = "your_email@example.com"
+receiver_email = "receiver@example.com"
+message = MIMEText("This is a test email.")
+message["Subject"] = "Automated Email"
+message["From"] = sender_email
+message["To"] = receiver_email
+
+# Sending the email
+with smtplib.SMTP("smtp.gmail.com", 587) as server:
+    server.starttls()
+    server.login(sender_email, "your_password")
+    server.sendmail(sender_email, receiver_email, message.as_string())
+
+print("Email sent successfully!")
+            </code></pre>
+        </section>
+
+        <section class="step">
+            <h3>Step 2: Automating Web Scraping</h3>
+            <pre><code>
+import requests
+from bs4 import BeautifulSoup
+
+# Send a GET request to the website
+response = requests.get('https://www.example.com')
+
+# Parse the HTML content
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Find all links on the page
+links = soup.find_all('a')
+
+# Print all links
+for link in links:
+    print(link.get('href'))
+            </code></pre>
+            <p>This script fetches all the links from the given website.</p>
+</section>
+<h2>DM Me on IG to get the PDF of this notes</h2>
+<style>
+    /* Footer Styling */
+    footer {
+    background-color: #091118;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.875rem;
+    margin-top: 10px;
+}
+</style>
+
+<footer>
+<nav>
+    <ul style="list-style-type: none; padding: 0; margin: 0;">
+        <li style="display: inline; margin-right: 15px;">
+            <a href="#contact">Contact Information</a>
+        </li>
+        <li style="display: inline; margin-right: 15px;">
+            <a href="#faqs">FAQs</a>
+        </li>
+        <li style="display: inline;">
+            <a href="#support">Support</a>
+        </li>
+    </ul>
+</nav>
+<p>&copy; 2024 Getser Surbakti. All rights reserved.</p>
+</footer>
+
+
+</body>
+</html>
+
+
