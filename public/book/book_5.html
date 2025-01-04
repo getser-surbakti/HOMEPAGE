@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Code: A Handbook of Agile Software Craftsmanship</title>
+    <style>
+        header {
+            background-color: #030608;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        marquee {
+            color:red; 
+        }
+        h1 {
+            color: #eaeef3;
+            text-align: center;
+        }
+        h2 {
+            color:#08742c;
+            text-align:center;
+        }
+        h3 {
+            text-align: center;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        .author {
+            text-align: center;
+        }
+        .code-block {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .chapter-title {
+            margin-top: 30px;
+            color: #2980b9;
+        }
+        .key-points {
+            margin-top: 10px;
+        }
+        .example {
+            background-color: #ecf0f1;
+            border-left: 5px solid #2980b9;
+            margin: 15px 0;
+            padding: 10px;
+        }
+        .example p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Python for Data Analysis </h1>
+    <p class="author">by Wes McKinney</p>
+    <marquee>Follow me on IG: @getsersurbakti</marquee>
+
+    <h3>Here’s a chapter-by-chapter summary of "Python for Data Analysis" by Wes McKinney:</h3>
+
+</header>
+
+ <!-- Chapter 1 -->
+ <div class="chapter">
+    <h2>Chapter 1: Preliminaries</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Introduction to Python programming and essential tools for data analysis.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Overview of Python’s role in data analysis.</li>
+            <li>Brief introduction to NumPy, pandas, and IPython.</li>
+            <li>Setting up your Python environment (using Anaconda, installing pandas, NumPy, etc.).</li>
+            <li>Importance of Python’s interactive environment (IPython, Jupyter notebooks) for data analysis.</li>
+        </ul>
+    </div>
+    
+    <h3>What is Python?</h3>
+    <p>Python is like a super smart robot you can talk to and tell it what to do. You type commands (like "add these numbers," "show me this table," or "plot a picture"), and Python listens and does exactly what you ask. Python helps you with data analysis by turning messy numbers or tables into something you can understand and work with.</p>
+
+    <h3>What Are These Tools (NumPy, pandas, and IPython)?</h3>
+    <ul>
+        <li><strong>NumPy:</strong> Think of NumPy as a magic box for working with numbers. It helps you do things like add up lots of numbers quickly or work with big grids of numbers (like a giant table of data). It’s like a super-powered calculator.</li>
+        <li><strong>pandas:</strong> pandas is like a special notebook where you can store, organize, and clean up your data. Imagine you have a giant list of your favorite toys, but some of them are messy (like some toys have missing names). pandas helps you fix that mess, sort the toys, or even add more toys to the list.</li>
+        <li><strong>IPython:</strong> This is a special place where you can talk to Python. It’s like a super helpful assistant that lets you try things out one step at a time. You can ask it a question, and it answers back right away!</li>
+    </ul>
+
+    <h3>Setting Up Your Python Adventure (Installing Tools)</h3>
+    <p>Before you can start your data adventure, you need to set up your tools. Imagine you’re getting your backpack ready for a trip. You’ll need to install Python and special tools like pandas and NumPy. If you use Anaconda, it's like a big, magical box that already comes with everything you need to get started! You just open it, and it’s ready for you to start playing with your data.</p>
+
+    <h3>Why Use Python’s Interactive Playground (IPython and Jupyter Notebooks)?</h3>
+    <p>When you’re starting your data adventure, you don’t want to guess what will happen or wait forever for an answer. So, IPython and Jupyter Notebooks give you a super cool playground. You can ask questions, see answers right away, and try new things without worrying about breaking anything. It’s like having a notebook where you can write down ideas and get answers instantly! You can also draw charts and graphs to make your data look like pictures.</p>
+
+    <div class="summary">
+        <p><strong>In short:</strong> Chapter 1 is getting you ready to use Python and some powerful tools (NumPy, pandas, and IPython) so you can start exploring and understanding data. It’s like setting up your very own data adventure with the best tools to help you along the way!</p>
+    </div>
+</div>
+
+<!-- Chapter 2 -->
+<div class="chapter">
+    <h2>Chapter 2: Introduction to pandas</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Introduction to the pandas library and its core data structures.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>pandas Series and DataFrame objects.</li>
+            <li>DataFrame creation from various data sources (CSV, Excel, SQL databases).</li>
+            <li>Basic operations like indexing, slicing, and filtering data.</li>
+            <li>Handling missing data in pandas (NaN handling).</li>
+        </ul>
+    </div>
+
+    <h3>What is pandas?</h3>
+    <p>pandas is like a magical notebook or toolbox that helps you collect, organize, and understand your data. It gives you powerful ways to look at and work with your clues (data) so you can solve the mystery faster and easier.</p>
+
+    <h3>pandas Series and DataFrame (What are they?)</h3>
+    <ul>
+        <li><strong>pandas Series:</strong> This is like a single list of things. For example, if you had a list of all the ages in your class, that would be a pandas Series. Each item in the list has a label next to it, so you know what it represents (like "age of John," "age of Sarah," etc.).</li>
+        <li><strong>pandas DataFrame:</strong> A DataFrame is like a big table made up of lots of lists. Think of it like a spreadsheet (like Excel) with rows and columns. For example, you could have one column with names of people in your class, one column with their ages, and another column with their favorite colors. The DataFrame keeps all of this neatly organized!</li>
+    </ul>
+
+    <h3>Creating a DataFrame from Different Sources (CSV, Excel, etc.)</h3>
+    <ul>
+        <li><strong>CSV:</strong> It’s like a simple list saved in a text file. pandas can read it and turn it into a DataFrame.</li>
+        <li><strong>Excel:</strong> If you’ve got your data in an Excel sheet, pandas can open that and create a DataFrame for you.</li>
+        <li><strong>SQL Databases:</strong> pandas can go to that database, grab the data, and organize it into a DataFrame for you.</li>
+    </ul>
+
+    <h3>Basic Operations: Indexing, Slicing, and Filtering Data</h3>
+    <ul>
+        <li><strong>Indexing:</strong> This means finding specific items in your data by using their labels.</li>
+        <li><strong>Slicing:</strong> If you want to look at just a part of the data, like the first 5 people in your class, slicing helps you do that.</li>
+        <li><strong>Filtering:</strong> pandas helps you find only the data you care about and ignore the rest, like only the people who are older than 10 years.</li>
+    </ul>
+
+    <h3>Handling Missing Data (NaN Handling)</h3>
+    <p>Sometimes, when you’re working with data, you’ll notice that some pieces are missing. This is like when a person in your class doesn’t answer a question, and their age is left blank. pandas uses a special word, NaN, which means "Not a Number." It’s like saying, "Oops! I don’t know this yet." pandas gives you tools to either fill in the missing data with something (like guessing their age) or remove the empty spots if they’re not needed.</p>
+
+    <div class="summary">
+        <p><strong>In short:</strong> Chapter 2 is all about organizing and working with data using pandas, and learning how to handle missing or incomplete data. With pandas, you can turn messy data into something neat and easy to understand!</p>
+    </div>
+</div>
+
+<!-- Chapter 3 -->
+<div class="chapter">
+    <h2>Chapter 3: Data Cleaning and Preparation</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Cleaning and preparing data for analysis.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Techniques for handling missing data (e.g., filling or dropping missing values).</li>
+            <li>Removing duplicates and data errors.</li>
+            <li>Data type conversions (e.g., converting columns to proper types like datetime).</li>
+            <li>String manipulation and regex-based cleaning.</li>
+            <li>Working with categorical data and factorizing.</li>
+        </ul>
+    </div>
+
+    <h3>What is Data Cleaning?</h3>
+    <p>Data cleaning is like tidying up your room or organizing your toys. Sometimes, the data you have isn’t perfect—it could have missing pieces, mistakes, or things out of order. You need to clean it up so it’s neat, tidy, and ready to use for solving problems.</p>
+
+    <h3>Handling Missing Data (Like Missing Puzzle Pieces)</h3>
+    <p>Imagine you’re putting together a puzzle, and some pieces are missing. How do you handle that? pandas gives you two options:</p>
+    <ul>
+        <li><strong>Filling Missing Data:</strong> Sometimes, you can fill in the missing pieces, like guessing someone's age using the average of others.</li>
+        <li><strong>Dropping Missing Data:</strong> You can also choose to remove the missing data.</li>
+    </ul>
+
+    <h3>Removing Duplicates and Data Errors (Fixing Mistakes)</h3>
+    <p>If your data has repeated information, pandas can help you remove duplicates to keep it accurate. Also, pandas can help you fix data errors, like correcting misspelled numbers.</p>
+
+    <h3>Data Type Conversions (Putting Things in the Right Box)</h3>
+    <p>pandas helps you ensure that data is in the right box—numbers, dates, and text should all be treated properly for accurate analysis.</p>
+
+    <h3>String Manipulation and Regex-Based Cleaning (Fixing Words)</h3>
+    <p>pandas also helps you clean up messy text data, like removing spaces or correcting capitalization using string manipulation and regex-based cleaning.</p>
+
+    <h3>Working with Categorical Data and Factorizing (Grouping Things)</h3>
+    <p>pandas helps organize categories of data (like colors or age groups) into a more manageable format and can also factorize them into numbers for easier processing.</p>
+
+    <div class="summary">
+        <p><strong>In short:</strong> Chapter 3 focuses on making sure your data is clean, well-organized, and ready for analysis by fixing errors, handling missing data, and categorizing information properly.</p>
+    </div>
+</div>
+
+<div class="chapter">
+    <h2>Chapter 4: Data Wrangling: Combining and Reshaping Datasets</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Merging, joining, concatenating, and reshaping data.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Merging and joining multiple DataFrames with pandas (inner, outer, left, and right joins).</li>
+            <li>Concatenating DataFrames along rows or columns.</li>
+            <li>Pivot tables and reshaping data (using melt, pivot, and stack methods).</li>
+            <li>Grouping data with groupby() and performing aggregate operations (sum, mean, count).</li>
+        </ul>
+    </div>
+
+    <h3>What is Data Wrangling?</h3>
+    <p>Data wrangling is like sorting, organizing, and connecting all the pieces of data you have. You might have lots of different tables or lists, and you need to put them together to make sense of everything. This chapter shows you how to do that!</p>
+
+    <h3>Merging and Joining Data (Putting Pieces Together)</h3>
+    <p>Imagine you have two separate puzzles—one with the names of people and their ages, and another with their favorite toys. You want to join them together into one big puzzle where each person has both their age and favorite toy next to their name.</p>
+    <ul>
+        <li><strong>Inner Join:</strong> Only keep the people who appear in both puzzles.</li>
+        <li><strong>Outer Join:</strong> Keep everyone, even if they don’t appear in both puzzles.</li>
+        <li><strong>Left Join:</strong> Start with the first puzzle and add matching data from the second.</li>
+        <li><strong>Right Join:</strong> Start with the second puzzle and add matching data from the first.</li>
+    </ul>
+
+    <h3>Concatenating Data (Sticking Things Together)</h3>
+    <p>What if you want to stick your puzzles together, like adding more rows or columns?</p>
+    <ul>
+        <li><strong>Concatenating along Rows:</strong> Stack your lists (like adding more rows of data).</li>
+        <li><strong>Concatenating along Columns:</strong> Stick data side by side, like adding more columns.</li>
+    </ul>
+
+    <h3>Pivot Tables and Reshaping Data (Turning Data Into New Shapes)</h3>
+    <ul>
+        <li><strong>Pivot Tables:</strong> Organize data into a table that makes it easier to analyze, like switching rows for columns.</li>
+        <li><strong>Melt:</strong> Simplify a table by reducing the number of columns, making it easier to work with.</li>
+        <li><strong>Stack:</strong> Convert a table into a taller format, better suited for vertical data organization.</li>
+    </ul>
+
+    <h3>Grouping Data with groupby() (Sorting Into Baskets)</h3>
+    <p>Imagine you want to group your data. For example, you could group by people’s favorite toys and then calculate things like the average age of people who like each toy. The <code>groupby()</code> method helps with that!</p>
+    <ul>
+        <li><strong>groupby():</strong> Sort data into categories (like “people who like toy cars” or “people who like dolls”) and calculate summary statistics for each group.</li>
+    </ul>
+
+    <div class="summary">
+        <p><strong>In short:</strong> Chapter 4 teaches you how to combine, reshape, and group data so it makes more sense and is easier to analyze. It’s like putting all the pieces of a puzzle together!</p>
+    </div>
+</div>
+
+<!-- Chapter 5 -->
+<div class="chapter">
+    <h2>Chapter 5: Plotting and Visualization with Matplotlib</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Visualizing data using Matplotlib.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Introduction to Matplotlib and basic plotting.</li>
+            <li>Customizing plots (e.g., titles, axis labels, legends).</li>
+            <li>Working with subplots and multiple figures.</li>
+            <li>Plot types: line, scatter, bar, histogram, etc.</li>
+            <li>Working with dates on the x-axis and other time-related plotting features.</li>
+        </ul>
+    </div>
+
+    <h3>What is Matplotlib?</h3>
+    <p>Matplotlib is like a magic paintbrush that lets you draw all kinds of pictures and graphs from your data! Instead of looking at raw numbers, Matplotlib helps you turn them into colorful visuals that are easier to understand.</p>
+
+    <h3>Basic Plotting (Drawing Your First Picture)</h3>
+    <p>Imagine you have some numbers, like how many candies you ate each day for a week. With Matplotlib, you can turn those numbers into a line or a bar on a graph, making it much easier to see how your candy-eating changed from day to day!</p>
+    <ul>
+        <li><strong>Line Plot:</strong> Shows changes over time by connecting data points with a line.</li>
+        <li><strong>Bar Chart:</strong> Displays quantities as bars, making it easy to compare values.</li>
+    </ul>
+
+    <h3>Customizing Your Plots (Making It Look Pretty)</h3>
+    <ul>
+        <li><strong>Titles:</strong> Add a title to explain what your plot is showing.</li>
+        <li><strong>Axis Labels:</strong> Label the axes to show what each side represents (e.g., days of the week, amount of candies).</li>
+        <li><strong>Legends:</strong> Add a legend to explain what each line or bar represents if you have multiple datasets.</li>
+    </ul>
+
+    <h3>Working with Subplots and Multiple Figures (Making More Than One Plot)</h3>
+    <p>If you want to display several plots on one page, you can use subplots to show multiple plots together.</p>
+    <ul>
+        <li><strong>Subplots:</strong> Show multiple plots in a grid on the same page.</li>
+        <li><strong>Multiple Figures:</strong> Create more than one figure to display different sets of data.</li>
+    </ul>
+
+    <h3>Plot Types: Line, Scatter, Bar, Histogram, etc.</h3>
+    <ul>
+        <li><strong>Line Plot:</strong> Useful for showing trends over time.</li>
+        <li><strong>Scatter Plot:</strong> Great for showing relationships between two variables.</li>
+        <li><strong>Bar Plot:</strong> Good for comparing quantities.</li>
+        <li><strong>Histogram:</strong> Useful for showing distributions of data.</li>
+    </ul>
+
+    <h3>Working with Dates on the x-Axis (Drawing with Time)</h3>
+    <p>If you have time-related data, like temperatures over a month, you can plot dates on the x-axis to visualize changes over time.</p>
+
+    <div class="summary">
+        <p><strong>In short:</strong> Chapter 5 introduces you to Matplotlib, a powerful tool for turning numbers into meaningful, easy-to-understand visuals like line plots, bar charts, and more!</p>
+    </div>
+</div>
+ <!-- Chapter 6 -->
+ <div class="chapter">
+    <h2>Chapter 6: Data Aggregation and Group Operations</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Advanced aggregation techniques and grouping data.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>groupby operations and applying aggregation functions like sum, mean, etc.</li>
+            <li>Handling multi-indexed data for more complex aggregations.</li>
+            <li>Using pivot_table and crosstab for aggregation tasks.</li>
+            <li>Using apply(), map(), and agg() for custom aggregations.</li>
+        </ul>
+    </div>
+
+    <h3>Grouping Data with groupby() (Sorting into Categories)</h3>
+    <p>Think of <code>groupby()</code> as a way to sort things into categories. You can group toys by their type, or you can group people by their age or favorite color. Once you’ve grouped things, you can perform calculations on each group to understand them better.</p>
+    <p>For example, if you have a list of toys and their prices, you can use <code>groupby()</code> to group them by type (like cars, dolls, etc.), and then calculate the sum or average price for each group.</p>
+    <ul>
+        <li><strong>sum():</strong> Adds up all the values in each group (e.g., total price of all cars).</li>
+        <li><strong>mean():</strong> Finds the average value in each group (e.g., average price of toys in each category).</li>
+        <li><strong>count():</strong> Tells you how many items are in each group.</li>
+    </ul>
+
+    <h3>Handling Multi-Indexed Data (More Complex Groupings)</h3>
+    <p>Sometimes, you want to group things by more than one attribute, like grouping toys by both their type and their color. This is called multi-indexing.</p>
+    <p>A multi-index allows you to group data by more than one attribute, like toy type and color within each type. Once your data is multi-indexed, you can still apply aggregation functions, like <code>sum()</code> or <code>mean()</code>, but they will work across both categories!</p>
+
+    <h3>Using pivot_table() and crosstab() for Aggregation Tasks</h3>
+    <p>Sometimes, you want to create a well-organized table that shows your grouped data in an easily digestible format. Pivot tables and crosstabs are helpful for this.</p>
+    <ul>
+        <li><strong>pivot_table():</strong> Creates a summary table where you can see the sums, averages, or counts for different groups of data. For example, if you wanted to know the average price of toys in each category (e.g., cars, dolls) and for each color, you can use <code>pivot_table()</code> to organize the data into a grid.</li>
+        <li><strong>crosstab():</strong> Helps compare two or more variables to show how they relate to each other. For instance, you can use <code>crosstab()</code> to see how many toys of each color are in each category (e.g., how many red cars, how many blue dolls).</li>
+    </ul>
+
+    <h3>Custom Aggregations with apply(), map(), and agg()</h3>
+    <p>Sometimes, the standard aggregation functions like <code>sum()</code> or <code>mean()</code> aren’t enough, and you want to apply your own custom calculations. That's where <code>apply()</code>, <code>map()</code>, and <code>agg()</code> come in!</p>
+    <ul>
+        <li><strong>apply():</strong> Lets you apply any function to each item in a group. For example, if you have a list of toy prices and you want to double the price of each toy, you can use <code>apply()</code> to modify the data.</li>
+        <li><strong>map():</strong> Applies a function to each individual item, not the entire group. For instance, if you have a list of toy names and want to add a special prefix like "Super" to each name, you can use <code>map()</code>.</li>
+        <li><strong>agg():</strong> Allows you to apply different functions (e.g., <code>sum()</code>, <code>mean()</code>, <code>max()</code>) to different columns simultaneously. For example, you can use <code>agg()</code> to calculate the total price and the average weight of toys in each group at once.</li>
+    </ul>
+
+    <div class="summary">
+        <p><strong>In short:</strong> Chapter 6 covers how to group data, perform aggregation operations, and apply custom functions. You’ll learn to use <code>groupby()</code>, multi-indexing, pivot tables, and custom aggregation functions to better analyze and summarize your data.</p>
+    </div>
+</div>
+
+<!-- Chapter 7 -->
+<div class="chapter">
+    <h2>Chapter 7: Time Series Data</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Working with time-series data in Python.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Introduction to pandas' <code>DatetimeIndex</code> and <code>Timedelta</code>.</li>
+            <li>Resampling time-series data (e.g., converting data to different time frequencies).</li>
+            <li>Time-shifting operations like forward and backward shifts.</li>
+            <li>Working with time zones, date offsets, and frequency conversions.</li>
+            <li>Handling missing or irregular time-series data.</li>
+        </ul>
+    </div>
+
+    <h3>What is Time Series Data?</h3>
+    <p>Time series data refers to information that is connected to specific times. Examples include:</p>
+    <ul>
+        <li>How much ice cream you ate on different days.</li>
+        <li>The temperature each day for a month.</li>
+        <li>Your height measured every year.</li>
+    </ul>
+
+    <h3>Introduction to pandas’ <code>DatetimeIndex</code> and <code>Timedelta</code></h3>
+    <p>pandas provides special tools to handle dates and times:</p>
+    <ul>
+        <li><strong>DatetimeIndex:</strong> Helps pandas understand which dates and times each piece of data is tied to. For example, if you have data for ice cream consumption on January 1st, 2nd, and 3rd, pandas will remember these dates using <code>DatetimeIndex</code>.</li>
+        <li><strong>Timedelta:</strong> Helps calculate the difference between two dates. For example, if you want to find the number of days between January 1st and January 10th, pandas uses <code>Timedelta</code> to compute this.</li>
+    </ul>
+
+    <h3>Resampling Time-Series Data (Changing the Time Frequency)</h3>
+    <p>Resampling allows you to change the frequency of your data. For instance, if you have data collected every hour, you can resample it to show daily or monthly averages.</p>
+    <ul>
+        <li><strong>Resampling:</strong> Converts data from one frequency to another, like turning hourly data into daily data by calculating averages.</li>
+    </ul>
+
+    <h3>Time-Shifting Operations (Moving Time Forward or Backward)</h3>
+    <p>Time-shifting means you can move your data forward to see future trends, or shift it backward to compare with previous values.</p>
+    <ul>
+        <li><strong>Time-shifting:</strong> Lets you shift data forward or backward in time. For example, you could compare today's ice cream consumption with yesterday's by shifting the data forward.</li>
+    </ul>
+
+    <h3>Working with Time Zones, Date Offsets, and Frequency Conversions</h3>
+    <ul>
+        <li><strong>Time Zones:</strong> pandas helps convert data between different time zones, such as comparing data from New York and London.</li>
+        <li><strong>Date Offsets:</strong> Lets you shift data by a specific amount of time, like moving 5 days forward or 2 months backward.</li>
+        <li><strong>Frequency Conversions:</strong> If your data is recorded at one frequency (like daily) but you need it in another frequency (like monthly), pandas can convert it.</li>
+    </ul>
+
+    <h3>Handling Missing or Irregular Time-Series Data</h3>
+    <p>Missing or irregular time-series data is common. pandas provides tools to handle this:</p>
+    <ul>
+        <li><strong>Handling Missing Data:</strong> pandas can fill in missing values or exclude them, allowing you to continue your analysis.</li>
+        <li><strong>Irregular Time Data:</strong> If your data is irregularly spaced (e.g., every third day), pandas can help organize and make sense of it.</li>
+    </ul>
+
+    <div class="summary">
+        <p><strong>In short:</strong> Chapter 7 introduces tools to handle time-series data, including <code>DatetimeIndex</code>, <code>Timedelta</code>, resampling, time-shifting, and dealing with time zones. You’ll also learn to handle missing or irregular data, making time-based analysis much easier!</p>
+    </div>
+</div>
+
+ <!-- Chapter 8 -->
+ <div class="chapter">
+    <h2>Chapter 8: Advanced Pandas Features</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>More advanced pandas functionalities for complex tasks.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>MultiIndex for working with hierarchically indexed data.</li>
+            <li>Performance optimization techniques with pandas.</li>
+            <li>Customizing pandas behavior through options and settings.</li>
+            <li>Complex merging and joining scenarios.</li>
+            <li>Techniques for handling large datasets efficiently.</li>
+        </ul>
+    </div>
+
+    <h3>MultiIndex for Hierarchically Indexed Data (Super Organizing!)</h3>
+    <p>Imagine you have a giant toy collection, but you want to sort your toys into two levels of categories. First, you might group them by toy type (like cars, dolls, trucks), and then within each group, you want to organize them by color (like red cars, blue cars, pink dolls, etc.).</p>
+    <p><strong>MultiIndex</strong> helps you create two layers of organization. So, you could have a hierarchy, where the first level is the type of toy (cars, dolls), and the second level is the color. It’s like creating a toy folder that has subfolders inside of it!</p>
+    <p>With MultiIndex, pandas can easily handle this two-level sorting and let you work with both levels of data at the same time.</p>
+
+    <h3>Performance Optimization (Making Pandas Run Faster)</h3>
+    <p>Now, imagine you have so many toys, and it’s taking forever to count and organize them all. You wouldn’t want to wait all day, right? Sometimes, pandas can get slow if there’s a lot of data. This section shows you how to make pandas work faster.</p>
+    <ul>
+        <li>Reduce the amount of data you’re working with—only select the toys you want to analyze.</li>
+        <li>Change how pandas stores your data to make it quicker to read and process.</li>
+        <li>Use specialized pandas tools optimized for speed.</li>
+    </ul>
+
+    <h3>Customizing Pandas Behavior (Making It Work Just the Way You Like)</h3>
+    <p>Pandas is awesome, but sometimes you want it to behave in a way that fits you perfectly. This part of the chapter shows you how to change settings so pandas does exactly what you need.</p>
+    <ul>
+        <li>Customize how pandas displays data, what happens when it encounters missing values, or how it handles errors. It's like having a pandas remote control to change how it works!</li>
+        <li>For example, if pandas normally shows all columns, you can change the setting so it only shows the ones you care about.</li>
+    </ul>
+
+    <h3>Complex Merging and Joining Scenarios (Super Connecting!)</h3>
+    <p>Sometimes, you need to combine or merge data from many different places, but things can get a little tricky when the data doesn’t match up perfectly.</p>
+    <p>This section shows you how to handle complex merging scenarios. Let’s say you have two different puzzle pieces, but one has extra pieces that don’t match. You can still merge them in a way that makes sense and keeps the good pieces.</p>
+    <ul>
+        <li>Learn different types of joins (like inner, outer, and left joins) to combine data, even when they don’t match perfectly.</li>
+        <li>It’s like combining two jigsaw puzzles, but being careful about which pieces fit together.</li>
+    </ul>
+
+    <h3>Techniques for Handling Large Datasets Efficiently (Tackling Big Problems)</h3>
+    <p>Now, what if your toy collection grew super huge—like, thousands of toys or even millions? If pandas has to look at every single toy one by one, it might take forever! This part shows you how to handle huge amounts of data without making pandas get overwhelmed.</p>
+    <ul>
+        <li>Chunk your data into smaller pieces so pandas doesn’t try to look at everything at once.</li>
+        <li>Store the data more efficiently so pandas doesn’t waste too much memory.</li>
+        <li>Use parallel processing (working on many pieces of data at once) to make pandas faster with big datasets.</li>
+    </ul>
+
+    <div class="summary">
+        <p><strong>Summary:</strong></p>
+        <ul>
+            <li><strong>MultiIndex:</strong> Helps you create two layers of organization for your data—like sorting toys by type and color.</li>
+            <li><strong>Performance Optimization:</strong> Makes pandas work faster by reducing the amount of data or using special tricks for speed.</li>
+            <li><strong>Customizing Pandas:</strong> Lets you change pandas' behavior so it works just the way you want—like setting your own rules.</li>
+            <li><strong>Complex Merging and Joining:</strong> Helps you connect data from different places, even if it doesn’t match perfectly.</li>
+            <li><strong>Handling Large Datasets:</strong> Shows you how to work with big data by breaking it into smaller pieces, storing it smarter, and using helpers to make pandas faster.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Chapter 9 -->
+<div class="chapter">
+    <h2>Chapter 9: Working with Data from Web and APIs</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Extracting data from external sources.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Working with APIs to gather data (e.g., using the requests library).</li>
+            <li>Parsing JSON and XML data.</li>
+            <li>Scraping web data using libraries like BeautifulSoup.</li>
+            <li>Processing data from web sources and importing into pandas DataFrames.</li>
+        </ul>
+    </div>
+
+    <h3>What is Web Data?</h3>
+    <p>Imagine you want to know the weather in your city, or you want to find out the latest news. Instead of looking it up yourself, you can ask a computer (called an API) to get that information for you from websites or other services on the internet. In this chapter, you’re learning how to get this information into your Python program, so you can play with it or analyze it.</p>
+
+    <h3>What is an API?</h3>
+    <p>Think of an API (Application Programming Interface) like a waiter in a restaurant. You tell the waiter what food you want, and they go to the kitchen and bring it back to you. Similarly, an API is like a waiter that takes your request for information from the web and brings it back to you in a special format, like JSON or XML.</p>
+
+    <h3>Key Points from the Chapter:</h3>
+    <h4>1. Working with APIs (requests library)</h4>
+    <p>When you want to get information from a website using Python, you use something called the <strong>requests library</strong>. This library lets your program "talk" to the web, ask for data, and then get that data back in a format you can work with.</p>
+    <pre>
+import requests
+
+response = requests.get("https://api.weather.com/v1/forecast")  # Asking for weather data
+data = response.json()  # Getting the data back as JSON
+    </pre>
+
+    <h4>2. Parsing JSON and XML Data</h4>
+    <p>When the API sends back data, it often uses something called JSON (JavaScript Object Notation) or XML (eXtensible Markup Language). These are just ways to organize and send data, like organizing toys in boxes.</p>
+    <pre>
+{
+"temperature": 22,
+"condition": "Sunny"
+}
+    </pre>
+    <pre>
+<weather>
+<temperature>22</temperature>
+<condition>Sunny</condition>
+</weather>
+    </pre>
+
+    <h4>3. Scraping Web Data (BeautifulSoup)</h4>
+    <p>Sometimes, the data you need isn’t available via an API, but it’s still on a website. Scraping is like sending a robot to a website to grab the data for you.</p>
+    <pre>
+from bs4 import BeautifulSoup
+import requests
+
+# Grab the webpage
+response = requests.get("https://example.com")
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Find all the links on the page
+links = soup.find_all('a')
+
+# Print each link
+for link in links:
+print(link.get('href'))
+    </pre>
+
+    <h4>4. Processing Data with pandas</h4>
+    <p>Once you have the data, you often want to work with it in a more organized way. One of the best tools for that is pandas, a Python library that lets you store and manipulate data in something called a DataFrame (like a fancy table).</p>
+    <pre>
+import pandas as pd
+
+# Imagine 'data' is a dictionary you got from an API
+data = {
+'Date': ['2025-01-01', '2025-01-02'],
+'Temperature': [22, 23],
+'Condition': ['Sunny', 'Cloudy']
+}
+
+# Create a DataFrame (a table) from the data
+df = pd.DataFrame(data)
+
+# Now you can work with the data, like printing it:
+print(df)
+    </pre>
+
+    <div class="summary">
+        <p><strong>Summary:</strong></p>
+        <ul>
+            <li><strong>API:</strong> A way for your Python program to talk to the web and ask for data.</li>
+            <li><strong>requests:</strong> A Python tool that lets you ask for data from the web.</li>
+            <li><strong>JSON/XML:</strong> Formats used to organize and send data back from the web.</li>
+            <li><strong>BeautifulSoup:</strong> A tool to grab data from web pages when you can’t use an API.</li>
+            <li><strong>pandas:</strong> A Python tool to organize and work with the data you get into neat tables.</li>
+        </ul>
+    </div>
+</div>
+
+ <!-- Chapter 10 -->
+ <div class="chapter">
+    <h2>Chapter 10: Data Analysis with NumPy</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Performing numerical operations and analysis with NumPy.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Introduction to NumPy arrays and basic operations.</li>
+            <li>Linear algebra operations using NumPy (dot products, matrix multiplication).</li>
+            <li>Random number generation and statistical functions in NumPy.</li>
+            <li>Broadcasting in NumPy (performing operations on arrays of different shapes).</li>
+        </ul>
+    </div>
+
+    <h3>What is NumPy?</h3>
+    <p>Imagine you have a bunch of numbers, like scores in a game, prices of toys, or temperatures in different cities. You might want to do math with those numbers, like adding them, multiplying them, or even finding averages. NumPy is a tool (a library) that helps you work with lots of numbers really fast and in smart ways.</p>
+    <p>It helps you do things like adding up big lists of numbers, working with tables of numbers, and even doing math with more complex shapes, like grids or 3D cubes!</p>
+
+    <h3>1. Introduction to NumPy Arrays and Basic Operations</h3>
+    <p>A NumPy array is like a list or a row of numbers, but it’s much more powerful. Let’s say you have a list of numbers:</p>
+    <pre> [1, 2, 3, 4] </pre>
+    <p>In Python, you can use this list for math, but NumPy lets you do much more, faster and easier. It turns your list into a special NumPy array, which can handle math operations like addition or multiplication more efficiently.</p>
+    <h4>Example of creating a NumPy array:</h4>
+    <pre>
+import numpy as np
+arr = np.array([1, 2, 3, 4])
+print(arr)
+    </pre>
+    <p>Output:</p>
+    <pre> [1 2 3 4] </pre>
+    <p>Now, you can do things like add numbers to all elements in the array at once:</p>
+    <pre> arr + 2 </pre>
+    <p>Output:</p>
+    <pre> [3 4 5 6] </pre>
+    <p>You can also do other operations like multiplication, subtraction, or finding the average, all using simple commands.</p>
+
+    <h3>2. Linear Algebra Operations (Dot Products, Matrix Multiplication)</h3>
+    <p>Linear algebra is just a fancy way of talking about operations with vectors (which are lists of numbers) and matrices (which are like grids or tables of numbers). NumPy makes this really easy!</p>
+    
+    <h4>Dot Product:</h4>
+    <p>It’s like multiplying two lists together, but in a special way. Let’s say you have two lists (or arrays): </p>
+    <pre>
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+    </pre>
+    <p>The dot product of <code>a</code> and <code>b</code> looks like this:</p>
+    <pre> np.dot(a, b) </pre>
+    <p>Result:</p>
+    <pre> 32 </pre>
+    <p>This happens because:</p>
+    <ul>
+        <li>1 * 4 = 4</li>
+        <li>2 * 5 = 10</li>
+        <li>3 * 6 = 18</li>
+    </ul>
+    <p>Then, NumPy adds the results: <code>4 + 10 + 18 = 32</code>.</p>
+
+    <h4>Matrix Multiplication:</h4>
+    <p>If you have two tables of numbers (matrices), NumPy can multiply them in a smart way. For example:</p>
+    <pre>
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+np.dot(A, B)
+    </pre>
+
+    <h3>3. Random Number Generation and Statistical Functions in NumPy</h3>
+    <p>Sometimes, you need to generate random numbers for things like simulations, games, or tests. NumPy can help you generate random numbers:</p>
+    <pre> random_numbers = np.random.randint(1, 11, size=5) </pre>
+    <p>This will give you five random numbers between 1 and 10.</p>
+    <h4>Statistical Operations:</h4>
+    <ul>
+        <li><strong>Mean (average):</strong> The average of all your numbers: <code>np.mean(arr)</code></li>
+        <li><strong>Sum:</strong> Adding up all the numbers: <code>np.sum(arr)</code></li>
+        <li><strong>Standard Deviation:</strong> How spread out your numbers are: <code>np.std(arr)</code></li>
+    </ul>
+
+    <h3>4. Broadcasting in NumPy (Working with Different Shapes)</h3>
+    <p>Broadcasting is a cool feature in NumPy that lets you do math with arrays that have different shapes, even if they don’t match exactly. For example:</p>
+    <pre>
+arr1 = np.array([1, 2, 3, 4])
+arr2 = 10
+arr1 + arr2
+    </pre>
+    <p>Result:</p>
+    <pre> [11 12 13 14] </pre>
+    <p>Even though <code>arr2</code> was just a single number, NumPy automatically adds it to all the numbers in <code>arr1</code>!</p>
+
+    <div class="summary">
+        <p><strong>Summary:</strong></p>
+        <ul>
+            <li><strong>NumPy Arrays:</strong> Like special lists of numbers that let you do math super fast.</li>
+            <li><strong>Dot Product & Matrix Multiplication:</strong> NumPy helps you do special math with lists (vectors) and tables (matrices) of numbers.</li>
+            <li><strong>Random Numbers & Statistics:</strong> You can generate random numbers and easily calculate things like averages or sums.</li>
+            <li><strong>Broadcasting:</strong> You can do math on arrays of different sizes and NumPy will automatically make it work.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Chapter 11 -->
+<div class="chapter">
+    <h2>Chapter 11: Machine Learning with pandas and scikit-learn</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Introduction to machine learning workflows with pandas and scikit-learn.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Using pandas for preparing data for machine learning models.</li>
+            <li>Introduction to scikit-learn and creating simple machine learning models.</li>
+            <li>Data preprocessing techniques (scaling, encoding).</li>
+            <li>Model evaluation techniques: cross-validation, confusion matrix, etc.</li>
+        </ul>
+    </div>
+
+    <h3>What is Machine Learning?</h3>
+    <p>Imagine you have a robot, and you want it to get better at something, like recognizing pictures of cats and dogs. Instead of telling the robot exactly what a cat or dog looks like, you show it lots of pictures of cats and dogs. Over time, the robot learns from these pictures, and it gets better at guessing if a new picture is a cat or a dog.</p>
+    <p>Machine learning is like teaching a computer to learn from data (like pictures, numbers, or words) and make decisions based on that data, just like how you learn from experience!</p>
+
+    <h3>1. Using pandas for Preparing Data for Machine Learning Models</h3>
+    <p>Before you teach a computer using machine learning, you need to make sure your data is clean and ready. This is where pandas comes in!</p>
+    <pre>
+import pandas as pd
+data = pd.DataFrame({
+'age': [25, 30, 35, 40, 45],
+'likes_pizza': ['yes', 'no', 'yes', 'yes', 'no']
+})
+
+data['likes_pizza'] = data['likes_pizza'].map({'yes': 1, 'no': 0})
+print(data)
+    </pre>
+
+    <h3>2. Introduction to scikit-learn and Creating Simple Machine Learning Models</h3>
+    <p>Once your data is ready, you can use scikit-learn to create machine learning models. Here's how you can do it:</p>
+    <pre>
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+X = data[['age']]
+y = data['likes_pizza']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+model = LogisticRegression()
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+print(predictions)
+    </pre>
+
+    <h3>3. Data Preprocessing Techniques (Scaling, Encoding)</h3>
+    <p>Before you feed the data into the model, you often need to do some special steps to get it ready.</p>
+    <h4>Scaling:</h4>
+    <pre> from sklearn.preprocessing import StandardScaler </pre>
+    <pre> scaler = StandardScaler() </pre>
+    <pre> X_scaled = scaler.fit_transform(X) </pre>
+
+    <h4>Encoding:</h4>
+    <pre> from sklearn.preprocessing import LabelEncoder </pre>
+    <pre> encoder = LabelEncoder() </pre>
+    <pre> y_encoded = encoder.fit_transform(y) </pre>
+
+    <h3>4. Model Evaluation Techniques (Cross-validation, Confusion Matrix)</h3>
+    <h4>Cross-validation:</h4>
+    <pre>
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(model, X, y, cv=5)
+print(scores)
+    </pre>
+
+    <h4>Confusion Matrix:</h4>
+    <pre>
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, predictions)
+print(cm)
+    </pre>
+
+    <div class="summary">
+        <p><strong>Summary:</strong></p>
+        <ul>
+            <li><strong>pandas:</strong> Helps you organize and clean your data so it’s ready for machine learning.</li>
+            <li><strong>scikit-learn:</strong> A toolkit for building machine learning models that can learn from data and make predictions.</li>
+            <li><strong>Preprocessing:</strong> Steps like scaling numbers and encoding words help get the data ready for the model.</li>
+            <li><strong>Model Evaluation:</strong> Tools like cross-validation and confusion matrices help you check how good your model is.</li>
+        </ul>
+    </div>
+</div>
+
+ <!-- Chapter 12 -->
+ <div class="chapter">
+    <h2>Chapter 12: Working with Large Datasets</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Techniques for handling large datasets efficiently.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Strategies for reading and processing large datasets (using chunksize, Dask, etc.).</li>
+            <li>Memory management when working with large datasets.</li>
+            <li>Optimizing pandas operations for speed and memory use.</li>
+            <li>Using HDF5, Parquet, and other formats for handling large datasets.</li>
+        </ul>
+    </div>
+
+    <h3>What are Large Datasets?</h3>
+    <p>Imagine you have a huge box full of toy cars. You want to find a specific red car, but instead of looking through the entire box at once, it’s better to go through it one small handful at a time. Working with large datasets is a bit like that — you can’t always look at everything all at once because it’s too big or too slow. So, you need to use smart ways to handle big boxes of data!</p>
+
+    <h3>1. Strategies for Reading and Processing Large Datasets (Using Chunksize, Dask, etc.)</h3>
+    <p>When you have a large dataset, it’s like having a giant table with millions of rows. If you try to load the entire table into your computer’s memory, it could crash or take forever. Instead, you can read it in chunks, like reading a few pages of a book at a time.</p>
+    <h4>Using Chunksize:</h4>
+    <p>Imagine if you have a huge book and instead of reading the whole thing at once, you read just 10 pages at a time. This helps you not get overwhelmed or slow down the system. In Python, pandas has a chunksize option that helps you do this with data.</p>
+    <pre>
+import pandas as pd
+
+# Reading a big file in chunks
+chunk_size = 1000  # Read 1000 rows at a time
+for chunk in pd.read_csv('big_data.csv', chunksize=chunk_size):
+# Process each chunk (part of the big dataset)
+print(chunk.head())  # Just print the first few rows of each chunk
+    </pre>
+    <p>This reads the data in small pieces, so your computer doesn’t get overloaded!</p>
+
+    <h4>Using Dask:</h4>
+    <p>Dask is another tool that works like pandas but is designed to handle super-big data. It splits the data up into many smaller parts and works on them in parallel (like having many helpers doing the work at the same time).</p>
+    <pre>
+import dask.dataframe as dd
+
+# Dask helps you read large files like pandas but handles big data efficiently
+df = dd.read_csv('big_data.csv')
+    </pre>
+    <p>This way, Dask can handle large files without slowing things down!</p>
+
+    <h3>2. Memory Management When Working with Large Datasets</h3>
+    <p>When you work with big data, your computer’s memory (its RAM) might run out if you’re not careful. It’s like trying to put too many toys into a small box — eventually, things spill out!</p>
+    <p>You can manage memory by being smart about what data you keep in memory at any time. For example:</p>
+    <h4>Use Smaller Data Types:</h4>
+    <p>When pandas reads a file, it automatically chooses the best memory format for the data. But you can help by choosing smaller memory formats if you know your data doesn’t need big numbers.</p>
+    <pre>
+# When reading a CSV, you can specify smaller types to save memory
+dtype = {'column_name': 'int8'}
+df = pd.read_csv('big_data.csv', dtype=dtype)
+    </pre>
+    <p>This helps your computer use less memory, so it doesn’t run out of space!</p>
+
+    <h3>3. Optimizing pandas Operations for Speed and Memory Use</h3>
+    <p>Sometimes, pandas can take too long or use too much memory when you try to work with large datasets. There are a few tricks to make it faster and more efficient:</p>
+    <h4>Use Vectorized Operations:</h4>
+    <p>When you work with pandas, try to use pandas built-in functions instead of loops. For example, instead of looping through rows to add numbers, you can let pandas do the work for you, which is much faster.</p>
+    <pre>
+# Instead of a loop, use pandas' built-in methods
+df['new_column'] = df['column1'] + df['column2']
+    </pre>
+    <p>This is much faster than adding the numbers one by one with a loop!</p>
+
+    <h4>Avoid Copying Data:</h4>
+    <p>Each time you copy a dataset, you use more memory. Instead of copying, try to modify the data in place.</p>
+    <pre>
+# Instead of df = df * 2, do this:
+df *= 2  # This avoids creating a new copy
+    </pre>
+
+    <h3>4. Using HDF5, Parquet, and Other Formats for Handling Large Datasets</h3>
+    <p>When saving or loading large datasets, the format you use is important because some formats take up less space and load faster.</p>
+    <h4>HDF5:</h4>
+    <p>This format is like a very organized box where you can store huge amounts of data in a way that is easy to access later. It's like a filing cabinet where you can store many files, but it’s still easy to grab the file you need quickly.</p>
+    <pre>
+# Saving to HDF5
+df.to_hdf('data.h5', 'my_data')
+
+# Reading from HDF5
+df = pd.read_hdf('data.h5', 'my_data')
+    </pre>
+
+    <h4>Parquet:</h4>
+    <p>This is another super-efficient format, especially for big datasets. It helps store data in a way that makes it much faster to read and use less space.</p>
+    <pre>
+# Saving to Parquet
+df.to_parquet('data.parquet')
+
+# Reading from Parquet
+df = pd.read_parquet('data.parquet')
+    </pre>
+    <p>These formats (HDF5 and Parquet) are great for handling large datasets because they help save space and make the process faster, like keeping all your toys neatly organized in smaller boxes.</p>
+
+    <div class="summary">
+        <p><strong>Summary:</strong></p>
+        <ul>
+            <li><strong>Chunking:</strong> Break big datasets into smaller pieces to process them step by step.</li>
+            <li><strong>Dask:</strong> A tool to handle huge datasets by splitting them up and working on many parts at once.</li>
+            <li><strong>Memory Management:</strong> Be smart about how much memory you use, by choosing smaller data types and avoiding unnecessary copies.</li>
+            <li><strong>Optimizing Operations:</strong> Use pandas' built-in functions and avoid loops to make things faster.</li>
+            <li><strong>Efficient Formats:</strong> Save and read large datasets using formats like HDF5 and Parquet to make the process quicker and save space.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Chapter 13 -->
+<div class="chapter">
+    <h2>Chapter 13: Case Studies</h2>
+    <div class="key-concepts">
+        <h3>Key Concepts:</h3>
+        <p>Real-world examples and case studies.</p>
+    </div>
+    <div class="key-points">
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Walkthrough of case studies applying data analysis techniques.</li>
+            <li>Analysis of financial data, cleaning data, and preparing it for visualization.</li>
+            <li>Time series analysis and forecasting.</li>
+        </ul>
+    </div>
+
+    <h3>Case Study 1: Analyzing Financial Data</h3>
+    <p><strong>Scenario:</strong> You have data from a stock market, with information about daily stock prices. The goal is to analyze the data to understand trends and make predictions about future stock prices.</p>
+    <h4>Steps:</h4>
+    <ol>
+        <li><strong>Reading Data:</strong> Load the stock data from a file (like a CSV file) using pandas:</li>
+        <pre>
+import pandas as pd
+stock_data = pd.read_csv('stock_prices.csv')
+        </pre>
+        <li><strong>Cleaning the Data:</strong> Clean the data by checking for missing values or incorrect data:</li>
+        <pre>
+stock_data.isnull().sum()  # Check for missing data
+stock_data.dropna()  # Remove rows with missing values
+        </pre>
+        <li><strong>Exploratory Data Analysis (EDA):</strong> Start by looking at basic statistics and visualizing the data with plots:</li>
+        <pre>
+stock_data['close'].describe()  # Basic statistics for closing price
+stock_data['close'].plot()  # Plotting the closing prices over time
+        </pre>
+        <li><strong>Time Series Analysis:</strong> Focus on time series analysis:</li>
+        <pre>
+stock_data['date'] = pd.to_datetime(stock_data['date'])  # Convert to datetime
+stock_data.set_index('date', inplace=True)  # Set the date as the index
+stock_data['close'].plot()  # Plot the closing prices over time
+        </pre>
+        <li><strong>Moving Averages and Trends:</strong> Calculate moving averages:</li>
+        <pre>
+stock_data['20-day MA'] = stock_data['close'].rolling(window=20).mean()
+stock_data['50-day MA'] = stock_data['close'].rolling(window=50).mean()
+stock_data[['close', '20-day MA', '50-day MA']].plot()
+        </pre>
+        <li><strong>Forecasting:</strong> Use models like ARIMA to forecast future stock prices:</li>
+        <pre>
+from statsmodels.tsa.arima.model import ARIMA
+model = ARIMA(stock_data['close'], order=(5, 1, 0))
+model_fit = model.fit()
+forecast = model_fit.forecast(steps=10)  # Predict the next 10 days
+print(forecast)
+        </pre>
+    </ol>
+
+    <h3>Case Study 2: Analyzing Sales Data (Retail)</h3>
+    <p><strong>Scenario:</strong> You have a dataset with retail sales data for a store, and you want to understand patterns in sales, like the effect of promotions or holidays on sales performance.</p>
+    <h4>Steps:</h4>
+    <ol>
+        <li><strong>Reading and Cleaning Data:</strong> Load the data and clean it by removing or filling in missing values:</li>
+        <pre>
+sales_data = pd.read_csv('retail_sales.csv')
+sales_data.fillna(0, inplace=True)  # Fill missing sales data with 0
+        </pre>
+        <li><strong>Exploratory Data Analysis:</strong> Summarize the data and check for trends or outliers:</li>
+        <pre>
+sales_data.describe()  # Summary of the sales data
+sales_data['sales'].hist()  # Histogram of sales to see distribution
+        </pre>
+        <li><strong>Feature Engineering:</strong> Create new columns based on existing data, like categorizing sales into high or low sales:</li>
+        <pre>
+sales_data['high_sales'] = sales_data['sales'] > sales_data['sales'].median()
+        </pre>
+        <li><strong>Group By Analysis:</strong> Group the data by categories, such as store location or product type, to compare sales performance:</li>
+        <pre>
+sales_by_location = sales_data.groupby('store_location')['sales'].mean()
+print(sales_by_location)
+        </pre>
+        <li><strong>Visualization:</strong> Visualize how sales vary by region or during holidays:</li>
+        <pre>
+sales_data['date'] = pd.to_datetime(sales_data['date'])
+sales_data.set_index('date', inplace=True)
+sales_data.groupby(sales_data.index.month)['sales'].mean().plot()  # Average sales by month
+        </pre>
+        <li><strong>Correlation Analysis:</strong> Check for correlations between sales and other factors:</li>
+        <pre>
+sales_data.corr()  # Find correlations between sales and other factors
+        </pre>
+    </ol>
+
+    <h3>Case Study 3: Customer Segmentation (Marketing)</h3>
+    <p><strong>Scenario:</strong> You have a dataset with customer information, including their spending habits, and you want to group customers into segments to target them better with marketing.</p>
+    <h4>Steps:</h4>
+    <ol>
+        <li><strong>Data Loading and Cleaning:</strong> Load the customer data and handle missing values or incorrect formats:</li>
+        <pre>
+customer_data = pd.read_csv('customer_data.csv')
+customer_data.dropna(subset=['spending', 'age'], inplace=True)
+        </pre>
+        <li><strong>Feature Engineering:</strong> Create new features that help with segmentation, like age groups or customer loyalty scores:</li>
+        <pre>
+customer_data['age_group'] = pd.cut(customer_data['age'], bins=[0, 18, 30, 50, 100], labels=['Teen', 'Young Adult', 'Adult', 'Senior'])
+        </pre>
+        <li><strong>Clustering:</strong> Use k-means clustering to segment customers:</li>
+        <pre>
+from sklearn.cluster import KMeans
+X = customer_data[['spending', 'age']]  # Features for clustering
+kmeans = KMeans(n_clusters=3)
+customer_data['cluster'] = kmeans.fit_predict(X)
+        </pre>
+        <li><strong>Analyzing the Clusters:</strong> Analyze each group to understand the characteristics of different customer segments:</li>
+        <pre>
+print(customer_data.groupby('cluster').mean())  # Mean spending and age by cluster
+        </pre>
+        <li><strong>Visualization:</strong> Visualize the customer segments:</li>
+        <pre>
+import matplotlib.pyplot as plt
+plt.scatter(customer_data['spending'], customer_data['age'], c=customer_data['cluster'])
+plt.show()
+        </pre>
+    </ol>
+
+    <div class="summary">
+        <p><strong>Summary:</strong></p>
+        <ul>
+            <li><strong>Case Study 1:</strong> Stock market analysis using time series to understand trends and forecast future prices.</li>
+            <li><strong>Case Study 2:</strong> Retail sales analysis to explore patterns, like seasonal sales or effects of promotions.</li>
+            <li><strong>Case Study 3:</strong> Customer segmentation using clustering to group customers and tailor marketing efforts.</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<h3>DM Me If You Need The PDF of This File</h3>
+    <style>
+        /* Footer Styling */
+        footer {
+        background-color: #020c14;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer a {
+        color: white;
+        text-decoration: none;
+        margin-right: 15px;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    footer p {
+        font-size: 0.875rem;
+        margin-top: 10px;
+    }
+  </style>
+ 
+  <footer>
+    <nav>
+        <ul style="list-style-type: none; padding: 0; margin: 0;">
+            <li style="display: inline; margin-right: 15px;">
+                <a href="#contact">Contact Information</a>
+            </li>
+            <li style="display: inline; margin-right: 15px;">
+                <a href="#faqs">FAQs</a>
+            </li>
+            <li style="display: inline;">
+                <a href="#support">Support</a>
+            </li>
+        </ul>
+    </nav>
+    <p>&copy; 2024 Getser Surbakti. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
