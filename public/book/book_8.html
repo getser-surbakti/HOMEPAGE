@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> "Flask Web Development: Developing Web Applications with Python" by Miguel Grinberg</title>
+    <style>
+        header {
+            background-color: #030608;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        marquee {
+            color:red; 
+        }
+        h1 {
+            color: #eaee08;
+            text-align: center;
+        }
+        h2{
+            color: #0cb315;
+            text-align: center;
+        }
+        h3 {
+            text-align: center;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        .author {
+            text-align: center;
+        }
+        .code-block {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .chapter-title {
+            margin-top: 30px;
+            color: #2980b9;
+        }
+        .key-points {
+            margin-top: 10px;
+        }
+        .example {
+            background-color: #ecf0f1;
+            border-left: 5px solid #2980b9;
+            margin: 15px 0;
+            padding: 10px;
+        }
+        .example p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1> "Flask Web Development: Developing Web Applications with Python" </h1>
+    <p class="author">by Miguel Grinberg</p>
+    <marquee>Follow me on IG: @getsersurbakti</marquee>
+
+    <h3>Here's a summary of the key points from each chapter of "Flask Web Development: Developing Web Applications with Python" by Miguel Grinberg. The book is structured to take you through the development of web applications using Flask, from beginner concepts to more advanced techniques.</h3>
+
+</header>
+    
+<main>
+    <!-- Chapter 1: Introduction to Flask -->
+    <section>
+        <h2>Chapter 1: Introduction to Flask</h2>
+        
+        <h3>1. Flask Overview: What is Flask?</h3>
+        <p>Imagine you want to build a website. There’s a lot of stuff you need to do, like making sure that when someone visits your website, they can see a nice page or fill out a form.</p>
+        <p>Flask is like a magic toolbox that helps you build websites easily. It’s called a "microframework" because it’s simple and light. You can think of it like a small but powerful tool that lets you do just the basic, important things needed to make a website work, without being too complicated.</p>
+
+        <h3>2. Why Flask?</h3>
+        <p>Flask is special because it is super simple and flexible. It's like using a set of building blocks to create something. With Flask, you don't have to worry about a lot of extra stuff that you might not need. You can focus just on what’s important, like showing a page or handling forms.</p>
+        <p>It’s also great for smaller websites or projects because it doesn’t make you use all sorts of fancy tools unless you want to. It’s perfect for things like a small blog, a to-do list, or a website where you want to share information with others.</p>
+
+        <h3>3. "Hello, World!" – The First Website</h3>
+        <p>Now, let’s create your very first website with Flask! Don’t worry, it’s super easy. Here’s how:</p>
+        <ul>
+            <li>First, you tell Flask you want to make a website.</li>
+            <li>Then, you tell it to show the message "Hello, World!" when someone visits your website.</li>
+        </ul>
+        <p>In Flask, you do this with just a few lines of code! Here’s what it looks like:</p>
+        <pre>
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run()
+        </pre>
+
+        <h4>What’s happening here?</h4>
+        <ul>
+            <li><strong>Flask(__name__)</strong>: This is like opening the toolbox to start using Flask.</li>
+            <li><strong>@app.route('/'):</strong> This line is like saying, “Hey Flask, whenever someone goes to the home page of my website (the / page), do this thing…”</li>
+            <li><strong>def hello():</strong> This is the thing you want to do! Here, you just return a simple message — "Hello, World!".</li>
+            <li><strong>app.run():</strong> This tells Flask to start your website and make it live on your computer so you can see it in the browser.</li>
+        </ul>
+
+        <h3>4. Flask’s Core Concepts</h3>
+        <p>To make sure we understand Flask well, let’s look at the main ideas of how Flask works:</p>
+        <ul>
+            <li><strong>Flask Application:</strong> This is like the main box that holds everything together. It’s where you tell Flask what you want it to do when people visit your website.</li>
+            <li><strong>Routing:</strong> Think of this like setting up roads that lead to different pages of your website. When someone visits a specific “road” (URL), Flask knows what to do. For example, if someone visits /, they’ll get the "Hello, World!" message.</li>
+            <li><strong>HTTP Requests:</strong> Every time someone visits a website, they send something called an HTTP request. This is like sending a letter to the website asking for a page. Flask handles these letters (requests) and gives back the right page (response).</li>
+        </ul>
+
+        <hr>
+
+        <h4>Putting It All Together:</h4>
+        <ul>
+            <li>Flask is the tool that helps us build websites.</li>
+            <li>We make websites simple and flexible with Flask by telling it what to do when people visit different pages (this is called routing).</li>
+            <li>When someone visits your site, Flask gets a request from them and shows them the right content.</li>
+        </ul>
+        <p>And that’s it! You just learned how to use Flask to make a very simple website and what the key concepts behind Flask are.</p>
+    </section>
+
+    <!-- Chapter 2: The Flask Web Application -->
+    <section>
+        <h2>Chapter 2: The Flask Web Application</h2>
+
+        <h3>1. Setting Up Flask: Getting Your Toolbox Ready</h3>
+        <p>Before we can build anything cool with Flask, we need to make sure we have the right tools, just like when you need to get your paint, brushes, and paper ready before starting an art project.</p>
+        <h4>How to Set Up Flask:</h4>
+        <ul>
+            <li><strong>Install Flask:</strong> Flask is a tool that you need to install on your computer. You can do that by using something called pip (which is like a helper that gets tools for you). You just type this in your computer’s command line:
+                <pre>pip install flask</pre>
+            </li>
+            <li><strong>Create a Virtual Environment:</strong> Think of this like setting up a clean workspace just for your project. It keeps things neat and tidy, so nothing gets mixed up with other projects. 
+                <pre>python -m venv myproject</pre> 
+                You can activate it (start using it) by typing:
+                <pre>source myproject/bin/activate  # On Mac/Linux</pre>
+                <pre>myproject\Scripts\activate  # On Windows</pre>
+            </li>
+            <li><strong>Run Your First Flask App:</strong> After you’ve set everything up, you can run your Flask app (like starting your website). The code to do that is:
+                <pre>
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello, World!"
+
+if __name__ == "__main__":
+    app.run()
+                </pre>
+                Then you can see your website in a browser by going to <strong>http://127.0.0.1:5000/</strong>. Ta-da! You've got your first Flask website up and running!
+            </li>
+        </ul>
+
+        <h3>2. Basic Web Application Structure: How Does Flask Work?</h3>
+        <p>Flask has a simple structure that you need to understand, like how a toy has different parts that all work together to make the toy do something fun.</p>
+        <ul>
+            <li><strong>App Instance:</strong> This is like the "main boss" of your website. It’s the Flask object that holds everything. You tell Flask what to do with this object.
+                <pre>app = Flask(__name__)</pre>
+            </li>
+            <li><strong>Routes:</strong> A route is like a map that tells Flask, "When someone visits this part of the website, do this!"
+                <pre>@app.route('/')  # This is the "road" (route) that leads to the homepage</pre>
+            </li>
+            <li><strong>Views:</strong> A view is the thing that shows up on the website when someone visits a route. So, the view is what the user sees—like the content on the page.
+                <pre>def hello(): return "Hello, World!"  # This is the view (what they see on the page)</pre>
+            </li>
+        </ul>
+
+        <h3>3. Rendering HTML Templates: Making Pretty Pages</h3>
+        <p>Remember how I said you can use Flask to show things on a web page? Well, we can make it pretty by using HTML templates!</p>
+        <p>Think of HTML templates as special "blueprints" for making web pages. With these blueprints, we can design pages that look nice and have dynamic content (stuff that can change based on what’s happening).</p>
+
+        <h4>Jinja2 Templates:</h4>
+        <p>Flask uses Jinja2 to help us create these templates. Jinja2 lets us put placeholders inside the template, like filling in blanks in a coloring book!</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;My First Flask Website&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Hello, {{ name }}!&lt;/h1&gt;  &lt;!-- {{ name }} is a placeholder --&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+              </pre>
+        <p>In your Python code, you can tell Flask what to replace the placeholder {{ name }} with. For example:</p>
+        <pre>
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return render_template('hello.html', name="World")  # "World" will replace {{ name }}
+
+if __name__ == "__main__":
+    app.run()
+        </pre>
+
+        <h3>4. Flask’s Request and Response Objects: What Happens When Someone Visits Your Website?</h3>
+        <ul>
+            <li><strong>Request:</strong> The person sends a request to your website. It’s like sending a letter to someone asking for information. This request is asking for a specific page or action.</li>
+            <li><strong>Response:</strong> Your Flask app receives the request and then sends a response back. This is like answering the letter and sending back the requested information (like an HTML page).</li>
+        </ul>
+        <p>In Flask, we use request and response objects to handle this process:</p>
+        <pre>
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    user = request.args.get('name', 'Stranger')  # Gets the name from the URL, if it exists
+    return f"Hello, {user}!"  # Responds with a message
+
+if __name__ == '__main__':
+    app.run()
+        </pre>
+
+        <h4>Putting It All Together:</h4>
+        <ul>
+            <li>Setting up Flask: You got your toolbox ready (installed Flask and set up the workspace).</li>
+            <li>Basic Structure: You learned how to make an app with routes (roads) and views (what people see on those roads).</li>
+            <li>Rendering Templates: You can make pages look nice with HTML templates, and even show different content based on what's happening.</li>
+            <li>Request and Response: You now know that Flask listens to requests (like letters from visitors) and sends back responses (like answers with web pages).</li>
+        </ul>
+        <p>So, with Flask, you’re ready to build simple, cool websites that people can visit and interact with!</p>
+    </section>
+    <section class="note">
+          <h2>Chapter 3: Templates and Static Files </h2>
+          <p>Imagine you're making a birthday card for your friend. You could write the same thing on each card, but it would be easier if you had a card template (like a pre-designed card) and just filled in the friend’s name and birthday wish every time.</p>
+          <p>In Flask (a tool for making websites), templates are like those birthday card designs. They are files that have a basic layout for your webpage, but they can also have spots where you put in dynamic stuff. Dynamic means things that change every time, like your friend's name or birthday wish.</p>
+          <p>For example, let's say you want to create a webpage that says "Hello, [name]!" where [name] changes depending on who visits the page. With Flask's template engine called Jinja2, you can make a template that says:</p>
+          <div class="code-example">
+            <code>&lt;h1&gt;Hello, {{ name }}!&lt;/h1&gt;</code>
+          </div>
+          <p>In this example, <code>{{ name }}</code> is like a placeholder, and Flask will replace it with a real name when the page loads, like "Hello, Alice!" or "Hello, Bob!"</p>
+        </section>
+    
+        <section class="note">
+          <h2>2. Static Files</h2>
+          <p>Now, imagine your birthday card needs decorations, like colorful text or balloons. You would need things like images, colors (from CSS), and maybe some JavaScript to make things move or change.</p>
+          <p>On a website, these things are called static files, and they don’t change. Things like pictures, styles (for colors and fonts), and scripts (for adding fun effects) are all static. Flask helps you put these static things in a special folder called <code>static</code>, so your webpage can find and use them.</p>
+          <p>For example, you might have a file called <code>style.css</code> in the static folder that makes the text big and colorful. Your webpage can then "use" this file to look nice!</p>
+        </section>
+    
+        <section class="note">
+          <h2>3. Template Inheritance</h2>
+          <p>Now, think of a family that has a special way of doing things, like everyone in the family wears the same color shirt. If you made a special event for the family, instead of making new shirts every time, you could just start with a base shirt and add any extra decorations for each person. That way, all the shirts look the same but are also unique.</p>
+          <p>In Flask, this is called template inheritance. It means you can create one base template for the layout of your webpage, and then for each new page, you just add extra parts to it. The layout (like the header, footer, and menu) can stay the same, and you only need to add new content in the middle.</p>
+          <p>Here’s an example of a base template:</p>
+          <div class="code-example">
+            <code>
+              &lt;!DOCTYPE html&gt;<br>
+              &lt;html&gt;<br>
+              &nbsp;&nbsp;&lt;head&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Website&lt;/title&gt;<br>
+              &nbsp;&nbsp;&lt;/head&gt;<br>
+              &nbsp;&nbsp;&lt;body&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Website&lt;/h1&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/header&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;main&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;% block content %&gt;&lt;% endblock %&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/main&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;footer&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Footer Information&lt;/p&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/footer&gt;<br>
+              &nbsp;&nbsp;&lt;/body&gt;<br>
+              &lt;/html&gt;
+            </code>
+          </div>
+          <p>The <code>{% block content %}</code> is like a special spot where each page can add its own content. For example, one page might say "About Me," and another might say "Contact Us."</p>
+          <p>When you make a new page, you just say, "I want to use the base layout," and then put in your content, like this:</p>
+          <div class="code-example">
+            <code>
+              &lt;% extends "base.html" %&gt;<br>
+              &lt;% block content %&gt;<br>
+              &nbsp;&nbsp;&lt;h2&gt;About Me&lt;/h2&gt;<br>
+              &nbsp;&nbsp;&lt;p&gt;This is the about me page!&lt;/p&gt;<br>
+              &lt;% endblock %&gt;
+            </code>
+          </div>
+          <p>This makes it easy to keep your website looking consistent but still have pages that are different.</p>
+        </section>
+    
+        <section>
+          <h2>To sum it up:</h2>
+          <ul>
+            <li>Templates help you create webpages with special places to fill in dynamic data (like a birthday card).</li>
+            <li>Static files are like decorations (CSS, images, JavaScript) that stay the same on your website.</li>
+            <li>Template inheritance lets you create a common webpage layout and change only what’s necessary, like using the same base shirt and adding new designs for different events.</li>
+          </ul>
+        </section>
+
+    <!-- Chapter 4: Forms and User Input -->
+    <section>
+        <h2>Chapter 4: Forms and User Input</h2>
+
+        <h3>1. Handling Forms</h3>
+        <p>Imagine you're playing a game where you need to fill in some information, like your name, age, and favorite color. You’d have a form with boxes for each of those things. In a website, when people want to give you information, they fill out forms too, just like those game boxes!</p>
+        <p>So, forms are like little "questionnaires" on a webpage where users can type or choose information, like a name or a message. Flask helps you collect that information when the user submits the form.</p>
+        <p>Here’s a simple example of a form where someone fills in their name:</p>
+        <pre>
+            &lt;form method=&quot;POST&quot; action=&quot;/submit&quot;&gt;
+              &lt;label for=&quot;name&quot;&gt;Your Name:&lt;/label&gt;
+              &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot;&gt;
+              &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+            &lt;/form&gt;
+              </pre>
+        <p>The label tells the user what to fill in. The input box is where they type their answer. The submit button sends the information to the website.</p>
+        <p>When the user fills out the form and clicks the button, Flask will take the name they typed and do something with it, like show it on the next page.</p>
+
+        <h3>2. WTForms</h3>
+        <p>Now, imagine filling out that form is like doing a homework assignment. Sometimes, people forget to fill out the form correctly (maybe they forget their name or type in the wrong kind of answer). WTForms is like a helper that checks the answers for you before they get sent in.</p>
+        <p>So, WTForms makes it easier to:</p>
+        <ul>
+            <li>Make sure people fill in their name correctly.</li>
+            <li>Check that the information is the right type (like making sure someone enters an email address in the right format).</li>
+            <li>Display errors or tips if someone forgets something.</li>
+        </ul>
+        <p>Instead of writing a lot of complicated code, you can use WTForms to create and check the form automatically. Here's an example of how you would use it in Flask:</p>
+        <pre>
+from flask import Flask, render_template, request
+from wtforms import Form, StringField
+from wtforms.validators import InputRequired
+
+app = Flask(__name__)
+
+class NameForm(Form):
+    name = StringField('Your Name', validators=[InputRequired()])
+
+@app.route('/submit', methods=['GET', 'POST'])
+def submit():
+    form = NameForm(request.form)
+    if request.method == 'POST' and form.validate():
+        name = form.name.data
+        return f'Hello, {name}!'
+    return render_template('form.html', form=form)
+        </pre>
+        <p>With WTForms, we don’t have to check if the form is filled out manually. The <code>InputRequired</code> part does that for us!</p>
+
+        <h3>3. CSRF Protection</h3>
+        <p>Now, let’s talk about CSRF Protection. Imagine someone is trying to trick your website into doing something without your permission. It’s like if someone else submitted a form pretending to be you, even though they never actually filled it out.</p>
+        <p>CSRF (which stands for Cross-Site Request Forgery) is a bad trick where a hacker tries to make a website do something without the user’s knowledge. Flask helps protect your website from this kind of trickery using CSRF Protection.</p>
+        <p>To stop this, Flask uses something called tokens. Every time you show a form, you also include a secret CSRF token that only your website knows. If the form is missing this token, it means the form isn’t from your website, and Flask will reject it.</p>
+        <p>Using Flask’s special helper, Flask-WTF, it’s easy to add CSRF protection to your forms:</p>
+        <pre>
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import InputRequired
+
+class NameForm(FlaskForm):
+    name = StringField('Your Name', validators=[InputRequired()])
+        </pre>
+        <p>Flask-WTF automatically adds the CSRF token for you, so you don’t need to worry about it!</p>
+
+        <h3>Summary</h3>
+        <ul>
+            <li>Forms are like online questionnaires where users fill in information, like their name or email.</li>
+            <li>WTForms is a helper that makes sure the form is filled out correctly, like checking homework answers.</li>
+            <li>CSRF protection stops bad people from pretending to be users and sending forms that they didn’t fill out.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Chapter 5: Databases</h2>
+
+        <h3>1. Database Basics</h3>
+        <p>Imagine you have a big notebook where you write down the details of all your toys. Each page in the notebook has information about a toy: its name, color, and size.</p>
+        <p>Now, a <strong>database</strong> is like that notebook, but on a computer. It helps store and organize lots of information in a way that’s easy to find and change. Flask helps us use <strong>SQL databases</strong> to store things like names, emails, and other details on websites. SQL is a special language that tells the computer how to store and retrieve information from the database.</p>
+
+        <h3>2. SQLAlchemy</h3>
+        <p>Talking directly to a database with SQL can be tricky, but <strong>SQLAlchemy</strong> is a tool that makes it easier. Think of SQLAlchemy as a magical helper that lets you talk to the database using <strong>Python</strong>, which is much easier for us to understand.</p>
+        <p>With SQLAlchemy, you can save information, look at it, and change it—all without worrying about the messy details. It helps you manage your database in a way that’s simple and clear.</p>
+
+        <h3>3. Models</h3>
+        <p>In Flask, we use <strong>models</strong> to organize the information in the database. A model is like a blueprint that says, “Here’s how the information will be stored.” For example, if we’re talking about toys, the <strong>Toy model</strong> would say, “Every toy has a name, color, and size.”</p>
+        <pre><code>
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class Toy(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    color = db.Column(db.String(50))
+    size = db.Column(db.String(20))
+        </code></pre>
+        <p>With models, we can do basic tasks like:</p>
+        <ul>
+            <li>Create a new toy</li>
+            <li>Read details about a toy</li>
+            <li>Update a toy’s information if something changes (like the toy’s color)</li>
+            <li>Delete a toy we no longer need</li>
+        </ul>
+
+        <h3>4. Migrations</h3>
+        <p>Sometimes, you might need to change how things are stored. For example, let’s say you want to add a “brand” field to your toys, but you didn’t plan for that when you first set things up. This is where <strong>migrations</strong> come in!</p>
+        <p>Migrations are a way to safely change the database without breaking anything. Flask has a tool called <strong>Flask-Migrate</strong> to help with this. It ensures that changes (like adding a new “brand” field) are made smoothly and correctly.</p>
+        <pre><code>
+flask db migrate -m "Added brand to Toy model"
+flask db upgrade
+        </code></pre>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>A database</strong> stores information, like a notebook for your toys.</li>
+            <li><strong>SQLAlchemy</strong> is a magical helper that lets you talk to the database using Python.</li>
+            <li><strong>Models</strong> define what kind of information you store and how it’s organized.</li>
+            <li><strong>Migrations</strong> help you make changes to your database safely without breaking anything.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Chapter 6: User Authentication</h2>
+
+        <h3>1. Authentication Basics</h3>
+        <p>Imagine you have a secret club, and only you and your friends are allowed inside. To make sure no one else gets in, you ask for a <strong>secret code</strong> (like a password). Authentication is the process of checking if someone is really who they say they are—just like asking for the secret code before letting them into your club.</p>
+        <p>When you visit a website, the website checks who you are by asking for things like a <strong>username</strong> and <strong>password</strong>. If they match the records in the website’s system, you get access to special areas of the website. Authentication is how websites keep track of who is allowed to do what.</p>
+
+        <h3>2. Flask-Login</h3>
+        <p>Let’s say your secret club has a rule that once you’re inside, you don’t have to keep showing your secret code. <strong>Flask-Login</strong> is like a helper that makes sure you stay inside the club once you're logged in, so you don’t need to log in again every time you visit.</p>
+        <p>With <strong>Flask-Login</strong>, you can:</p>
+        <ul>
+            <li>Keep track of who’s logged in.</li>
+            <li>Let users stay logged in without needing to re-enter their password.</li>
+            <li>Log users out safely when they’re done.</li>
+        </ul>
+        <p>Here’s an example of how you might use Flask-Login to check if someone is logged in:</p>
+        <pre><code>
+from flask import Flask, render_template
+from flask_login import LoginManager, login_user, logout_user, current_user
+
+app = Flask(__name__)
+login_manager = LoginManager()
+login_manager.init_app(app)
+        </code></pre>
+
+        <h3>3. User Registration</h3>
+        <p>When someone wants to join your secret club, you have them fill out a registration form with their <strong>username</strong> and <strong>password</strong>. <strong>User registration</strong> is when a new user fills out a form on a website with their details to create an account. The website saves this information in its <strong>database</strong> so it knows who they are the next time they log in.</p>
+        <p>Here’s an example of a registration form:</p>
+        <pre><code>
+            &lt;form action=&quot;/register&quot; method=&quot;POST&quot;&gt;
+                &lt;label for=&quot;username&quot;&gt;Username:&lt;/label&gt;
+                &lt;input type=&quot;text&quot; id=&quot;username&quot; name=&quot;username&quot; required&gt;
+                &lt;br&gt;&lt;br&gt;
+            
+                &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;
+                &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; required&gt;
+                &lt;br&gt;&lt;br&gt;
+            
+                &lt;button type=&quot;submit&quot;&gt;Register&lt;/button&gt;
+            &lt;/form&gt;
+              </code></pre>
+
+        <h3>4. Password Hashing</h3>
+        <p>Imagine if someone sneaky found your notebook where you keep everyone's secret codes written down. They could use the codes to sneak into the club! That’s bad.</p>
+        <p>So, we don't save the secret codes in their normal form. Instead, we "hash" them. Hashing is like mixing the secret code up into a puzzle, so even if someone sees the puzzle, they can’t figure out what the secret code is. It’s safe because the website can still check if the secret code matches the puzzle (or hash) without actually saving the code.</p>
+        <p>We use tools like <strong>Werkzeug</strong> and <strong>Flask-Bcrypt</strong> to hash passwords. They help us turn the password into a secret code that’s impossible to guess. So, if someone finds your password, all they’ll see is the jumbled-up puzzle, and they won’t know how to solve it.</p>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>Authentication</strong> is like asking for a secret code to make sure someone is who they say they are.</li>
+            <li><strong>Flask-Login</strong> helps keep track of who is logged in and makes logging in and out easy.</li>
+            <li><strong>User registration</strong> lets new users create an account on your website.</li>
+            <li><strong>Password hashing</strong> keeps passwords safe by turning them into a jumbled-up code.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Chapter 7: User Authorization</h2>
+
+        <h3>1. Authorization Basics</h3>
+        <p>Imagine your secret club has different areas. There's the main room where everyone can hang out, but there's also a special room with a treasure chest that only certain friends can enter. Not everyone can go into the treasure room — only a few special people like the club leader can go there.</p>
+        <p>Authorization is like deciding who can go into which room. It helps you decide who has permission to do certain things, like entering the treasure room. In websites, this means giving certain users different roles and permissions to access different parts of the site. Some people may be able to do more things than others!</p>
+        <p>For example, one person (an admin) can change anything on the website, while another person (a regular user) might only be able to see things but not change them.</p>
+
+        <h3>2. Flask-Login Advanced Features</h3>
+        <p>Earlier, we talked about Flask-Login helping us keep track of who’s logged in. But what if we want to make sure that only special users can enter certain areas, like the treasure room? This is where advanced features of Flask-Login come in.</p>
+        <p>Flask-Login can also help protect parts of your website, making sure only the right people can see them. For example, if someone tries to enter a special area meant for admins, Flask-Login can stop them and say, “Hey, you’re not allowed in here!” This keeps the treasure room safe!</p>
+
+        <h3>3. Permissions and Roles</h3>
+        <p>Now, let’s get into roles. Let’s say we have two types of members in our club:</p>
+        <ul>
+            <li><strong>Admins</strong>, who are like the leaders of the club and can do everything, like invite new members and change rules.</li>
+            <li><strong>Regular users</strong>, who are just club members that can hang out and talk but can’t change any rules.</li>
+        </ul>
+        <p>We give these roles to our users, and then we control what they can and can’t do based on their roles.</p>
+        <p>In Flask, you can create different roles like "admin" or "user," and then give each role certain permissions:</p>
+        <ul>
+            <li>Admins might have permission to see and change everything.</li>
+            <li>Regular users might only have permission to see certain things, but not change anything.</li>
+        </ul>
+        <p>By using roles and permissions, you can make sure that only the right people can access the right parts of your website.</p>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>Authorization</strong> is about deciding who can do what. It's like letting certain people into different rooms in your club.</li>
+            <li><strong>Flask-Login Advanced Features</strong> help you protect special areas of your website, making sure only the right people can go there.</li>
+            <li><strong>Permissions and Roles</strong> help you organize your users by what they’re allowed to do (like admins having more power than regular users).</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Chapter 8: Application Structure</h2>
+
+        <h3>1. Flask Application Layout</h3>
+        <p>Imagine you have a big toy collection, but you want to keep things organized. If you put everything in one giant pile, it would be hard to find your favorite toy, right? You’d want to organize them into sections: one for cars, one for dolls, one for puzzles, etc. That way, when you want to play with a specific toy, you know exactly where to look!</p>
+        <p>In Flask, when your website gets bigger, you need to organize all your code into separate sections (just like your toy collection). This helps you keep your code clean and easy to understand, so you can find what you need quickly.</p>
+
+        <h3>2. Blueprints</h3>
+        <p>Now, let’s say you have different areas of your toy collection, like one section for cars, one for dolls, and another for puzzles. Each of these sections has different toys, and you can work on them separately. When you’re working on the cars section, you don’t need to worry about the dolls section at all.</p>
+        <p>In Flask, Blueprints are like these sections. They help you split your big website into smaller, easier-to-manage parts. So, one part of your app (like the user login system) can be in one blueprint, and another part (like the toy store page) can be in another blueprint. Each part can be developed separately, making your whole app easier to build and maintain.</p>
+
+        <h3>3. Application Factories</h3>
+        <p>Think about when you build a toy house. You could have a toy house factory that makes different kinds of houses based on your needs: a house with more rooms for your dolls, a smaller house for your toy cars, or even a house that can be changed whenever you want.</p>
+        <p>In Flask, application factories are like that toy house factory. Instead of creating just one fixed website, you can create a website in a flexible way. You can decide what features to add or change, depending on what you need for different situations. It lets you make the app exactly the way you want it, and you can change things easily if needed!</p>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>Flask Application Layout</strong> is like organizing your toys into sections, so it’s easy to find and play with what you need.</li>
+            <li><strong>Blueprints</strong> are like those toy sections, where you can work on different parts of the website separately and keep things neat.</li>
+            <li><strong>Application Factories</strong> are like toy house factories that help you build different kinds of websites, changing them to suit your needs.</li>
+        </ul>
+    </section>
+        <h2>Chapter 9: Error Handling and Logging</h2>
+
+        <h3>1. Error Handling</h3>
+        <p>Imagine you're playing a game and you make a mistake, like clicking the wrong button or missing a jump. The game doesn’t just say "Oops!" and leave you confused, right? It gives you a message or a page that helps you understand what went wrong. In web development, we do something similar with errors like 404 or 500.</p>
+        <ul>
+            <li><strong>404 Error</strong>: This happens when you try to visit a page that doesn't exist. It’s like trying to open a door that’s not there! You see a message like "Oops! Page not found." Instead of just showing a boring error page, you can create a custom one, with a nice design and message, to tell the user "Sorry, we couldn't find that page."</li>
+            <li><strong>500 Error</strong>: This is like when the website has a big problem, and it can’t show anything at all, sort of like when your game crashes. Flask can catch this error and show a helpful message to the user, like "Something went wrong, but we're fixing it!"</li>
+        </ul>
+        <p>So, error handling means making sure your website doesn't just break or show a scary message when something goes wrong. You give it a friendlier, more helpful message instead.</p>
+
+        <h3>2. Logging</h3>
+        <p>Now, imagine you're building a robot, and sometimes it makes mistakes. You might want to keep a notebook and write down what the robot is doing, so if something goes wrong, you can look back and see what happened.</p>
+        <p>In the same way, logging helps developers keep track of what’s happening in the app. Flask has a built-in system that lets you write down important stuff, like when there’s an error or something unusual happens. For example, if your website’s page doesn't load, logging will record what went wrong. This way, you can later look at the log and find out what happened to fix it.</p>
+        <p>Logging can help capture things like:</p>
+        <ul>
+            <li><strong>Errors</strong>: Problems that stop the app from working.</li>
+            <li><strong>Warnings</strong>: Things that might not be a problem now, but could be in the future.</li>
+            <li><strong>Important information</strong>: Like when someone logs in or does something important, so you know what’s going on.</li>
+        </ul>
+        <p>To set up logging, you can tell Flask to write these notes in a special file, so you can check them later when you need to find out what went wrong.</p>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>Error Handling</strong> is about making sure users see friendly messages when something goes wrong (like a 404 or 500 error).</li>
+            <li><strong>Logging</strong> is like keeping a diary to help developers know what’s happening behind the scenes, so they can fix problems faster!</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Chapter 10: Testing</h2>
+
+        <h3>1. Testing Basics</h3>
+        <p>When you build an app with Flask, you want to make sure everything works correctly, just like making sure your toy car works. Testing helps you find problems before anyone else uses your app. It’s like checking if your car is ready to drive before taking it out for a ride.</p>
+        <p>You can write little tests for different parts of your app to make sure each part does what it’s supposed to do. If something’s wrong, the tests will help you catch it!</p>
+
+        <h3>2. Unit Tests</h3>
+        <p>Now, imagine your toy car is made of many parts: wheels, the body, the engine, and the battery. A unit test helps you check one small part at a time. For example, you test if the wheels spin, then test if the engine works, and so on. In your Flask app, unit tests check small pieces of code, like individual functions, to make sure they’re working.</p>
+        <p>Flask uses a built-in tool called unittest to make writing and running these tests easy. For example, if you have a function that adds two numbers, you would write a test to make sure it adds them correctly.</p>
+
+        <h3>3. Test Client</h3>
+        <p>Now, you know how to test your toy car’s parts, but what if you want to test the whole car at once? You can simulate driving it without actually taking it outside. In Flask, you use something called the test client. The test client acts like a pretend user. It can make requests to your website, just like a real user, without needing the website to be live. This way, you can test if everything is working together—like if a page loads correctly or if a button does what it’s supposed to do.</p>
+
+        <h3>4. Test Coverage</h3>
+        <p>Imagine you’re testing your toy car, but you forget to check one of the wheels or a part of the engine. The car might look fine, but if you didn’t check everything, something might break later! Test coverage helps make sure you’ve tested everything. It checks if your tests have covered all parts of your app, so nothing is left out.</p>
+        <p>Test coverage tools will show you which parts of your app have been tested and which ones still need to be tested. This helps you make sure everything is safe and ready to go!</p>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>Testing Basics</strong>: You test your app to make sure everything works correctly.</li>
+            <li><strong>Unit Tests</strong>: You test small pieces of code, like checking each part of your toy car.</li>
+            <li><strong>Test Client</strong>: You pretend to be a user to test your app without a live website.</li>
+            <li><strong>Test Coverage</strong>: You make sure you’ve tested every part of your app, like checking all parts of your toy car.</li>
+        </ul>
+        <p>Testing helps you catch problems early and make sure your app is working perfectly, just like making sure your toy car runs smoothly before you show it to everyone!</p>
+    </section>
+    <section>
+        <h2>Chapter 11: JavaScript and AJAX</h2>
+
+        <h3>1. AJAX Basics</h3>
+        <p>Imagine you're playing a game on your computer. You click a button to get more information or points, but instead of the whole screen changing or the page reloading, only a small part of the screen changes. This happens because of something called AJAX. AJAX lets you ask for new information (like getting points or seeing a new level) without having to refresh the entire game.</p>
+        <p>AJAX is like sending a small note to the server (the game’s helper), asking for something, and getting an answer back without disturbing the whole game. It’s faster and cooler because you don’t need to reload the whole page!</p>
+        <p>In technical terms, AJAX (Asynchronous JavaScript and XML) uses JavaScript to send requests to the server and get answers back without making the whole page reload.</p>
+
+        <h3>2. AJAX in Flask</h3>
+        <p>Now, let’s say you’re using Flask to build a website, and you want your website to be super smooth, just like that game. Instead of the whole page refreshing every time someone clicks a button, you use AJAX with Flask to load content dynamically. This means parts of your page can change without having to reload the whole thing.</p>
+        <p>For example, imagine you have a button that shows more blog posts when clicked. Instead of refreshing the entire page, AJAX asks the server for more posts, and the server sends them back. The page just adds the new posts without any extra wait time for a full page reload.</p>
+
+        <h3>3. Flask and jQuery</h3>
+        <p>jQuery is a special helper tool that makes working with JavaScript easier, just like how a magnifying glass helps you see small things more clearly! When you use jQuery with AJAX in Flask, it helps you do cool stuff like updating part of your webpage (like a list of items or a comment box) without making the entire page reload.</p>
+        <p>For example, let’s say you have a “like” button on a page. When someone clicks it, AJAX, with the help of jQuery, can tell Flask to update just the like count without reloading the page. This makes your website feel much faster and smoother for users!</p>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>AJAX Basics</strong>: It’s like sending a quick note to ask for new things on your website without refreshing everything.</li>
+            <li><strong>AJAX in Flask</strong>: You use AJAX with Flask to change parts of the website without reloading the whole page.</li>
+            <li><strong>Flask and jQuery</strong>: jQuery helps you make using AJAX easier, so parts of your website can update smoothly and quickly.</li>
+        </ul>
+        <p>AJAX makes websites feel super fast and fun, like playing a game that doesn’t stop to reload every time you click something!</p>
+    </section>
+    <section>
+        <h2>Chapter 12: RESTful Web Services</h2>
+
+        <h3>1. REST Overview</h3>
+        <p>REST stands for Representational State Transfer, but don’t worry about the fancy name. It’s just a way for different parts of a website (or app) to talk to each other using messages.</p>
+        <p>Think of REST like a set of rules or instructions for how to send and receive messages in a way that’s easy to understand. It’s like sending a letter to your friend, where the letter has clear instructions on what to do next (like, “please send me a toy car!”). The important part is that REST helps your website or app know how to ask for and share information smoothly.</p>
+        <p>So, when you build an app, REST helps you send requests (like asking for data) and get responses (like getting back information) using clear, easy-to-follow rules. It’s a way of organizing how different parts of your website or app can talk to each other.</p>
+
+        <h3>2. Flask-RESTful</h3>
+        <p>Now, imagine you have a super cool tool that makes building these messages easier! In Flask, there’s a special tool called Flask-RESTful that helps you build APIs quickly. An API is like a special mailbox where you send and receive messages.</p>
+        <p>Flask-RESTful helps you set up those mailboxes (APIs) in your app, so you can easily get and send information between different parts of the website. It makes building APIs simpler, like having a super easy-to-use robot to help you send messages in your toy factory.</p>
+
+        <h3>3. Creating RESTful APIs</h3>
+        <p>When you build an API, you’re setting up rules for how your website can talk to other websites or apps. Here’s how you make that happen:</p>
+        <ul>
+            <li><strong>HTTP Methods</strong>: These are like different types of messages you can send. They include:
+                <ul>
+                    <li><strong>GET</strong>: Ask for information (like, “Tell me about the toy car”).</li>
+                    <li><strong>POST</strong>: Send information (like, “Here’s a new toy car to add to the collection!”).</li>
+                    <li><strong>PUT</strong>: Update something (like, “Change the color of the toy car”).</li>
+                    <li><strong>DELETE</strong>: Remove something (like, “Take the toy car away”).</li>
+                </ul>
+            </li>
+            <li><strong>JSON Format</strong>: When you get a response from the API, it usually comes back in a special format called JSON. Think of JSON like a neat and tidy way of packing up information so it’s easy to read and understand.</li>
+        </ul>
+        <pre>
+{
+  "name": "Toy Car",
+  "color": "Red",
+  "price": 10
+}
+        </pre>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>REST Overview</strong>: REST is like a set of rules that helps websites talk to each other, sending clear messages back and forth.</li>
+            <li><strong>Flask-RESTful</strong>: Flask-RESTful is a tool that helps you easily build APIs, which are like mailboxes for sending and receiving messages.</li>
+            <li><strong>Creating RESTful APIs</strong>: You use different methods (GET, POST, PUT, DELETE) to send messages and get information. The responses are usually packed in JSON format so they’re easy to read and understand.</li>
+        </ul>
+        <p>RESTful APIs help your website or app communicate with others, making everything work smoothly and efficiently—just like sending messages between rooms in your toy factory!</p>
+    </section>
+    <section>
+        <h2>Chapter 13: File Uploads</h2>
+
+        <h3>1. File Handling in Flask</h3>
+        <p>In Flask, file handling is how you let people upload their files (like pictures, documents, or videos) to your website. When someone uploads a file, Flask helps you receive it, save it somewhere, and even show it back to the person later.</p>
+        <ul>
+            <li>Accept the file: Flask will catch the file when the person sends it.</li>
+            <li>Store the file: You’ll decide where to put the file (like saving it in a folder).</li>
+            <li>Serve the file: If someone wants to see their picture later, Flask helps you show it to them.</li>
+        </ul>
+
+        <h3>2. Handling File Uploads Securely</h3>
+        <p>When people upload files, you have to be careful. Imagine if someone tried to send a secret message hidden inside a picture, or uploaded a big file that could break your website! To keep everything safe, we have to check and limit what kinds of files can be uploaded.</p>
+        <ul>
+            <li><strong>Check file extensions</strong>: Only allow certain types of files, like pictures (JPEG, PNG) or documents (PDF).</li>
+            <li><strong>Set size limits</strong>: Make sure the files aren’t too big to avoid breaking the website.</li>
+        </ul>
+
+        <h3>3. Storing Files</h3>
+        <p>Once the file is safely uploaded, you need to decide where to keep it. There are two common ways to store files:</p>
+        <ul>
+            <li><strong>Local directories</strong>: Saving the files right on the computer or server where your website is hosted.</li>
+            <li><strong>Cloud storage</strong> (like Amazon S3): Renting a storage space in the sky where you can store lots of files.</li>
+        </ul>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>File Handling in Flask</strong>: Flask helps you accept, store, and show files that people upload to your website.</li>
+            <li><strong>Handling File Uploads Securely</strong>: You need to check that the files are safe (like checking file types and size) to protect your website.</li>
+            <li><strong>Storing Files</strong>: You can store files either on your computer/server (local directories) or in a cloud storage service (like Amazon S3).</li>
+        </ul>
+        <p>This way, just like your art contest, people can upload their pictures or documents, and you can handle everything safely and smoothly!</p>
+    </section>
+    <section>
+        <h2>Chapter 14: Sending Email</h2>
+
+        <h3>1. Sending Email in Flask</h3>
+        <p>In Flask, sending emails is like writing a letter, putting it in an envelope, and sending it off to someone. Flask uses an extension called Flask-Mail to make this super simple.</p>
+        <ul>
+            <li>Write the email.</li>
+            <li>Address it to the person you want to send it to.</li>
+            <li>Hit "send" and Flask will deliver it!</li>
+        </ul>
+        <p>For example, when someone registers for your website, you can send them a welcome email to say "Hey, welcome to our website!" Flask-Mail makes sure the email goes from your website to their inbox!</p>
+
+        <h3>2. Setting Up Email</h3>
+        <p>Before you can start sending these emails, you need to set up your magic mailbox. This means telling Flask where to send the emails from and how to send them. Here’s how you set it up:</p>
+        <ul>
+            <li><strong>SMTP</strong>: The address for your magic mailbox. SMTP helps your emails travel from your website to the person's inbox.</li>
+            <li><strong>Email Settings</strong>: You’ll need to give Flask your mailbox details, like:
+                <ul>
+                    <li>Your email address (who’s sending the email).</li>
+                    <li>Your password (or a special key if you’re using something like Gmail).</li>
+                    <li>The SMTP server address (like where the magic mailbox lives).</li>
+                    <li>A special port number that tells Flask how to talk to the mailbox.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>3. Examples of Sending Emails</h3>
+        <ul>
+            <li><strong>User Registration</strong>: After someone signs up for your website, you might want to send them a confirmation email, saying "Thanks for joining!"</li>
+            <li><strong>Password Resets</strong>: If someone forgets their password, you can send them an email with a special link to reset it.</li>
+        </ul>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>Sending Email in Flask</strong>: Flask-Mail helps you send magical emails from your website, like notifications or welcome emails.</li>
+            <li><strong>Setting Up Email</strong>: You tell Flask where your magic mailbox is (via SMTP) and how to send the emails.</li>
+        </ul>
+        <p>Now, with Flask and Flask-Mail, you can send emails easily, just like writing letters and sending them to your friends or users of your website!</p>
+    </section>
+    <section>
+        <h2>Chapter 15: Deploying Flask Applications</h2>
+
+        <h3>1. Deployment Overview</h3>
+        <p>When you’re ready to share your Flask website with the world, you need to deploy it. This means putting your app on a real server (a computer) that can be accessed from anywhere, just like putting your toy in a box and sending it to the store.</p>
+        <p>There are special places where you can deploy your Flask app:</p>
+        <ul>
+            <li><strong>Heroku</strong>: It’s like a magic store where you can send your website easily.</li>
+            <li><strong>DigitalOcean</strong>: Another place where you can rent a computer to run your app.</li>
+            <li><strong>AWS (Amazon Web Services)</strong>: A big cloud that gives you lots of space to run your website.</li>
+        </ul>
+        <p>These services help you make sure your website is always online and available to people.</p>
+
+        <h3>2. Gunicorn and Nginx</h3>
+        <p>Now, when you want to serve your app in production (a fancy word for "for real, on the internet"), you need to make sure it runs smoothly and quickly.</p>
+        <ul>
+            <li><strong>Gunicorn</strong>: This is like the super-fast delivery person who takes care of your app and makes sure it responds quickly to people’s requests. Gunicorn helps handle the website’s traffic, like when a lot of people want to visit your app at once.</li>
+            <li><strong>Nginx</strong>: Nginx is like a friendly guard at the front door. It makes sure only the right people can come in and also helps direct visitors to the right parts of your app. It works with Gunicorn to make everything go smoothly.</li>
+        </ul>
+        <p>So, when you deploy your app, you use both Gunicorn and Nginx to make sure it runs well and handles lots of visitors without any problems.</p>
+
+        <h3>3. Environment Variables</h3>
+        <p>When you’re building your app, you have secret stuff like passwords or special keys to access things, like a secret code to your toy chest. You don’t want to share these secrets with everyone.</p>
+        <p>Environment variables are like hidden pockets in your app where you can store these secrets safely. For example:</p>
+        <ul>
+            <li>Your app’s secret key that keeps things safe.</li>
+            <li>Database credentials (like a password to your toy chest full of data).</li>
+        </ul>
+        <p>You put these secrets in environment variables so they don’t show up in the public part of your app, keeping them safe from prying eyes.</p>
+
+        <h3>4. Debug Mode in Production</h3>
+        <p>When you’re building your app and testing it, Flask has something called debug mode that helps you see what’s wrong if something breaks. It’s like having a helper who points out mistakes while you build.</p>
+        <p>But when your app is ready for the world (in production), you don’t want that debug helper to show up and give out too much information. So, you turn off debug mode to keep everything secure. You also set up logging, which is like writing notes in a notebook to remember what happened if anything goes wrong.</p>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>Deployment Overview</strong>: Deploying means putting your website on the internet so everyone can use it, using services like Heroku, DigitalOcean, or AWS.</li>
+            <li><strong>Gunicorn and Nginx</strong>: These tools help your app run smoothly and handle lots of visitors in production.</li>
+            <li><strong>Environment Variables</strong>: You store secrets, like passwords, safely using environment variables so they don’t get exposed.</li>
+            <li><strong>Debug Mode in Production</strong>: You turn off debug mode to keep things secure and use logging to keep track of anything that goes wrong.</li>
+        </ul>
+        <p>Now your website is live, and everyone can see your amazing creation—just like sending your toy to a big store where all your friends can play with it!</p>
+    </section>
+    <section>
+        <h2>Chapter 16: Conclusion</h2>
+
+        <h3>1. Wrapping Up</h3>
+        <p>In this chapter, we look back at everything you’ve learned about Flask and building websites. You’ve learned how to:</p>
+        <ul>
+            <li>Make a website with Flask.</li>
+            <li>Handle users, their data, and even send emails.</li>
+            <li>Make your app secure and smooth, so it works well for everyone.</li>
+            <li>And even deploy your website for the whole world to see! 🌍</li>
+        </ul>
+        <p>But guess what? This is just the start. Now that you know how to make basic apps, you can build even more complex ones! You can add more features, make your app fancier, and use all the skills you've learned to create whatever you imagine.</p>
+
+        <h3>2. Further Resources</h3>
+        <p>Just like when you finish building a toy, you can always find new ways to make it better, bigger, or even cooler. The Flask documentation is like an instruction book that helps you understand how to use Flask in even more advanced ways. You can look at the documentation whenever you want to learn new tricks and features!</p>
+        <p>Also, there are community forums where you can talk to other people who love building apps, just like you! You can ask questions, share your ideas, and get help when you’re stuck. It’s like joining a big club where everyone is building cool things together.</p>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>Wrapping Up</strong>: You’ve learned a lot about building websites with Flask, and now it’s time to build even bigger and cooler projects!</li>
+            <li><strong>Further Resources</strong>: Use the Flask documentation and community forums to learn even more and continue growing as a web developer.</li>
+        </ul>
+        <p>Now go ahead and keep building awesome things—there’s so much more to explore, and the sky’s the limit!</p>
+    </section>
+
+</main>
+
+
+
+
+
+<h2>DM Me If You Need The PDF of This File</h2>
+    <style>
+        /* Footer Styling */
+        footer {
+        background-color: #020c14;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer a {
+        color: white;
+        text-decoration: none;
+        margin-right: 15px;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    footer p {
+        font-size: 0.875rem;
+        margin-top: 10px;
+    }
+  </style>
+ 
+  <footer>
+    <nav>
+        <ul style="list-style-type: none; padding: 0; margin: 0;">
+            <li style="display: inline; margin-right: 15px;">
+                <a href="#contact">Contact Information</a>
+            </li>
+            <li style="display: inline; margin-right: 15px;">
+                <a href="#faqs">FAQs</a>
+            </li>
+            <li style="display: inline;">
+                <a href="#support">Support</a>
+            </li>
+        </ul>
+    </nav>
+    <p>&copy; 2025 Getser Surbakti. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
