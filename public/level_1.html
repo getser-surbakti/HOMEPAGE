@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Worksheet</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #007bff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .question {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .solution-container {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .solution-container h3 {
+            font-size: 18px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .solution-container textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            background-color: #fff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        .scroll-container {
+            width: 100%;
+            max-width: 960px;
+            overflow-y: auto;
+            padding: 10px;
+            height: calc(100vh - 80px); /* Full view height minus header/footer */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                max-width: none;
+            }
+
+            .title {
+                font-size: 20px;
+                margin-top: 10px;
+            }
+        }
+
+        /* Additional mobile adjustments */
+        @media (max-width: 480px) {
+            .solution-container h3 {
+                font-size: 16px;
+            }
+
+            .solution-container textarea {
+                font-size: 14px;
+                height: 120px;
+            }
+        }
+
+        /* Print Specific Styles */
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+            }
+
+            .title {
+                font-size: 22px;
+                color: #007bff;
+                text-align: center;
+                margin-top: 0;
+                page-break-before: always; /* Ensure title is on its own page */
+            }
+
+            .scroll-container {
+                height: auto; /* Remove scroll and let content flow */
+                padding: 20px;
+            }
+
+            .container {
+                margin-bottom: 30px;
+                padding: 20px;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+
+            .question {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .image-container img {
+                max-height: 250px;
+                object-fit: contain;
+                page-break-inside: avoid;
+            }
+
+            .solution-container {
+                margin-top: 20px;
+            }
+
+            .submit-btn {
+                display: none; /* Hide the submit button on print */
+            }
+
+            /* Prevent extra space between problems */
+            .container:not(:last-child) {
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title -->
+    <div class="title">Chapter 8: Worksheet A</div>
+
+    <div class="scroll-container">
+        <!-- Problem 1 -->
+        <div class="container">
+            <div class="question">Problem 1:</div>
+            <div class="image-container">
+                <img src="level1/1.png" alt="Math Problem 1">
+            </div>
+            <div class="solution-container">
+                <h3>Write your solution here:</h3>
+                <textarea placeholder="Write your solution to the math problem here..."></textarea>
+            </div>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="container">
+            <div class="question">Problem 2:</div>
+            <div class="image-container">
+                <img src="level1/2.png" alt="Math Problem 2">
+            </div>
+            <div class="solution-container">
+                <h3>Write your solution here:</h3>
+                <textarea placeholder="Write your solution to the math problem here..."></textarea>
+            </div>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="container">
+            <div class="question">Problem 3:</div>
+            <div class="image-container">
+                <img src="level1/3.png" alt="Math Problem 3">
+            </div>
+            <div class="solution-container">
+                <h3>Write your solution here:</h3>
+                <textarea placeholder="Write your solution to the math problem here..."></textarea>
+            </div>
+        </div>
+
+        <!-- Problem 4 -->
+        <div class="container">
+            <div class="question">Problem 4:</div>
+            <div class="image-container">
+                <img src="level1/4.png" alt="Math Problem 4">
+            </div>
+            <div class="solution-container">
+                <h3>Write your solution here:</h3>
+                <textarea placeholder="Write your solution to the math problem here..."></textarea>
+            </div>
+        </div>
+
+        <!-- Problem 5 -->
+        <div class="container">
+            <div class="question">Problem 5:</div>
+            <div class="image-container">
+                <img src="level1/5.png" alt="Math Problem 5">
+            </div>
+            <div class="solution-container">
+                <h3>Write your solution here:</h3>
+                <textarea placeholder="Write your solution to the math problem here..."></textarea>
+            </div>
+        </div>
+
+        <!-- Problem 6 -->
+        <div class="container">
+            <div class="question">Problem 6:</div>
+            <div class="image-container">
+                <img src="level1/6.png" alt="Math Problem 6">
+            </div>
+            <div class="solution-container">
+                <h3>Write your solution here:</h3>
+                <textarea placeholder="Write your solution to the math problem here..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="container">
+        <button class="submit-btn">Submit Worksheet</button>
+    </div>
+
+</body>
+</html>
