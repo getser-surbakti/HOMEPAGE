@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Probability Games</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      text-align: center;
+    }
+    .slide {
+      display: none;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 50px auto;
+      transition: opacity 1s;
+    }
+    .active {
+      display: block;
+      opacity: 1;
+    }
+    h1 {
+      color: #2f4f4f;
+    }
+    p {
+      font-size: 18px;
+      text-align:left;
+    }
+    li {
+        text-align:left;
+        
+    }
+    .btn {
+      background-color: #040a05;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 10px;
+    }
+    .btn:hover {
+      background-color: #030804;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Game 1: Probability Dice Roll -->
+  <div class="slide active" id="slide1">
+    <h1>Game 1: Probability Dice Roll</h1>
+    <p><strong>Objective:</strong> Teams compete to predict the outcome of dice rolls.</p>
+    <p><strong>How to Play:</strong></p>
+    <ul>
+      <li>Each team chooses a number (1-6) they think will appear on a dice roll.</li>
+      <li>One student from each team rolls the dice, and the team whose number is rolled scores a point.</li>
+      <li>Teams can take turns rolling the dice, and the game continues for a set number of rounds.</li>
+      <li>Discuss the probabilities of rolling each number (1/6) and how that influences the outcome.</li>
+    </ul>
+    <button class="btn" onclick="nextSlide(1)">Next Game</button>
+  </div>
+
+  <!-- Game 2: Coin Flip Prediction Challenge -->
+  <div class="slide" id="slide2">
+    <h1>Game 2: Coin Flip Prediction Challenge</h1>
+    <p><strong>Objective:</strong> Teams predict the outcome of multiple coin flips.</p>
+    <p><strong>How to Play:</strong></p>
+    <ul>
+      <li>Each team chooses either "heads" or "tails" before each flip.</li>
+      <li>A coin is flipped 10 times, and the team that correctly predicts the most flips wins.</li>
+      <li>Afterward, discuss the likelihood of heads vs. tails and the fairness of the game.</li>
+    </ul>
+    <button class="btn" onclick="nextSlide(1)">Next Game</button>
+  </div>
+
+  <!-- Game 3: Lucky Draw Challenge -->
+  <div class="slide" id="slide3">
+    <h1>Game 3: Lucky Draw Challenge</h1>
+    <p><strong>Objective:</strong> Teams compete to draw certain colored balls from a bag.</p>
+    <p><strong>How to Play:</strong></p>
+    <ul>
+      <li>Fill a bag with colored balls (e.g., red, blue, yellow, green), with a different number of balls for each color.</li>
+      <li>Teams take turns drawing a ball from the bag, with the goal of drawing a certain color.</li>
+      <li>After a series of draws, the team that draws the most of their chosen color wins.</li>
+      <li>This game can help teach concepts of probability and chance.</li>
+    </ul>
+    <button class="btn" onclick="nextSlide(1)">Next Game</button>
+  </div>
+
+  <!-- Game 4: Estimation Station -->
+  <div class="slide" id="slide4">
+    <h1>Game 4: Estimation Station</h1>
+    <p><strong>Objective:</strong> Teams estimate quantities and compare their predictions with actual results.</p>
+    <p><strong>How to Play:</strong></p>
+    <ul>
+      <li>Prepare several containers with a known number of small objects (e.g., beans, marbles, or buttons).</li>
+      <li>Teams take turns estimating how many objects are in each container.</li>
+      <li>After all estimates are made, the actual number is revealed, and the team with the closest guess wins.</li>
+      <li>This helps students practice making informed estimates based on probability.</li>
+    </ul>
+    <button class="btn" onclick="nextSlide(1)">Restart</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function nextSlide(step) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide += step;
+      if (currentSlide >= slides.length) {
+        currentSlide = 0; // Restart from the first slide
+      }
+      slides[currentSlide].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
