@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six-Sided Die Experiment Worksheet</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2em;
+        }
+        h2 {
+            color: #333;
+            font-size: 1.5em;
+        }
+        p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td input {
+            width: 80%;
+            padding: 5px;
+            text-align: center;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: block;
+            width: 100%;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Six-Sided Die Experiment Worksheet</h1>
+
+        <div class="section">
+            <h2>Objective:</h2>
+            <p>In this experiment, we will roll a standard six-sided die 20 times. After each roll, we will record the result and calculate the relative frequency for each number (1-6). We will then make predictions based on our data.</p>
+        </div>
+
+        <div class="section">
+            <h2>1. Prediction (What do you think will happen?)</h2>
+            <label for="prediction">What do you think the frequency of each number (1-6) will be after 20 rolls?</label>
+            <input type="text" id="prediction" placeholder="Enter your prediction for each number (e.g., 1: 3 times, 2: 4 times, etc.)">
+        </div>
+
+        <div class="section">
+            <h2>2. Perform the Experiment:</h2>
+            <p>Now, roll the die 20 times. Each time you roll, record the result (1, 2, 3, 4, 5, or 6) in the table below:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll #</th>
+                        <th>Result (1-6)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td><input type="text" name="roll1" placeholder="1-6"></td></tr>
+                    <tr><td>2</td><td><input type="text" name="roll2" placeholder="1-6"></td></tr>
+                    <tr><td>3</td><td><input type="text" name="roll3" placeholder="1-6"></td></tr>
+                    <tr><td>4</td><td><input type="text" name="roll4" placeholder="1-6"></td></tr>
+                    <tr><td>5</td><td><input type="text" name="roll5" placeholder="1-6"></td></tr>
+                    <tr><td>6</td><td><input type="text" name="roll6" placeholder="1-6"></td></tr>
+                    <tr><td>7</td><td><input type="text" name="roll7" placeholder="1-6"></td></tr>
+                    <tr><td>8</td><td><input type="text" name="roll8" placeholder="1-6"></td></tr>
+                    <tr><td>9</td><td><input type="text" name="roll9" placeholder="1-6"></td></tr>
+                    <tr><td>10</td><td><input type="text" name="roll10" placeholder="1-6"></td></tr>
+                    <tr><td>11</td><td><input type="text" name="roll11" placeholder="1-6"></td></tr>
+                    <tr><td>12</td><td><input type="text" name="roll12" placeholder="1-6"></td></tr>
+                    <tr><td>13</td><td><input type="text" name="roll13" placeholder="1-6"></td></tr>
+                    <tr><td>14</td><td><input type="text" name="roll14" placeholder="1-6"></td></tr>
+                    <tr><td>15</td><td><input type="text" name="roll15" placeholder="1-6"></td></tr>
+                    <tr><td>16</td><td><input type="text" name="roll16" placeholder="1-6"></td></tr>
+                    <tr><td>17</td><td><input type="text" name="roll17" placeholder="1-6"></td></tr>
+                    <tr><td>18</td><td><input type="text" name="roll18" placeholder="1-6"></td></tr>
+                    <tr><td>19</td><td><input type="text" name="roll19" placeholder="1-6"></td></tr>
+                    <tr><td>20</td><td><input type="text" name="roll20" placeholder="1-6"></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>3. Reflect on the Results:</h2>
+            <ul>
+                <li>Was your prediction correct? Why or why not?</li>
+                <input type="text" id="reflection1" placeholder="Enter your answer here">
+                
+                <li>Did any number appear more frequently than others? What might explain that?</li>
+                <input type="text" id="reflection2" placeholder="Enter your answer here">
+                
+                <li>If you were to roll the die 100 times, do you think the results would be closer to an even distribution of each number? Why?</li>
+                <input type="text" id="reflection3" placeholder="Enter your answer here">
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Extension: Predict Future Rolls</h2>
+            <p>Let's make another prediction. If we roll the die 50 times, how many times do you think each number (1-6) will appear? Write your prediction below:</p>
+            <input type="text" id="futurePrediction" placeholder="Enter your prediction for each number (e.g., 1: 8 times, 2: 9 times, etc.)">
+        </div>
+
+        <div class="section">
+            <button class="button" onclick="alert('Great job! Continue with the next steps.')">Submit</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Created for educational purposes. Enjoy the experiment!</p>
+    </div>
+
+</body>
+</html>
