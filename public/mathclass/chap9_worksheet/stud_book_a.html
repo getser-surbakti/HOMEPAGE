@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz - Addition and Subtraction with Unknown Numbers</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #1fbe0a, #1fbe0a);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-size: 2.5rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .question-container {
+      display: none;
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: opacity 0.3s ease;
+      height: 450px;
+    }
+
+    .question-container.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .question-container img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .question-text {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
+
+    .answer {
+      margin-top: 10px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 100%;            /* Full width */
+      max-width: 500px;       /* Max width of input */
+      padding: 15px;          /* Increase padding */
+      font-size: 1.2rem;      /* Adjust text size */
+      border: 2px solid #ccc; /* Border style */
+      border-radius: 10px;    /* Rounded corners */
+      margin-top: 15px;       /* Space above input */
+      margin-bottom: 20px;    /* Space below input */
+      box-sizing: border-box; /* Include padding in the element's total width */
+      height: 150px;
+    }
+
+    input[type="text"]:focus {
+      border-color: #FF5722;  /* Focus border color */
+      outline: none;          /* Remove outline */
+    }
+
+    button {
+      background-color: #FF5722;
+      color: white;
+      font-size: 1.2rem;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #e64a19;
+      transform: scale(1.05);
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    #next-button {
+      display: block;
+      margin: 1px auto;
+      background-color: #4CAF50;
+      padding: 12px 24px;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #next-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><strong>Chapter 9 (Part A):</strong> Add and Subtract to find the value of two unknown numbers</h1>
+
+  <!-- Question 1 -->
+  <div class="question-container active" id="question1">
+    <img src="studentsbook/1.png" alt="Question 1">
+    <p class="question-text">The mass of one package of flour is:</p>
+    <input type="text" id="userInput1" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer1')">Show Answer</button>
+    <p id="answer1" class="answer" style="display:none;"><strong>Answer:</strong> 4 Kg</p>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question-container" id="question2">
+    <img src="studentsbook/2.png" alt="Question 2">
+    <p class="question-text">If the mass of one round pizza is 0.3 kg, what is the mass of one square pizza?:</p>
+    <input type="text" id="userInput2" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer2')">Show Answer</button>
+    <p id="answer2" class="answer" style="display:none;"><strong>Answer:</strong> 0.2 kg</p>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question-container" id="question3">
+    <img src="studentsbook/3.png" alt="Question 3">
+    <p class="question-text">What is the cost of each pencil and ruler?</p>
+    <input type="text" id="userInput3" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer3')">Show Answer</button>
+    <p id="answer3" class="answer" style="display:none;"><strong>Answer:</strong> Each pencil costs $1.50 and each ruler costs $2.50</p>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="question-container" id="question4">
+    <img src="studentsbook/4.png" alt="Question 4">
+    <p class="question-text">What is the total cost of the items?</p>
+    <input type="text" id="userInput4" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer4')">Show Answer</button>
+    <p id="answer4" class="answer" style="display:none;"><strong>Answer:</strong> 70</p>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="question-container" id="question5">
+    <img src="studentsbook/5.png" alt="Question 5">
+    <p class="question-text">What is the total cost of the items?</p>
+    <input type="text" id="userInput5" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer5')">Show Answer</button>
+    <p id="answer5" class="answer" style="display:none;"><strong>Answer:</strong> 80</p>
+  </div>
+  <!-- Question 6 -->
+  <div class="question-container" id="question6">
+    <img src="studentsbook/6.png" alt="Question 6">
+    <input type="text" id="userInput6" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer6')">Show Answer</button>
+    <p id="answer6" class="answer" style="display:none;"><strong>Answer:</strong> 80</p>
+  </div>
+  <!-- Question 5 -->
+  <div class="question-container" id="question7">
+    <img src="studentsbook/7.png" alt="Question 7">
+    <input type="text" id="userInput7" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer7')">Show Answer</button>
+    <p id="answer7" class="answer" style="display:none;"><strong>Answer:</strong> 80</p>
+  </div>
+
+  <!-- Additional Questions ... -->
+
+  <button id="next-button" onclick="nextQuestion()">Next Question</button>
+
+  <script>
+    let currentQuestion = 1;
+
+    function showAnswer(answerId) {
+      document.getElementById(answerId).style.display = "block";
+    }
+
+    function nextQuestion() {
+      const totalQuestions = 15;
+      if (currentQuestion < totalQuestions) {
+        document.getElementById(`question${currentQuestion}`).classList.remove("active");
+        currentQuestion++;
+        document.getElementById(`question${currentQuestion}`).classList.add("active");
+      }
+      if (currentQuestion === totalQuestions) {
+        document.getElementById('next-button').style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>

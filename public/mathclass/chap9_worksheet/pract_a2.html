@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz - Addition and Subtraction with Unknown Numbers</title>
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-size: 2.5rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .question-container {
+      display: none;
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: opacity 0.3s ease;
+    }
+
+    .question-container.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .question-container p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .shape-circle {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      margin: 0 10px;
+      text-align: center;
+      line-height: 50px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .shape-square {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: #FF5722;
+      margin: 0 10px;
+      text-align: center;
+      line-height: 50px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .shape-triangle {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-bottom: 50px solid #3F51B5;
+      margin: 0 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #FF5722;
+      color: white;
+      font-size: 1.2rem;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #e64a19;
+      transform: scale(1.05);
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    /* Answer Text */
+    .answer {
+      margin-top: 10px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Navigation button */
+    #next-button {
+      display: block;
+      margin: 30px auto;
+      background-color: #4CAF50;
+      padding: 12px 24px;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #next-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Two Unknown Numbers</h1>
+
+  <!-- Question 1 -->
+  <div class="question-container active" id="question1">
+    <p><strong>Question 1:</strong> <span class="shape-circle">?</span> + <span class="shape-circle">?</span> - 30 = 80</p>
+    <button onclick="showAnswer('answer1')">Show Answer</button>
+    <p id="answer1" class="answer" style="display:none;"><strong>Answer:</strong> 55</p>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question-container" id="question2">
+    <p><strong>Question 2:</strong> <span class="shape-square">?</span> - 20 + <span class="shape-square">?</span> = 60</p>
+    <button onclick="showAnswer('answer2')">Show Answer</button>
+    <p id="answer2" class="answer" style="display:none;"><strong>Answer:</strong> 40</p>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question-container" id="question3">
+    <p><strong>Question 3:</strong> <span class="shape-circle">?</span> + <span class="shape-circle">?</span> - 50 = 90</p>
+    <button onclick="showAnswer('answer3')">Show Answer</button>
+    <p id="answer3" class="answer" style="display:none;"><strong>Answer:</strong> 70</p>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="question-container" id="question4">
+    <p><strong>Question 4:</strong> <span class="shape-square">?</span> - 40 + <span class="shape-square">?</span> = 100</p>
+    <button onclick="showAnswer('answer4')">Show Answer</button>
+    <p id="answer4" class="answer" style="display:none;"><strong>Answer:</strong> 70</p>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="question-container" id="question5">
+    <p><strong>Question 5:</strong> <span class="shape-triangle">?</span> + <span class="shape-triangle">?</span> - 30 = 110</p>
+    <button onclick="showAnswer('answer5')">Show Answer</button>
+    <p id="answer5" class="answer" style="display:none;"><strong>Answer:</strong> 70</p>
+  </div>
+
+  <!-- Question 6 -->
+  <div class="question-container" id="question6">
+    <p><strong>Question 6:</strong> <span class="shape-square">?</span> + <span class="shape-square">?</span> - 60 = 50</p>
+    <button onclick="showAnswer('answer6')">Show Answer</button>
+    <p id="answer6" class="answer" style="display:none;"><strong>Answer:</strong> 55</p>
+  </div>
+
+  <!-- Question 7 -->
+  <div class="question-container" id="question7">
+    <p><strong>Question 7:</strong> <span class="shape-circle">?</span> + <span class="shape-circle">?</span> - 10 = 120</p>
+    <button onclick="showAnswer('answer7')">Show Answer</button>
+    <p id="answer7" class="answer" style="display:none;"><strong>Answer:</strong> 65</p>
+  </div>
+
+  <!-- Question 8 -->
+  <div class="question-container" id="question8">
+    <p><strong>Question 8:</strong> <span class="shape-square">?</span> - 35 + <span class="shape-square">?</span> = 75</p>
+    <button onclick="showAnswer('answer8')">Show Answer</button>
+    <p id="answer8" class="answer" style="display:none;"><strong>Answer:</strong> 55</p>
+  </div>
+
+  <!-- Question 9 -->
+  <div class="question-container" id="question9">
+    <p><strong>Question 9:</strong> <span class="shape-circle">?</span> + <span class="shape-circle">?</span> - 40 = 90</p>
+    <button onclick="showAnswer('answer9')">Show Answer</button>
+    <p id="answer9" class="answer" style="display:none;"><strong>Answer:</strong> 65</p>
+  </div>
+
+  <!-- Question 10 -->
+  <div class="question-container" id="question10">
+    <p><strong>Question 10:</strong> <span class="shape-square">?</span> + <span class="shape-square">?</span> - 25 = 70</p>
+    <button onclick="showAnswer('answer10')">Show Answer</button>
+    <p id="answer10" class="answer" style="display:none;"><strong>Answer:</strong> 47.5</p>
+  </div>
+
+  <br>
+  <button id="next-button" onclick="nextQuestion()">Next Question</button>
+
+  <script>
+    let currentQuestion = 1;
+    
+    function showAnswer(answerId) {
+      document.getElementById(answerId).style.display = "block";
+    }
+
+    function nextQuestion() {
+      const totalQuestions = 10;
+      if (currentQuestion < totalQuestions) {
+        document.getElementById(`question${currentQuestion}`).classList.remove("active");
+        currentQuestion++;
+        document.getElementById(`question${currentQuestion}`).classList.add("active");
+      }
+      if (currentQuestion === totalQuestions) {
+        document.getElementById('next-button').style.display = 'none';
+      }
+    }
+  </script>
+  
+</body>
+</html>
