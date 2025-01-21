@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negative Numbers Worksheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            text-align: center;
+        }
+        .worksheet-container {
+            background-color: white;
+            margin: 30px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+            display: none; /* Hide questions initially */
+        }
+        .question p {
+            font-size: 18px;
+        }
+        .answer {
+            padding: 5px;
+            font-size: 16px;
+            width: 60px;
+            text-align: center;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+        .nav-btn {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .nav-btn:hover {
+            background-color: #007bb5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="worksheet-container">
+    <h1>Negative Numbers Practice Worksheet</h1>
+
+    <form id="worksheetForm">
+        <!-- Question 1 to 4 -->
+        <div class="question" id="question1">
+            <p>1. What is -5 + 3?</p>
+            <input type="number" class="answer" id="q1" placeholder="Answer">
+        </div>
+        <div class="question" id="question2">
+            <p>2. What is 7 - (-2)?</p>
+            <input type="number" class="answer" id="q2" placeholder="Answer">
+        </div>
+        <div class="question" id="question3">
+            <p>3. What is -6 + (-3)?</p>
+            <input type="number" class="answer" id="q3" placeholder="Answer">
+        </div>
+        <div class="question" id="question4">
+            <p>4. What is -4 - 6?</p>
+            <input type="number" class="answer" id="q4" placeholder="Answer">
+        </div>
+
+        <!-- Question 5 to 8 -->
+        <div class="question" id="question5">
+            <p>5. What is 3 + (-7)?</p>
+            <input type="number" class="answer" id="q5" placeholder="Answer">
+        </div>
+        <div class="question" id="question6">
+            <p>6. What is -8 + 3?</p>
+            <input type="number" class="answer" id="q6" placeholder="Answer">
+        </div>
+        <div class="question" id="question7">
+            <p>7. What is -2 - (-5)?</p>
+            <input type="number" class="answer" id="q7" placeholder="Answer">
+        </div>
+        <div class="question" id="question8">
+            <p>8. What is -10 + 6?</p>
+            <input type="number" class="answer" id="q8" placeholder="Answer">
+        </div>
+
+        <!-- Question 9 to 12 -->
+        <div class="question" id="question9">
+            <p>9. What is 0 - (-5)?</p>
+            <input type="number" class="answer" id="q9" placeholder="Answer">
+        </div>
+        <div class="question" id="question10">
+            <p>10. What is -15 + 8?</p>
+            <input type="number" class="answer" id="q10" placeholder="Answer">
+        </div>
+        <div class="question" id="question11">
+            <p>11. What is -12 + 5?</p>
+            <input type="number" class="answer" id="q11" placeholder="Answer">
+        </div>
+        <div class="question" id="question12">
+            <p>12. What is 4 - (-9)?</p>
+            <input type="number" class="answer" id="q12" placeholder="Answer">
+        </div>
+
+        <!-- Question 13 to 16 -->
+        <div class="question" id="question13">
+            <p>13. What is -9 - 7?</p>
+            <input type="number" class="answer" id="q13" placeholder="Answer">
+        </div>
+        <div class="question" id="question14">
+            <p>14. What is -20 + (-5)?</p>
+            <input type="number" class="answer" id="q14" placeholder="Answer">
+        </div>
+        <div class="question" id="question15">
+            <p>15. What is 3 - (-3)?</p>
+            <input type="number" class="answer" id="q15" placeholder="Answer">
+        </div>
+        <div class="question" id="question16">
+            <p>16. What is -11 + 4?</p>
+            <input type="number" class="answer" id="q16" placeholder="Answer">
+        </div>
+
+        <!-- Question 17 to 20 -->
+        <div class="question" id="question17">
+            <p>17. What is 5 + (-13)?</p>
+            <input type="number" class="answer" id="q17" placeholder="Answer">
+        </div>
+        <div class="question" id="question18">
+            <p>18. What is -6 - (-4)?</p>
+            <input type="number" class="answer" id="q18" placeholder="Answer">
+        </div>
+        <div class="question" id="question19">
+            <p>19. What is 0 + (-10)?</p>
+            <input type="number" class="answer" id="q19" placeholder="Answer">
+        </div>
+        <div class="question" id="question20">
+            <p>20. What is -8 + 7?</p>
+            <input type="number" class="answer" id="q20" placeholder="Answer">
+        </div>
+
+        <button type="button" class="nav-btn" onclick="nextQuestions()">Next Questions</button>
+        <button type="button" class="submit-btn" onclick="checkAnswers()">Submit Answers</button>
+    </form>
+
+    <div id="result" class="result"></div>
+    <div class="footer">
+        <p>© 2025 Negative Numbers Practice. All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+    let currentSet = 1;
+    const totalSets = 5; // 5 sets of 4 questions
+
+    // Initially show the first set of 4 questions
+    function showQuestions() {
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById(`question${i}`).style.display = 'block';
+        }
+    }
+
+    // Show next set of questions
+    function nextQuestions() {
+        if (currentSet < totalSets) {
+            for (let i = (currentSet - 1) * 4 + 1; i <= currentSet * 4; i++) {
+                document.getElementById(`question${i}`).style.display = 'none';
+            }
+            currentSet++;
+            for (let i = (currentSet - 1) * 4 + 1; i <= currentSet * 4; i++) {
+                document.getElementById(`question${i}`).style.display = 'block';
+            }
+        }
+    }
+
+    function checkAnswers() {
+        let resultText = '';
+        let correctAnswers = 0;
+
+        // Answers for each question
+        const answers = {
+            q1: -2, q2: 9, q3: -9, q4: -10, q5: -4, q6: -5, q7: 3, q8: -4, q9: 5, q10: -7,
+            q11: -7, q12: 13, q13: -16, q14: -25, q15: 6, q16: -7, q17: -8, q18: -2, q19: -10, q20: -1
+        };
+
+        // Check each question
+        for (let i = 1; i <= 20; i++) {
+            const userAnswer = parseInt(document.getElementById('q' + i).value);
+            if (userAnswer === answers['q' + i]) {
+                correctAnswers++;
+                resultText += `Question ${i}: <span class="correct">Correct!</span><br>`;
+            } else {
+                resultText += `Question ${i}: <span class="incorrect">Incorrect. Correct answer is ${answers['q' + i]}.</span><br>`;
+            }
+        }
+
+        resultText += `<br>You got ${correctAnswers} out of 20 correct!`;
+        document.getElementById('result').innerHTML = resultText;
+    }
+
+    // Show the first set of questions by default
+    showQuestions();
+</script>
+
+</body>
+</html>

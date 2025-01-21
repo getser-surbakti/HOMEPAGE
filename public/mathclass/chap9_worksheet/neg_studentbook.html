@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz - Addition and Subtraction with Unknown Numbers</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #f3faf3, #f1f5f0);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-size: 2.5rem;
+      color: rgb(87, 11, 11);
+    }
+
+    .question-container {
+      display: none;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: opacity 0.3s ease;
+      height: 550px;
+    }
+
+    .question-container.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .question-container img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .question-text {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
+
+    .answer {
+      margin-top: 10px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 100%;            /* Full width */
+      max-width: 500px;       /* Max width of input */
+      padding: 15px;          /* Increase padding */
+      font-size: 1.2rem;      /* Adjust text size */
+      border: 2px solid #ccc; /* Border style */
+      border-radius: 10px;    /* Rounded corners */
+      margin-top: 15px;       /* Space above input */
+      margin-bottom: 20px;    /* Space below input */
+      box-sizing: border-box; /* Include padding in the element's total width */
+      height: 150px;
+    }
+
+    input[type="text"]:focus {
+      border-color: #FF5722;  /* Focus border color */
+      outline: none;          /* Remove outline */
+    }
+
+    button {
+      background-color: #FF5722;
+      color: white;
+      font-size: 1.2rem;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #e64a19;
+      transform: scale(1.05);
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    #next-button {
+      display: block;
+      margin: 1px auto;
+      background-color: #4CAF50;
+      padding: 12px 24px;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #next-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><strong>Studentsbook(B):</strong> Add and Subtract with Negative Numbers</h1>
+
+  <!-- Question 1 -->
+  <div class="question-container active" id="question1">
+    <img src="negative numbers/1.png" alt="Question 1">
+    <input type="text" id="userInput1" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer1')">Show Answer</button>
+    <p id="answer1" class="answer" style="display:none;"><strong>Answer:</strong> a. 300 | b. 500</p>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question-container" id="question2">
+    <img src="negative numbers/2.png" alt="Question 2">
+    <input type="text" id="userInput2" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer2')">Show Answer</button>
+    <p id="answer2" class="answer" style="display:none;"><strong>Answer:  </strong> a. 1,627 | b.1,618</p>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question-container" id="question3">
+    <img src="negative numbers/3.png" alt="Question 3">
+    <input type="text" id="userInput3" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer3')">Show Answer</button>
+    <p id="answer3" class="answer" style="display:none;"><strong>Answer:</strong> 509 g </p>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="question-container" id="question4">
+    <img src="negative numbers/4.png" alt="Question 4">
+    <input type="text" id="userInput4" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer4')">Show Answer</button>
+    <p id="answer4" class="answer" style="display:none;"><strong>Answer:</strong>a. -4 | b. -6</p>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="question-container" id="question5">
+    <img src="negative numbers/5.png" alt="Question 5">
+    <input type="text" id="userInput5" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer5')">Show Answer</button>
+    <p id="answer5" class="answer" style="display:none;"><strong>Answer:</strong> a. He won't be able to do it. Because 300-110 -110 -110 = -30.  | b. 300-110-110= 80 apples left for the 3rd store </p>
+  </div>
+  <!-- Question 6 -->
+  <div class="question-container" id="question6">
+    <img src="negative numbers/6.png" alt="Question 6">
+    <input type="text" id="userInput6" placeholder="Enter your answer">
+    <button onclick="showAnswer('answer6')">Show Answer</button>
+    <p id="answer6" class="answer" style="display:none;"><strong>Answer:</strong>a. -6 degrees Celcius | b. 11 degrees Celcius</p>
+  </div>
+
+  <!-- Additional Questions ... -->
+
+  <button id="next-button" onclick="nextQuestion()">Next Question</button>
+
+  <script>
+    let currentQuestion = 1;
+
+    function showAnswer(answerId) {
+      document.getElementById(answerId).style.display = "block";
+    }
+
+    function nextQuestion() {
+      const totalQuestions = 15;
+      if (currentQuestion < totalQuestions) {
+        document.getElementById(`question${currentQuestion}`).classList.remove("active");
+        currentQuestion++;
+        document.getElementById(`question${currentQuestion}`).classList.add("active");
+      }
+      if (currentQuestion === totalQuestions) {
+        document.getElementById('next-button').style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>

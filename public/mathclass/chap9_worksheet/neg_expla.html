@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Negative Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+
+        .slide-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .slide {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+            display: none; /* Hide slides initially */
+        }
+
+        .slide.active {
+            display: block; /* Show active slide */
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .slide p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            margin-top: 20px;
+        }
+
+        .nav-buttons button {
+            font-size: 1rem;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #45a049;
+        }
+        li {
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- Slide 1 -->
+    <div class="slide active" id="slide1">
+        <h1>What Are Negative Numbers?</h1>
+        <p>Negative numbers are numbers that are less than zero. You can think of them as "below zero."</p>
+        <p>or you can think of it as the opposite of the positive number</p>
+        <p>We usually use negative numbers to talk about things like temperature, money, or altitude.</p>
+        <li> 5m : go 5m to the <strong>RIGHT</strong></li>
+        <li>-5m : go 5m to the <strong>LEFT</strong></li>
+        <p>________________________________________</p>
+        <li> 5m : go 5m to the <strong>UP</strong></li>
+        <li>-5m : go 5m to the <strong>DOWN</strong></li>
+        <p>__________________________________________</p>
+        <li> $5 : you get $5 <strong>PROFIT</strong></li>
+        <li>-5m : you get $5 <strong>LOSS</strong></li>
+        <p>_________________________________________</p>
+        <li> 5&deg;C : The temperature <strong>RISES</strong> 5&deg;C</li>
+        <li>-5&deg;C : you get $5 <strong>DROPS</strong>5&deg;C</li>
+        
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" id="slide2">
+        <h1>Where Do We See Negative Numbers?</h1>
+        <p>Imagine it's winter, and the temperature is -5°C. That means it’s 5 degrees below zero!</p>
+        <p>Negative numbers can also be used to show money that is "owed,"<i>(hutang uang)</i> like -$10.</p>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide" id="slide3">
+        <h1>Adding Negative Numbers</h1>
+        <p>When you add a negative number, it means you are going "down."</p>
+        <p>For example, 3 + (-2) = 1. You start at 3 and move 2 steps back to get to 1.</p>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide" id="slide4">
+        <h1>Subtracting Negative Numbers</h1>
+        <p>When you subtract a negative number, it’s like adding!</p>
+        <p>For example, 4 - (-2) = 6. You start at 4, and subtracting a negative number moves you forward to 6.</p>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide" id="slide5">
+        <h1>Real-Life Examples of Negative Numbers</h1>
+        <p>1. Let’s say you have 3 apples, and then you lose 5 apples. You’d be at -2 apples! That’s a negative number because you owe apples!</p>
+        <p>2. If the temperature drops to -5°C, it’s 5 degrees below zero! That's how we use negative numbers to represent cold temperatures.</p>
+        <p>3. If your bank account balance is -$50, it means you owe the bank $50!</p>
+        <p>4. The Dead Sea is at an elevation of about -430 meters. It’s below sea level, so we use negative numbers to show how deep it is.</p>
+        <p>5. If you borrow $20 from a friend, you could say you have -$20. This represents the money you owe.</p>
+        <p>6. Freezers are usually set to temperatures like -18°C. This means it’s cold enough to freeze food!</p>
+        <p>7. If you dive deep into the ocean, your depth might be -200 meters. This shows how far below sea level you are!</p>
+        <p>8. If you owe $150 on your credit card, your balance is -$150. This is the negative amount you owe the credit card company.</p>
+        <p>9. If it’s -10°C outside, that’s really cold! We use negative numbers to describe freezing temperatures during the winter.</p>
+        <p>10. When an airplane descends below sea level or drops below a certain height, it’s considered a negative altitude.</p>
+    </div>
+    
+
+    <!-- Navigation buttons -->
+    <div class="nav-buttons">
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+    
+</div>
+
+<script>
+    let currentSlide = 1;
+    const totalSlides = 5;
+
+    function showSlide() {
+        // Hide all slides
+        for (let i = 1; i <= totalSlides; i++) {
+            document.getElementById('slide' + i).classList.remove('active');
+        }
+
+        // Show current slide
+        document.getElementById('slide' + currentSlide).classList.add('active');
+    }
+
+    function nextSlide() {
+        if (currentSlide < totalSlides) {
+            currentSlide++;
+            showSlide();
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 1) {
+            currentSlide--;
+            showSlide();
+        }
+    }
+</script>
+
+</body>
+</html>
