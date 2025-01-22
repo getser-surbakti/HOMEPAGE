@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 5 Math Quiz: Negative Numbers</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f9f9;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        .question {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .question-number {
+            font-size: 1.2rem;
+            color: #2196F3;
+            margin-bottom: 15px;
+        }
+        input {
+            width: 80px;
+            padding: 8px;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .submit-btn, .next-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .submit-btn:hover, .next-btn:hover {
+            background-color: #45a049;
+        }
+        .next-btn {
+            background-color: #2196F3;
+        }
+        .next-btn:hover {
+            background-color: #0b7dda;
+        }
+        .result {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .button-container {
+            margin-top: 30px;
+        }
+        .instructions {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>IF YOU SCORED LESS THAN 60%</h1>
+    <div class="instructions">
+        <p>Let's test your math skills! Answer each question below. Click "Next" to move to the next one.</p>
+    </div>
+    <form id="quizForm">
+        <div id="questionContainer">
+            <!-- Question content will be injected here via JavaScript -->
+        </div>
+        
+        <div class="button-container">
+            <button type="button" id="nextBtn" class="next-btn" onclick="nextQuestion()">Next</button>
+        </div>
+    </form>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    // Array of 100 questions and answers
+    const questions = [
+        { question: "-3 - 8 = ?", answer: -11 },
+        { question: "12 + (-9) = ?", answer: 3 },
+        { question: "-15 + 7 = ?", answer: -8 },
+        { question: "-6 - 10 = ?", answer: -16 },
+        { question: "8 - (-2) = ?", answer: 10 },
+        { question: "-4 + 6 = ?", answer: 2 },
+        { question: "9 + (-13) = ?", answer: -4 },
+        { question: "-11 + 5 = ?", answer: -6 },
+        { question: "-2 + (-6) = ?", answer: -8 },
+        { question: "10 - 14 = ?", answer: -4 },
+        { question: "-5 - 3 = ?", answer: -8 },
+        { question: "0 + (-8) = ?", answer: -8 },
+        { question: "-6 + 9 = ?", answer: 3 },
+        { question: "3 + (-12) = ?", answer: -9 },
+        { question: "-4 - (-9) = ?", answer: 5 },
+        { question: "-10 + 6 = ?", answer: -4 },
+        { question: "15 + (-7) = ?", answer: 8 },
+        { question: "-3 - (-5) = ?", answer: 2 },
+        { question: "8 - 15 = ?", answer: -7 },
+        { question: "13 + (-6) = ?", answer: 7 },
+        { question: "-4 + (-9) = ?", answer: -13 },
+        { question: "-9 + 4 = ?", answer: -5 },
+        { question: "7 + (-11) = ?", answer: -4 },
+        { question: "12 - (-6) = ?", answer: 18 },
+        { question: "-10 + (-5) = ?", answer: -15 },
+        { question: "-3 + (-9) = ?", answer: -12 },
+        { question: "14 + (-19) = ?", answer: -5 },
+        { question: "5 - (-5) = ?", answer: 10 },
+        { question: "8 - (-3) = ?", answer: 11 },
+        { question: "-5 + 8 = ?", answer: 3 },
+        { question: "-7 - (-4) = ?", answer: -3 },
+        { question: "9 + (-6) = ?", answer: 3 },
+        { question: "-13 + 9 = ?", answer: -4 },
+        { question: "-4 - (-10) = ?", answer: 6 },
+        { question: "5 + (-7) = ?", answer: -2 },
+        { question: "-8 + 4 = ?", answer: -4 },
+        { question: "-6 + (-6) = ?", answer: -12 },
+        { question: "7 - (-9) = ?", answer: 16 },
+        { question: "-3 + (-7) = ?", answer: -10 },
+        { question: "12 + (-15) = ?", answer: -3 },
+        { question: "-10 + (-9) = ?", answer: -19 },
+        { question: "14 - (-8) = ?", answer: 22 },
+        { question: "-9 - 2 = ?", answer: -11 },
+        { question: "10 - (-13) = ?", answer: 23 },
+        { question: "-15 + 4 = ?", answer: -11 },
+        { question: "-3 - (-5) = ?", answer: 2 },
+        { question: "11 + (-10) = ?", answer: 1 },
+        { question: "-7 - (-12) = ?", answer: 5 },
+        { question: "8 + (-5) = ?", answer: 3 },
+        { question: "-12 + 3 = ?", answer: -9 },
+        { question: "-5 - (-8) = ?", answer: 3 },
+        { question: "13 - (-6) = ?", answer: 19 },
+        { question: "6 + (-3) = ?", answer: 3 },
+        { question: "-4 - 9 = ?", answer: -13 },
+        { question: "-10 + 7 = ?", answer: -3 },
+        { question: "5 - (-2) = ?", answer: 7 },
+        { question: "-8 + (-7) = ?", answer: -15 },
+        { question: "-5 + 12 = ?", answer: 7 },
+        { question: "-3 - 10 = ?", answer: -13 },
+        { question: "-7 + 2 = ?", answer: -5 },
+        { question: "9 - (-4) = ?", answer: 13 },
+        { question: "10 + (-18) = ?", answer: -8 },
+        { question: "-2 + (-7) = ?", answer: -9 },
+        { question: "8 + (-3) = ?", answer: 5 },
+        { question: "-6 + 4 = ?", answer: -2 },
+        { question: "15 - (-10) = ?", answer: 25 },
+        { question: "-4 + (-12) = ?", answer: -16 },
+        { question: "-1 + (-2) = ?", answer: -3 },
+        { question: "5 + (-13) = ?", answer: -8 },
+        { question: "-5 + (-4) = ?", answer: -9 },
+        { question: "12 + (-18) = ?", answer: -6 },
+        { question: "-4 + 8 = ?", answer: 4 },
+        { question: "-7 - (-2) = ?", answer: -5 },
+        { question: "0 + (-5) = ?", answer: -5 },
+        { question: "-2 - (-3) = ?", answer: 1 },
+        { question: "-11 + (-8) = ?", answer: -19 },
+        { question: "8 - (-6) = ?", answer: 14 },
+        { question: "4 + (-14) = ?", answer: -10 },
+        { question: "-3 - 5 = ?", answer: -8 },
+        { question: "9 + (-9) = ?", answer: 0 },
+        { question: "-7 + (-10) = ?", answer: -17 },
+        { question: "7 + (-7) = ?", answer: 0 },
+        { question: "6 - (-9) = ?", answer: 15 },
+        { question: "-3 + (-4) = ?", answer: -7 },
+        { question: "-8 + 11 = ?", answer: 3 },
+        { question: "-2 - 6 = ?", answer: -8 },
+        { question: "10 + (-5) = ?", answer: 5 },
+        { question: "-4 + 3 = ?", answer: -1 },
+        { question: "7 + (-14) = ?", answer: -7 },
+        { question: "6 + (-8) = ?", answer: -2 },
+        { question: "-9 + 6 = ?", answer: -3 },
+        { question: "-2 + 5 = ?", answer: 3 },
+        { question: "-15 + 10 = ?", answer: -5 },
+        { question: "-6 + (-3) = ?", answer: -9 },
+        { question: "3 - (-10) = ?", answer: 13 },
+        { question: "9 + (-4) = ?", answer: 5 },
+        { question: "-5 + 8 = ?", answer: 3 },
+        { question: "-1 + (-8) = ?", answer: -9 },
+        { question: "-12 + 14 = ?", answer: 2 },
+        { question: "3 + (-11) = ?", answer: -8 }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    // Function to load the next question
+    function loadQuestion() {
+        const questionContainer = document.getElementById('questionContainer');
+        questionContainer.innerHTML = `
+            <div class="question-number">Question ${currentQuestionIndex + 1} of ${questions.length}</div>
+            <div class="question">${questions[currentQuestionIndex].question}</div>
+            <input type="number" id="answerInput" required>
+        `;
+    }
+
+    // Function to check the answer and move to the next question
+    function nextQuestion() {
+        const answerInput = document.getElementById('answerInput');
+        const userAnswer = parseInt(answerInput.value);
+
+        // Check if the answer is correct
+        if (userAnswer === questions[currentQuestionIndex].answer) {
+            score++;
+        }
+
+        // Move to the next question
+        currentQuestionIndex++;
+
+        // If all questions are answered, show the result
+        if (currentQuestionIndex === questions.length) {
+            showResult();
+        } else {
+            loadQuestion();
+        }
+    }
+
+    // Function to show the result
+    function showResult() {
+        const resultElement = document.getElementById('result');
+        resultElement.innerHTML = `🎉 You scored ${score} out of ${questions.length}! 🎉`;
+        resultElement.style.color = score === questions.length ? 'green' : 'orange';
+        document.getElementById('questionContainer').style.display = 'none'; // Hide questions
+        document.getElementById('nextBtn').style.display = 'none'; // Hide next button
+    }
+
+    // Initial call to load the first question
+    loadQuestion();
+</script>
+
+</body>
+</html>
