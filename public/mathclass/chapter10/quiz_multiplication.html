@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 18px;
+            text-align: center;
+        }
+        #nextBtn {
+            display: none;
+        }
+        #startBtn {
+            background-color: #008CBA;
+        }
+        #startBtn:hover {
+            background-color: #007B9F;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            .question {
+                font-size: 18px;
+            }
+            input[type="number"], button {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 18px;
+            }
+            .question {
+                font-size: 16px;
+            }
+            input[type="number"], button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Multiplication Quiz</h1>
+    
+    <!-- Instructions for the students -->
+    <div id="instructions">
+        <h3>How to Play:</h3>
+        <p>Hi there! Mr. Getser wants you to practice multiplying big numbers. Get your notebook ready and solve the problems step by step on paper. When you're done, you'll see your score. Remember to take a screenshot of your score and send it on Google Classroom. Don’t forget to show your teacher your notebook too!</p>
+        <button id="startBtn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz -->
+    <div id="quiz" style="display:none;">
+        <div class="question" id="question"></div>
+        <input type="number" id="answer" placeholder="Your answer here" required>
+        <button id="submitBtn" onclick="checkAnswer()">Submit</button>
+        <button id="nextBtn" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <!-- Final Result -->
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    
+    // Generate 25 multiplication questions
+    function generateQuestions() {
+        for (let i = 0; i < 25; i++) {
+            let num1 = Math.floor(Math.random() * 900) + 100; // 3-digit number
+            let num2 = Math.floor(Math.random() * 900) + 100; // 3-digit number
+            questions.push({num1, num2, answer: num1 * num2});
+        }
+    }
+
+    // Show the current question
+    function showQuestion() {
+        const question = questions[currentQuestionIndex];
+        document.getElementById('question').innerText = `What is ${question.num1} x ${question.num2}?`;
+        document.getElementById('answer').value = '';
+        document.getElementById('submitBtn').style.display = 'inline';
+        document.getElementById('nextBtn').style.display = 'none';
+    }
+
+    // Check the answer
+    function checkAnswer() {
+        const userAnswer = parseInt(document.getElementById('answer').value);
+        const correctAnswer = questions[currentQuestionIndex].answer;
+
+        if (userAnswer === correctAnswer) {
+            score++;
+        }
+
+        // Show the next button
+        document.getElementById('submitBtn').style.display = 'none';
+        document.getElementById('nextBtn').style.display = 'inline';
+    }
+
+    // Move to the next question
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    // Show the final result
+    function showResult() {
+        document.getElementById('quiz').style.display = 'none';
+        document.getElementById('result').innerHTML = `You answered ${score} out of ${questions.length} questions correctly. Well done!`;
+    }
+
+    // Start the quiz
+    function startQuiz() {
+        generateQuestions();
+        document.getElementById('instructions').style.display = 'none';
+        document.getElementById('quiz').style.display = 'block';
+        showQuestion();
+    }
+</script>
+
+</body>
+</html>
