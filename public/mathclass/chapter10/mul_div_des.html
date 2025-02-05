@@ -1,72 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Math Problems</title>
+    <title>Math Problems for Grade 5</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
         .question {
+            display: none;
             margin-bottom: 20px;
+        }
+        .question.active {
+            display: block;
         }
         .answer {
             display: none;
+            margin-top: 10px;
+            color: #008000;
         }
         button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
             margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="question">
-        <p>1. Multiply or Divide:</p>
-        <p>a. 1.4 × 10 = ?</p>
-        <button onclick="toggleAnswer('answer1a')">Show/Hide Answer</button>
-        <p id="answer1a" class="answer">14</p>
-    </div>
+    <div class="container">
+        <div class="question active">
+            <p>1. Multiply or Divide:</p>
+            <p>a. 1.4 × 10 = ?</p>
+            <button onclick="toggleAnswer('answer1a')">Show/Hide Answer</button>
+            <p id="answer1a" class="answer">14</p>
+        </div>
 
-    <div class="question">
-        <p>b. 7.29 × 100 = ?</p>
-        <button onclick="toggleAnswer('answer1b')">Show/Hide Answer</button>
-        <p id="answer1b" class="answer">729</p>
-    </div>
+        <div class="question">
+            <p>b. 7.29 × 100 = ?</p>
+            <button onclick="toggleAnswer('answer1b')">Show/Hide Answer</button>
+            <p id="answer1b" class="answer">729</p>
+        </div>
 
-    <div class="question">
-        <p>c. 63 ÷ 100 = ?</p>
-        <button onclick="toggleAnswer('answer1c')">Show/Hide Answer</button>
-        <p id="answer1c" class="answer">0.63</p>
-    </div>
+        <div class="question">
+            <p>c. 63 ÷ 100 = ?</p>
+            <button onclick="toggleAnswer('answer1c')">Show/Hide Answer</button>
+            <p id="answer1c" class="answer">0.63</p>
+        </div>
 
-    <div class="question">
-        <p>d. 8.7 ÷ 10 = ?</p>
-        <button onclick="toggleAnswer('answer1d')">Show/Hide Answer</button>
-        <p id="answer1d" class="answer">0.87</p>
-    </div>
+        <div class="question">
+            <p>d. 8.7 ÷ 10 = ?</p>
+            <button onclick="toggleAnswer('answer1d')">Show/Hide Answer</button>
+            <p id="answer1d" class="answer">0.87</p>
+        </div>
 
-    <div class="question">
-        <p>2. Light Bulb Problem</p>
-        <p>An electrician replaces 10 light bulbs on each floor and completes 1.5 floors every hour. How many light bulbs does he replace in an hour?</p>
-        <button onclick="toggleAnswer('answer2')">Show/Hide Answer</button>
-        <p id="answer2" class="answer">15 light bulbs</p>
-    </div>
+        <div class="question">
+            <p>2. Light Bulb Problem</p>
+            <p>An electrician replaces 10 light bulbs on each floor and completes 1.5 floors every hour. How many light bulbs does he replace in an hour?</p>
+            <button onclick="toggleAnswer('answer2')">Show/Hide Answer</button>
+            <p id="answer2" class="answer">15 light bulbs</p>
+        </div>
 
-    <div class="question">
-        <p>3. Factory Bean Production</p>
-        <p>a. The factory produces 125 kg of beans every day with 10 workers, each working 10 hours a day. How many kilograms does each worker pack per hour?</p>
-        <button onclick="toggleAnswer('answer3a')">Show/Hide Answer</button>
-        <p id="answer3a" class="answer">1.25 kg/hour</p>
-    </div>
+        <div class="question">
+            <p>3. Factory Bean Production</p>
+            <p>a. The factory produces 125 kg of beans every day with 10 workers, each working 10 hours a day. How many kilograms does each worker pack per hour?</p>
+            <button onclick="toggleAnswer('answer3a')">Show/Hide Answer</button>
+            <p id="answer3a" class="answer">1.25 kg/hour</p>
+        </div>
 
-    <div class="question">
-        <p>b. If production increases to 150 kg of beans every day, how many additional kilograms must each worker pack per hour?</p>
-        <button onclick="toggleAnswer('answer3b')">Show/Hide Answer</button>
-        <p id="answer3b" class="answer">0.25 kg/hour</p>
-    </div>
+        <div class="question">
+            <p>b. If production increases to 150 kg of beans every day, how many additional kilograms must each worker pack per hour?</p>
+            <button onclick="toggleAnswer('answer3b')">Show/Hide Answer</button>
+            <p id="answer3b" class="answer">0.25 kg/hour</p>
+        </div>
 
-    <div class="question">
-        <p>c. The factory owner claims the factory produces 15.5 kg of beans per hour and runs for 10 hours every day. Is the claim correct?</p>
-        <button onclick="toggleAnswer('answer3c')">Show/Hide Answer</button>
-        <p id="answer3c" class="answer">No, the factory produces 125 kg of beans every day, not 155 kg.</p>
+        <div class="question">
+            <p>c. The factory owner claims the factory produces 15.5 kg of beans per hour and runs for 10 hours every day. Is the claim correct?</p>
+            <button onclick="toggleAnswer('answer3c')">Show/Hide Answer</button>
+            <p id="answer3c" class="answer">No, the factory produces 125 kg of beans every day, not 155 kg.</p>
+        </div>
+
+        <button onclick="nextQuestion()">Next Question</button>
     </div>
 
     <script>
+        var currentQuestionIndex = 0;
+        var questions = document.querySelectorAll('.question');
+
         function toggleAnswer(id) {
             var element = document.getElementById(id);
             if (element.style.display === "none") {
@@ -74,6 +107,12 @@
             } else {
                 element.style.display = "none";
             }
+        }
+
+        function nextQuestion() {
+            questions[currentQuestionIndex].classList.remove('active');
+            currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+            questions[currentQuestionIndex].classList.add('active');
         }
     </script>
 </body>
