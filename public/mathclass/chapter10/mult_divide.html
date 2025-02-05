@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Practise</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .solution {
+            display: none;
+            color: #007bff;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function showNextQuestion() {
+            var current = document.querySelector('.question:not([style*="display: none"])');
+            if (current.nextElementSibling && current.nextElementSibling.classList.contains('question')) {
+                current.style.display = 'none';
+                current.nextElementSibling.style.display = 'block';
+            }
+        }
+        function toggleSolution(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.question').style.display = 'block';
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Math Practise</div>
+
+        <div class="question" style="display: none;">
+            <div class="subtitle">1. Multiply or divide.</div>
+            <p>a. 24 × 100 = ______ <button onclick="toggleSolution('solution1a')">Show/Hide Solution</button></p>
+            <p id="solution1a" class="solution">2400</p>
+            <p>b. 536 × 1000 = ______ <button onclick="toggleSolution('solution1b')">Show/Hide Solution</button></p>
+            <p id="solution1b" class="solution">536000</p>
+            <p>c. 176 ÷ 100 = ______ <button onclick="toggleSolution('solution1c')">Show/Hide Solution</button></p>
+            <p id="solution1c" class="solution">1.76</p>
+            <p>d. 94,800 ÷ 1000 = ______ <button onclick="toggleSolution('solution1d')">Show/Hide Solution</button></p>
+            <p id="solution1d" class="solution">94.8</p>
+            <button onclick="showNextQuestion()">Next Question</button>
+        </div>
+
+        <div class="question" style="display: none;">
+            <div class="subtitle">2. There are 10 packets of nuts in a box. The mass of each packet is 150 g.</div>
+            <p>a. A label on the box states that the mass of the 10 packets of nuts is 1 kg. Do you think the label is correct? Why do you say so? <button onclick="toggleSolution('solution2a')">Show/Hide Solution</button></p>
+            <p id="solution2a" class="solution">No, the label is not correct. The total mass of the 10 packets of nuts is 10 × 150 g = 1500 g, which is 1.5 kg.</p>
+            <p>b. There are 100 boxes of nuts in a store. Describe how you would find the total mass of the nuts in the store. Convince your partner. <button onclick="toggleSolution('solution2b')">Show/Hide Solution</button></p>
+            <p id="solution2b" class="solution">To find the total mass of the nuts in the store, multiply the mass of one box by the number of boxes. Since one box has a mass of 1.5 kg, the total mass is 100 × 1.5 kg = 150 kg.</p>
+            <button onclick="showNextQuestion()">Next Question</button>
+        </div>
+
+        <div class="question" style="display: none;">
+            <div class="subtitle">3. A dairy farm sold 55,500 ml of milk in 1 week.</div>
+            <p>If the milk was sold in 1-litre and 500-ml milk cartons, what is the greatest possible number of 1-litre milk cartons sold? <button onclick="toggleSolution('solution3')">Show/Hide Solution</button></p>
+            <p id="solution3" class="solution">To maximize the number of 1-litre milk cartons, use as many 1-litre cartons as possible. Since 1 litre = 1000 ml, the greatest number of 1-litre cartons is 55,500 ml ÷ 1000 ml = 55 cartons. The remaining 500 ml can be sold in one 500-ml carton.</p>
+            <button onclick="showNextQuestion()">Next Question</button>
+        </div>
+    </div>
+</body>
+</html>

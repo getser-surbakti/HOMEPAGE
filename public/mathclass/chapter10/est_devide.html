@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Let's Practise</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .solution {
+            display: none;
+            color: #007bff;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function showNextQuestion() {
+            var current = document.querySelector('.question:not([style*="display: none"])');
+            if (current.nextElementSibling && current.nextElementSibling.classList.contains('question')) {
+                current.style.display = 'none';
+                current.nextElementSibling.style.display = 'block';
+            }
+        }
+        function toggleSolution(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.question').style.display = 'block';
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Let's Practise</div>
+
+        <div class="question" style="display: none;">
+            <div class="subtitle">1. Estimate and divide.</div>
+            <p>a. 35 ÷ 6 = ______ <button onclick="toggleSolution('solution1a')">Show/Hide Solution</button></p>
+            <p id="solution1a" class="solution">5 remainder 5</p>
+            <p>b. 96 ÷ 3 = ______ <button onclick="toggleSolution('solution1b')">Show/Hide Solution</button></p>
+            <p id="solution1b" class="solution">32</p>
+            <p>c. 123 ÷ 4 = ______ <button onclick="toggleSolution('solution1c')">Show/Hide Solution</button></p>
+            <p id="solution1c" class="solution">30 remainder 3</p>
+            <p>d. 248 ÷ 8 = ______ <button onclick="toggleSolution('solution1d')">Show/Hide Solution</button></p>
+            <p id="solution1d" class="solution">31</p>
+            <p>e. 305 ÷ 4 = ______ <button onclick="toggleSolution('solution1e')">Show/Hide Solution</button></p>
+            <p id="solution1e" class="solution">76 remainder 1</p>
+            <p>f. 456 ÷ 5 = ______ <button onclick="toggleSolution('solution1f')">Show/Hide Solution</button></p>
+            <p id="solution1f" class="solution">91 remainder 1</p>
+            <button onclick="showNextQuestion()">Next Question</button>
+        </div>
+
+        <div class="question" style="display: none;">
+            <div class="subtitle">2. Daphne has 2 boxes of pencils. Each box has 12 pencils. She gives an equal number of pencils to the 7 members in her dance group.</div>
+            <p>a. How many pencils does each member get? <button onclick="toggleSolution('solution2a')">Show/Hide Solution</button></p>
+            <p id="solution2a" class="solution">3 pencils each</p>
+            <p>b. Daphne says that she will have no pencils left. Do you agree or disagree? Why do you say so? <button onclick="toggleSolution('solution2b')">Show/Hide Solution</button></p>
+            <p id="solution2b" class="solution">Disagree. There will be 3 pencils left (24 ÷ 7 = 3 remainder 3).</p>
+            <button onclick="showNextQuestion()">Next Question</button>
+        </div>
+
+        <div class="question" style="display: none;">
+            <div class="subtitle">3. Ram has some biscuits. When he divides them equally into 5 bags, there is no remainder. When he divides them equally into 6 bags, there is a remainder of 4.</div>
+            <p>a. Ram has fewer than 100 biscuits. What is the greatest possible number of biscuits he has? <button onclick="toggleSolution('solution3a')">Show/Hide Solution</button></p>
+            <p id="solution3a" class="solution">70 biscuits</p>
+            <p>b. Ram has the number of biscuits in (a). He divides them equally into 4 bags. How many biscuits will there be in each bag? <button onclick="toggleSolution('solution3b')">Show/Hide Solution</button></p>
+            <p id="solution3b" class="solution">17 biscuits each</p>
+            <button onclick="showNextQuestion()">Next Question</button>
+        </div>
+    </div>
+</body>
+</html>
